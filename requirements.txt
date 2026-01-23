@@ -1,0 +1,5 @@
+flask:
+python -m pip install flask
+
+pymongo werkzeug:
+python -m pip install flask pymongo werkzeug
