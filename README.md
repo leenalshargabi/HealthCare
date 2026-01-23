@@ -25,3 +25,18 @@ HealthCare supports web application developed as part of a Large Data Management
 ---
 
 ## 📁 Project Structure
+healthcare_project/
+├── app.py
+├── templates/
+│ ├── index.html
+│ ├── login.html
+│ ├── signup.html
+│ ├── about.html
+│ ├── cardiology.html
+│ ├── neurology.html
+│ ├── dentistry.html
+│ ├── orthopedics.html
+├── static/
+│ └── css/
+│ └── style.css
+└── README.md
