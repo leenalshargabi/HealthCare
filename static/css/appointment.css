@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Segoe UI, sans-serif;
+  background: #E7F0FA;
+  color: #0D2440;
+}
+
+.appointment-hero {
+  background: #2E5E99;
+  color: white;
+  padding: 90px;
+  text-align: center;
+}
+
+.appointment-form {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px;
+}
+
+form {
+  background: white;
+  padding: 50px;
+  border-radius: 35px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: #2E5E99;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0D2440;
+}

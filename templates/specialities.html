@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Specialities</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/specialities.css') }}">
+  <script src="{{ url_for('static', filename='js/animations.js') }}" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <h1>Our Medical Specialities</h1>
+  <p>Dedicated departments with expert doctors and modern facilities</p>
+</header>
+
+<section class="specialities-grid">
+
+  <div class="card cardiology" onclick="location.href='/speciality/cardiology'">
+    <h2>Cardiology</h2>
+    <p>Heart care, diagnostics, and advanced cardiac treatments.</p>
+  </div>
+
+  <div class="card neurology" onclick="location.href='/speciality/neurology'">
+    <h2>Neurology</h2>
+    <p>Brain, nerves, and neurological disorder treatment.</p>
+  </div>
+
+  <div class="card orthopedic" onclick="location.href='/speciality/orthopedics'">
+    <h2>Orthopedics</h2>
+    <p>Bones, joints, muscles, and movement recovery.</p>
+  </div>
+
+  <div class="card dental" onclick="location.href='/speciality/dentistry'">
+    <h2>Dental Care</h2>
+    <p>Complete oral health and cosmetic dentistry.</p>
+  </div>
+
+  <div class="card pediatrics" onclick="location.href='/speciality/pediatrics'">
+    <h2>Pediatrics</h2>
+    <p>Compassionate healthcare for infants and children.</p>
+  </div>
+
+</section>
+
+</body>
+</html>

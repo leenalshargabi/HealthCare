@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/appointment.css') }}">
+</head>
+<body>
+
+<section class="appointment-hero">
+  <h1>Book an Appointment</h1>
+  <p>Fast, simple, and secure</p>
+</section>
+
+<section class="appointment-form">
+
+  <form>
+    <div class="row">
+      <input type="text" placeholder="Patient Name">
+      <input type="email" placeholder="Email">
+    </div>
+
+    <div class="row">
+      <select>
+        <option>Select Speciality</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Orthopedics</option>
+        <option>Dental Care</option>
+        <option>Pediatrics</option>
+      </select>
+
+      <select>
+        <option>Select Doctor</option>
+        <option>Dr. Ahmed Hassan</option>
+        <option>Dr. Sara Ali</option>
+        <option>Dr. John Smith</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <input type="date">
+      <input type="time">
+    </div>
+
+    <textarea placeholder="Describe your symptoms (optional)"></textarea>
+
+    <button type="submit">Confirm Appointment</button>
+  </form>
+
+</section>
+
+</body>
+</html>

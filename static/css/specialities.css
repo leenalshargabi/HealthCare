@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #E7F0FA;
+  color: #0D2440;
+}
+
+/* HEADER */
+.top {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.top h1 {
+  font-size: 44px;
+}
+
+.top p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* GRID */
+.specialities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 60px;
+}
+
+/* CARD BASE */
+.card {
+  padding: 50px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* THEMES */
+.cardiology {
+  background: #FCE9E9;
+  color: #511010;
+}
+
+.neurology {
+  background: #FFFCFC;
+  color: #5D3543;
+}
+
+.orthopedic {
+  background: #F5F6F7;
+  color: #2B2E33;
+}
+
+.dental {
+  background: #E8F0F1;
+  color: #004B57;
+}
+
+.pediatrics {
+  background: #F7F3ED;
+  color: #422B23;
+}

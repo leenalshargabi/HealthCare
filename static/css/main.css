@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #E7F0FA;
+  color: #0D2440;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #2E5E99;
+}
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.book-btn {
+  background: #7BA4D0;
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: #0D2440;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+}
+
+.stat-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+}
+
+/* INFO */
+.info-section {
+  background: #7BA4D0;
+  color: #0D2440;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+/* CONTACT */
+.contact-section {
+  padding: 60px;
+  text-align: center;
+  background: #2E5E99;
+  color: white;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
