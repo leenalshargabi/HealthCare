@@ -1,13 +1,30 @@
-flask
-werkzeug
-pymongo flask
+# This is a requirements.txt file for a Python project.
+# It lists the dependencies needed for the project.
+# You can install all the dependencies by running:
+# pip install -r requirements.txt
+Flask==2.3.2
+Werkzeug==3.0.1
+pymongo==4.4.0
+Flask-PyMongo==2.3.0
+# The dependencies included are:
+# - Flask: A lightweight WSGI web application framework.
+# - Werkzeug: A comprehensive WSGI web application library.
+# - PyMongo: A Python distribution containing tools for working with MongoDB.
+# - Flask-PyMongo: Flask extension that simplifies using PyMongo with Flask.
 
-flask:
-python -m pip install flask
+# To install specific packages, you can use the following commands:
+# Install Flask only
+# python -m pip install flask
 
-pymongo flask werkzeug:
-python -m pip install flask pymongo werkzeug
+# Install Flask, PyMongo, and Werkzeug
+# python -m pip install flask pymongo werkzeug
 
-pymongo flask:
-python -m pip install flask-pymongo
+#install Flask-PyMongo
+# python -m pip install Flask-PyMongo
+
+#install pymongo
+# python -m pip install pymongo
+
+#install Werkzeug
+# python -m pip install Werkzeug
 
