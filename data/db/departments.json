@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Cardiology",
+    "description": "Diagnosis and treatment of heart and blood vessel diseases",
+    "createdAt": {
+      "$date": "2024-01-10T09:00:00Z"
+    }
+  },
+  {
+    "name": "Pediatrics",
+    "description": "Medical care for infants, children, and adolescents",
+    "createdAt": {
+      "$date": "2024-01-12T09:00:00Z"
+    }
+  },
+  {
+    "name": "Orthopedics",
+    "description": "Treatment of musculoskeletal system disorders",
+    "createdAt": {
+      "$date": "2024-01-15T09:00:00Z"
+    }
+  },
+  {
+    "name": "Neurology",
+    "description": "Diagnosis and treatment of nervous system disorders",
+    "createdAt": {
+      "$date": "2024-01-18T09:00:00Z"
+    }
+  },
+  {
+    "name": "Dentistry",
+    "description": "Oral health and dental care services",
+    "createdAt": {
+      "$date": "2024-01-20T09:00:00Z"
+    }
+  }
+]

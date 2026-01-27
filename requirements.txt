@@ -28,3 +28,8 @@ Flask-PyMongo==2.3.0
 #install Werkzeug
 # python -m pip install Werkzeug
 
+#Database name is: healthcare_db
+#include this collection names:
+#1.patients
+#2.doctors
+#3.appointments
