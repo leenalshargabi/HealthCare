@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Specialities{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Welcome, {{ session.get('name') }}!</h1>
+    <p>View and manage your medical appointments below.</p>
+
+    <h2 class="section-title">Upcoming Appointments</h2>
+    <div class="appointments-list">
+        {% for appt in upcoming %}
+            <div class="appointment-card">
+                <div class="doctor-info">
+                    <b>Dr. {{ appt.doctor_name if appt.doctor_name else 'To be assigned' }}</b>
+                    <span>Department: {{ appt.department }}</span>
+                </div>
+                <div>📅 {{ appt.date }}</div>
+                <div>⏰ {{ appt.time }}</div>
+                <div><span class="status-badge pending">Upcoming</span></div>
+            </div>
+        {% else %}
+            <div class="no-data">No upcoming appointments found. <a href="/specialities">Book one now.</a></div>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">Medical History</h2>
+    <div class="appointments-list">
+        {% for appt in history %}
+            <div class="appointment-card" style="border-left-color: #666; opacity: 0.8;">
+                <div class="doctor-info">
+                    <b>Dr. {{ appt.doctor_name }}</b>
+                    <span>{{ appt.department }}</span>
+                </div>
+                <div>{{ appt.date }}</div>
+                <div>{{ appt.time }}</div>
+                <div>
+                    <span class="status-badge {{ appt.status }}">
+                        {{ appt.status }}
+                    </span>
+                </div>
+            </div>
+        {% else %}
+            <div class="no-data">No past records available.</div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

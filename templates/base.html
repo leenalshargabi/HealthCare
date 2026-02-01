@@ -15,15 +15,25 @@
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
     <div class="logo">NovaCare</div>
-
     <div class="nav-links">
         <a href="/">Home</a>
         <a href="/specialities">Specialities</a>
         <a href="/news">News</a>
         <a href="/about">About</a>
-        <a href="/login">Login</a>
+         <a class="nav-links" id="logout" href="/logout">Logout</a>
+        {% if session.get('role') == 'patient' %}
         <a href="/book-appointment" class="nav-btn">Book Appointment</a>
-    </div>
+        <a href="/dashboard/patient" class="nav-btn">my Appointments</a>
+        {% elif session.get('role') == 'doctor' %}
+        <a href="/book-appointment" class="nav-btn">Clinic Table</a>
+        <!-- <a href="/book-appointment" class="nav-btn">Book Appointment</a> -->
+        {% elif session.get('role') == 'Admin' %}
+        <a href="/book-appointment" class="nav-btn">control</a>
+        <!-- <a href="/book-appointment" class="nav-btn">Book Appointment</a> -->
+         {% else %}
+             <a href="/login">Login</a>
+        {% endif %}
+    
 </nav>
 
 

@@ -2,15 +2,21 @@ from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
-import os,json
+# import os,json
 
 app = Flask(__name__)
 app.secret_key = "super-secret"
 
 client = MongoClient("mongodb://localhost:27017/")
-db = client["hospital_db"]
+db = client["healthcare_db"]
 users = db["users"]
 appointments = db["appointments"]
+patients = db["patients"]
+operations = db["operations"]
+doctors = db["doctors"]
+news = db["news"]
+departments = db["departments"]
+admin = db["admin"]
 
 
 # ================= HOME =================
@@ -31,13 +37,14 @@ def about():
 #=====================================
 
 @app.route("/news")
-def news():
-    file_path = os.path.join("data", "db", "news.json")
-
-    with open(file_path, "r", encoding="utf-8") as file:
-        news_data = json.load(file)
-
-    return render_template("news.html", news=news_data)
+def news_page():
+    page = int(request.args.get('page',1))
+    # per_page = 10
+    skip_among=(page-1)*10
+    allNews = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
+    total=news.count_documents({})
+    has_next =total>(page*10)
+    return render_template("news.html",Pnews=allNews,current=page,has_next=has_next)
 
 # ================= AUTH =================
 # @app.route("/choose-role")
@@ -47,12 +54,17 @@ def news():
 @app.route("/login")
 def choose_role():
     return render_template("auth/choose_role.html")
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
 
 @app.route("/login/patient", methods=["GET", "POST"])
 def patient_login():
     if request.method == "POST":
         user = users.find_one({"email": request.form["email"], "role": "patient"})
-        if user and check_password_hash(user["password"], request.form["password"]):
+        check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
+        if user and  check:
             session["user_id"] = str(user["_id"])
             session["role"] = "patient"
             return redirect("/book-appointment")
@@ -115,29 +127,88 @@ def book_appointment():
 # ================= DEPARTMENTS =================
 @app.route("/department/cardiology")
 def cardiology():
-    return render_template("departments/cardiology.html")
+    query = {
+  "mainSpecialty": {'$in':[
+      "Interventional Cardiologist",'Heart Failure Specialist',
+  'Interventional Cardiologist',
+  ] }
+}
+    cardiology_doctors = list(doctors.find(query))
+    return render_template("departments/cardiology.html", cDoctors=cardiology_doctors)
 
 @app.route("/department/neurology")
 def neurology():
-    return render_template("departments/neurology.html")
+    query = {
+   
+  'mainSpecialty': {
+    '$in': [
+        'Neurologist', 'Epileptologist'
+    ]
+}
+
+}
+    neurology_doctors = list(doctors.find(query))
+    return render_template("departments/neurology.html", cDoctors=neurology_doctors)
 
 @app.route("/department/orthopedics")
 def orthopedic():
-    return render_template("departments/orthopedics.html")
+    query = {
+    'mainSpecialty': {
+        '$in': [
+            'Spine Surgeon',  'Orthopedic Surgeon',
+        ]
+    }
+}
+    orthopedics_doctors = list(doctors.find(query))
+    return render_template("departments/orthopedics.html", cDoctors=orthopedics_doctors)
 
 @app.route("/department/dentistry")
 def dental():
-    return render_template("departments/dentistry.html")
+    query = {
+  'mainSpecialty': {
+    '$in': [
+        'Periodontist', 'Dentist',
+    ]
+}
+}
+    dentistry_doctors = list(doctors.find(query))
+    return render_template("departments/dentistry.html", cDoctors=dentistry_doctors)
 
 @app.route("/department/pediatrics")
 def pediatrics():
-    return render_template("departments/pediatrics.html")
+    query = {
+  'mainSpecialty': {
+    '$in': [
+        'Pediatrician', 'Pediatric Cardiologist',
+  'Pediatric Neurologist'
+    ]
+}
+}
+    pediatrics_doctors = list(doctors.find(query))
+    return render_template("departments/pediatrics.html", cDoctors=pediatrics_doctors)
 
 
 # ================= DASHBOARDS =================
 @app.route("/dashboard/patient")
 def patient_dashboard():
-    return render_template("dashboards/patient_dashboard.html")
+    def patient_dashboard():
+        if "user_id" not in session or session.get("role") != "patient":
+            return redirect("/login")
+
+    user_id = session["user_id"]
+   
+    upcoming_appts = list(appointments.find({
+        "patient_id": user_id,
+        "status": "scheduled"
+    }).sort("date", 1))
+
+    past_appts = list(appointments.find({
+        "patient_id": user_id,
+        "status": {"$in": ["completed", "cancelled"]}
+    }).sort("date", -1))
+
+    return render_template("dashboards/patient_dashboard.html",
+    upcoming=upcoming_appts,history=past_appts)
 
 @app.route("/dashboard/doctor")
 def doctor_dashboard():
