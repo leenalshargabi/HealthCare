@@ -1,45 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Specialities</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/specialities.css') }}">
-  <script src="{{ url_for('static', filename='js/animations.js') }}" defer></script>
-</head>
-<body>
+{% extends "base.html" %}
 
-<header class="top">
-  <h1>Our Medical Specialities</h1>
-  <p>Dedicated departments with expert doctors and modern facilities</p>
-</header>
+{% block title %}Specialities{% endblock %}
 
-<section class="specialities-grid">
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/specialities.css') }}">
+{% endblock %}
 
-  <div class="card cardiology" onclick="location.href='/speciality/cardiology'">
-    <h2>Cardiology</h2>
-    <p>Heart care, diagnostics, and advanced cardiac treatments.</p>
-  </div>
+{% block content %}
 
-  <div class="card neurology" onclick="location.href='/speciality/neurology'">
-    <h2>Neurology</h2>
-    <p>Brain, nerves, and neurological disorder treatment.</p>
-  </div>
+<section class="specialities-section">
 
-  <div class="card orthopedic" onclick="location.href='/speciality/orthopedics'">
-    <h2>Orthopedics</h2>
-    <p>Bones, joints, muscles, and movement recovery.</p>
-  </div>
+    <h1 class="page-title">Our Medical Specialities</h1>
+    <p class="page-subtitle">
+        Comprehensive healthcare services delivered by expert professionals
+    </p>
 
-  <div class="card dental" onclick="location.href='/speciality/dentistry'">
-    <h2>Dental Care</h2>
-    <p>Complete oral health and cosmetic dentistry.</p>
-  </div>
+    <div class="specialities-grid">
 
-  <div class="card pediatrics" onclick="location.href='/speciality/pediatrics'">
-    <h2>Pediatrics</h2>
-    <p>Compassionate healthcare for infants and children.</p>
-  </div>
+        <a href="/department/cardiology" class="card cardiology">
+            <img src="{{ url_for('static', filename='icons/cardiology.png') }}" class="icon">
+            <h3>Cardiology</h3>
+            <p>Advanced heart care, diagnostics, and cardiac treatments.</p>
+        </a>
+
+        <a href="/department/neurology" class="card neurology">
+            <img src="{{ url_for('static', filename='icons/neurology.png') }}" class="icon">
+            <h3>Neurology</h3>
+            <p>Expert care for brain, spine, and nervous system disorders.</p>
+        </a>
+
+        <a href="/department/orthopedics" class="card orthopedic">
+            <img src="{{ url_for('static', filename='icons/orthopedic.png') }}" class="icon">
+            <h3>Orthopedics</h3>
+            <p>Bone, joint, and muscle treatments with modern techniques.</p>
+        </a>
+
+        <a href="/department/dentistry" class="card dental">
+            <img src="{{ url_for('static', filename='icons/dental_care.png') }}" class="icon">
+            <h3>Dental Care</h3>
+            <p>Complete oral health services for all age groups.</p>
+        </a>
+
+        <a href="/department/pediatrics" class="card pediatrics">
+            <img src="{{ url_for('static', filename='icons/pediatrics.png') }}" class="icon">
+            <h3>Pediatrics</h3>
+            <p>Compassionate healthcare for infants, children, and teens.</p>
+        </a>
+
+        <!-- <a href="/department/ophthalmology" class="card ophthalmology">
+            <img src="{{ url_for('static', filename='icons/ophthalmology.svg') }}" class="icon">
+            <h3>Ophthalmology</h3>
+            <p>Vision care, eye surgeries, and advanced diagnostics.</p>
+        </a> -->
+
+    </div>
 
 </section>
 
-</body>
-</html>
+{% endblock %}

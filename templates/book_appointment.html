@@ -1,53 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Book Appointment</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/appointment.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Book Appointment{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
 
-<section class="appointment-hero">
-  <h1>Book an Appointment</h1>
-  <p>Fast, simple, and secure</p>
-</section>
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <h2>Book Appointment</h2>
 
-<section class="appointment-form">
+        <form method="POST">
+            <select name="department" required>
+                <option value="">Select Department</option>
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Pediatrics</option>
+                <option>Orthopedics</option>
+                <option>Dental</option>
+            </select>
 
-  <form>
-    <div class="row">
-      <input type="text" placeholder="Patient Name">
-      <input type="email" placeholder="Email">
+            <input type="date" name="date" required>
+            <input type="time" name="time" required>
+
+            <button type="submit">Confirm Appointment</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="javascript:history.back()">← Return</a>
+        </div>
     </div>
-
-    <div class="row">
-      <select>
-        <option>Select Speciality</option>
-        <option>Cardiology</option>
-        <option>Neurology</option>
-        <option>Orthopedics</option>
-        <option>Dental Care</option>
-        <option>Pediatrics</option>
-      </select>
-
-      <select>
-        <option>Select Doctor</option>
-        <option>Dr. Ahmed Hassan</option>
-        <option>Dr. Sara Ali</option>
-        <option>Dr. John Smith</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <input type="date">
-      <input type="time">
-    </div>
-
-    <textarea placeholder="Describe your symptoms (optional)"></textarea>
-
-    <button type="submit">Confirm Appointment</button>
-  </form>
-
-</section>
-
-</body>
-</html>
+</div>
+{% endblock %}
