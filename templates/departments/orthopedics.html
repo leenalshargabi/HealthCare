@@ -15,17 +15,13 @@
   <h2>Our Orthopedic Doctors</h2>
 
   <div class="doctors">
+    {% for doctor in cDoctors %}
     <div class="doctor" style="background:#fff;">
-      <h3>Dr. Omar Nasser</h3>
-      <span>Joint Replacement Surgeon</span>
-      <p>Specialized in knee and hip replacement surgeries.</p>
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
     </div>
-
-    <div class="doctor" style="background:#fff;">
-      <h3>Dr. Rana Adel</h3>
-      <span>Sports Injury Specialist</span>
-      <p>Focused on athlete recovery and physical rehabilitation.</p>
-    </div>
+    {% endfor %}
   </div>
 </div>
 

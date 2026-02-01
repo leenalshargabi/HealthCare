@@ -33,14 +33,16 @@ body {
 /* DOCTORS */
 .doctors {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 40px;
 }
 
 .doctor {
   padding: 35px;
+  margin: 30px;
   border-radius: 25px;
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 500px;
 }
 
 .doctor:hover {

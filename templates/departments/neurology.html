@@ -15,17 +15,13 @@
   <h2>Our Neurologists</h2>
 
   <div class="doctors">
+    {% for doctor in cDoctors %}
     <div class="doctor" style="background:#fff;">
-      <h3>Dr. Samir Khaled</h3>
-      <span>Consultant Neurologist</span>
-      <p>Specialist in epilepsy, migraines, and neurological diagnostics.</p>
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
     </div>
-
-    <div class="doctor" style="background:#fff;">
-      <h3>Dr. Noor Saleh</h3>
-      <span>Neurophysiology Expert</span>
-      <p>Focused on nerve conduction studies and movement disorders.</p>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
