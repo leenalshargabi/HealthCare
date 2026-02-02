@@ -8,9 +8,17 @@ app = Flask(__name__)
 app.secret_key = "super-secret"
 
 # 
+def pages (pagNum,Collname):
+    page = int(request.args.get('page',1))
+    per_page = pagNum
+    skip_among=(page-1)*per_page
+    allItems = list(Collname.find().sort('_id',-1).skip(skip_among).limit(per_page))
+    total=Collname.count_documents({})
+    has_next =total>(page*per_page)
+    return allItems,has_next ,page
+
 client = MongoClient("mongodb://localhost:2009/")
 db = client["healthcare_db"]
-
 users = db["users"]
 appointments = db["appointments"]
 patients = db["patients"]
@@ -43,10 +51,12 @@ def news_page():
     page = int(request.args.get('page',1))
     # per_page = 10
     skip_among=(page-1)*10
-    allNews = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
+    allItem = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
     total=news.count_documents({})
     has_next =total>(page*10)
-    return render_template("news.html",Pnews=allNews,current=page,has_next=has_next)
+    # nextpage=pages (6,news)
+    # return render_template("news.html",Pnews=nextpage.allItem,current=nextpage.page,has_next=nextpage.has_next)
+    return render_template("news.html",Pnews=allItem,current=page,has_next= has_next)
 
 # ================= AUTH =================
 # @app.route("/choose-role")
@@ -65,8 +75,9 @@ def logout():
 def patient_login():
     if request.method == "POST":
         user = users.find_one({"email": request.form["email"], "role": "patient"})
-        check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
-        if user and  check:
+        # check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
+        if user:
+            password_input=request.form["password"]
             session["user_id"] = str(user["_id"])
             session["role"] = "patient"
             return redirect("/book-appointment")
@@ -102,7 +113,7 @@ def signup():
             "role": "patient",
             "created_at": datetime.now()
         })
-        return redirect("/login")
+        return redirect("/login/patient")
     return render_template("auth/signup.html")
 
 
@@ -123,7 +134,7 @@ def book_appointment():
         })
         return redirect("/dashboard/patient")
 
-    return render_template("book_appointment.html")
+    return render_template("index.html")
 
 
 # ================= DEPARTMENTS =================
@@ -143,12 +154,9 @@ def neurology():
     query = {
    
   'mainSpecialty': {
-    '$in': [
-        'Neurologist', 'Epileptologist'
-    ]
-}
-
-}
+    '$in': ['Neurologist', 'Epileptologist']
+                    }
+            }
     neurology_doctors = list(doctors.find(query))
     return render_template("departments/neurology.html", cDoctors=neurology_doctors)
 
@@ -218,8 +226,25 @@ def doctor_dashboard():
 
 @app.route("/dashboard/manager")
 def manager_dashboard():
-    return render_template("dashboards/manager_dashboard.html")
+    if "user_id" not in session or session.get("role") != "manager":
+        return redirect("/login")
 
+    stats = {
+        "patients": patients.count_documents({}),
+        "doctors": doctors.count_documents({}),
+        "appointments": appointments.count_documents({}),
+        "news": news.count_documents({})
+    }
+
+    specs = doctors.distinct("mainSpecialty")
+
+    return render_template("dashboards/manager_dashboard.html", stats=stats, specs=specs)
+
+@app.route("/delete_news/<news_id>")
+def delete_news(news_id):
+    from bson.objectid import ObjectId
+    news.delete_one({"_id": ObjectId(news_id)})
+    return redirect("/dashboard/manager")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=2009)
