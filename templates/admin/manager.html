@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <button id="menuBtn">☰</button>
+
+    <input type="text" id="searchInput" placeholder="Search patient or doctor...">
+
+    <button onclick="filterUsers('patients')">Patients</button>
+    <button onclick="filterUsers('doctors')">Doctors</button>
+</div>
+
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+    <h2>Manager Panel</h2>
+
+    <button onclick="showSection('add')">Add</button>
+    <button onclick="goToReports()">Reports</button>
+    <button onclick="showSection('db')">Add DB</button>
+    <button onclick="showSection('collections')">Collections</button>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="main" id="mainContent">
+
+    <h1>Welcome Manager</h1>
+    <p>Select an action from the sidebar.</p>
+
+    <div id="results"></div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/manager.js') }}"></script>
+</body>
+</html>

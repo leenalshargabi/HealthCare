@@ -1,0 +1,71 @@
+.rooms-page {
+  padding: 40px;
+}
+
+.rooms-page h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: var(--secondary);
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.table-container {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.rooms-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rooms-table thead {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.rooms-table th,
+.rooms-table td {
+  padding: 16px 18px;
+  text-align: left;
+}
+
+.rooms-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.rooms-table tbody tr:hover {
+  background-color: #f4f8fd;
+}
+
+/* ===== Status Pills ===== */
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status.scheduled {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}

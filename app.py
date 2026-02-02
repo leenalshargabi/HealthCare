@@ -224,27 +224,30 @@ def patient_dashboard():
 def doctor_dashboard():
     return render_template("dashboards/doctor_dashboard.html")
 
+# ================= ADMIN =================
 @app.route("/dashboard/manager")
 def manager_dashboard():
-    if "user_id" not in session or session.get("role") != "manager":
-        return redirect("/login")
+    return render_template("admin/manager_dashboard.html")
 
-    stats = {
-        "patients": patients.count_documents({}),
-        "doctors": doctors.count_documents({}),
-        "appointments": appointments.count_documents({}),
-        "news": news.count_documents({})
-    }
-
-    specs = doctors.distinct("mainSpecialty")
-
-    return render_template("dashboards/manager_dashboard.html", stats=stats, specs=specs)
-
-@app.route("/delete_news/<news_id>")
-def delete_news(news_id):
-    from bson.objectid import ObjectId
-    news.delete_one({"_id": ObjectId(news_id)})
+@app.route("/admin/add-user", methods=["POST"])
+def add_user():
+    users.insert_one({
+        "name": request.form["name"],
+        "email": request.form["email"],
+        "role": request.form["role"]
+    })
     return redirect("/dashboard/manager")
+
+@app.route("/admin/create-db", methods=["POST"])
+def create_db():
+    db_name = request.form["db_name"]
+    client[db_name]
+    return redirect("/dashboard/manager")
+
+@app.route("/admin/collections")
+def show_collections():
+    cols = db.list_collection_names()
+    return {"collections": cols}
 
 if __name__ == "__main__":
     app.run(debug=True, port=2009)
