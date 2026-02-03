@@ -33,56 +33,41 @@
 
 <div class="section">
   <h2>Our Cardiologists</h2>
-<<<<<<< Updated upstream
+    <div class="doctors" id="doctor-list">
+      {% for doctor in cDoctors %}
+      <div class="doctor doctor-item">
 
-  <div class="doctors" id="doctor-list">
-  {% for doctor in cDoctors %}
-  <div class="doctor doctor-item">
+        <div class="doctor-top">
+          <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
 
-  <div class="doctor-top">
-    <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
+          <div class="availability available">
+            Available
+            <h3>{{ doctor.fullName }}</h3>
+            <span>{{doctor.mainSpecialty }}</span>
+            <p>{{doctor.subSpecialty }}</p>
+            <p>workingHours:{{doctor.workingHours.from }}- {{doctor.workingHours.to }} </p>
 
-    <div class="availability available">
-        Available
-=======
-{% for doctor in cDoctors %}
-    <div class="doctor" style="background:#fff;">
-      <h3>{{ doctor.fullName }}</h3>
-      <span>{{doctor.mainSpecialty }}</span>
-      <p>{{doctor.subSpecialty }}</p>
-      <p>workingHours:{{doctor.workingHours.from }}- {{doctor.workingHours.to }} </p>
->>>>>>> Stashed changes
+          </div>
+        </div>
+
+        {% endfor %}
+        <div class="pagination" id="pagination"></div>
+        {% if current >1 %}
+        <a href="{{ url_for('neurology' ,page =current-1)}} " id="prev">
+          previous</a>
+        {% endif %}
+        <span style="margin: 0 15px;">page: {{current}}</span>
+        {% if has_next %}
+        <a href="{{ url_for('neurology' ,page =current+1)}}">
+          next</a>
+        {% endif %}
+      </div>
+
     </div>
+
+
+
   </div>
-
-  <h3>{{ doctor.fullName }}</h3>
-  <span>{{doctor.mainSpecialty }}</span>
-  <p>{{doctor.subSpecialty }}</p>
-  <p>{{doctor.workingHours }}</p>
-
-</div>
-
-    {% endfor %}
-<<<<<<< Updated upstream
-  </div>
-
-  <div class="pagination" id="pagination"></div>
-
-=======
-  <div class="pagination" style="text-align: center; margin: 30px;">
-      {% if current >1 %}
-      <a href="{{ url_for('cardiology' ,page =current-1)}} " id="prev" >
-      previous</a>
-      {% endif %}
-<span style="margin: 0 15px;">page: {{current}}</span>
-      {% if has_next %}
-      <a href="{{ url_for('cardiology' ,page =current+1)}}">
-      next</a>
-      {% endif %}
-  </div>
-  
->>>>>>> Stashed changes
-</div>
 
 </body>
 
