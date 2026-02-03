@@ -1,0 +1,23 @@
+[
+  {
+    "fullName": "Super Admin",
+    "email": "super.admin@hospital.com",
+    "passwordHash": "$2b$10$HASH_SUPER",
+    "isActive": true,
+    "createdAt": { "$date": "2025-01-01T08:00:00Z" }
+  },
+  {
+    "fullName": "Medical Admin",
+    "email": "medical.admin@hospital.com",
+    "passwordHash": "$2b$10$HASH_MEDICAL",
+    "isActive": true,
+    "createdAt": { "$date": "2025-01-01T08:05:00Z" }
+  },
+  {
+    "fullName": "Content Admin",
+    "email": "content.admin@hospital.com",
+    "passwordHash": "$2b$10$HASH_CONTENT",
+    "isActive": true,
+    "createdAt": { "$date": "2025-01-01T08:10:00Z" }
+  }
+]
