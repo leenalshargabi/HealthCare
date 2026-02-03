@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>News & Articles</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+    <meta charset="UTF-8">
+    <title>News & Updates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
 </head>
 <body>
 
-<header>
-  <h1>Medical News & Articles</h1>
-  <p>Latest updates from the world of healthcare</p>
-</header>
+<!-- Full Width Header -->
+<div class="top-header">
+    <h1>News & Updates</h1>
+    <p>Stay informed about the latest hospital announcements</p>
+</div>
 
-<section class="news-container">
+<div class="page-container">
 
-  <div class="news-card">
-    <h2>AI Revolution in Healthcare</h2>
-    <span>January 2026</span>
-    <p>Hospitals worldwide are adopting AI to assist doctors in diagnosis, imaging, and patient monitoring.</p>
-  </div>
+    <!-- Filter -->
+    <div class="filter-bar">
+        <label for="dateFilter">Filter by</label>
+        <select id="dateFilter">
+            <option value="all">All</option>
+            <option value="new">Most Recent</option>
+            <option value="old">Oldest First</option>
+        </select>
+        <button class="filter-btn" onclick="applyFilter()">Filter</button>
+    </div>
 
-  <div class="news-card">
-    <h2>New Cardiac Surgery Techniques</h2>
-    <span>December 2025</span>
-    <p>Minimally invasive heart surgeries reduce recovery time and improve patient outcomes.</p>
-  </div>
+    <!-- News Grid -->
+    <div id="newsGrid" class="news-grid"></div>
 
-  <div class="news-card">
-    <h2>Pediatric Vaccination Advances</h2>
-    <span>November 2025</span>
-    <p>New vaccines show higher effectiveness with fewer side effects for children.</p>
-  </div>
+    <!-- Pagination -->
+    <div id="pagination" class="pagination"></div>
+    <div class="more-pagination-container">
+        <button id="morePagesBtn" onclick="loadMorePages()">More</button>
+    </div>
 
-</section>
+</div>
+
+<script>
+    let newsData = {{ news | tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/news.js') }}"></script>
 
 </body>
 </html>
