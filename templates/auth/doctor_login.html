@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Doctor Login{% endblock %}
+
+{% block content %}
+<div class="login-box doctor-theme">
+
+    <h2>Doctor Login</h2>
+
+    <form method="POST">
+        <input type="email" name="email" placeholder="Hospital Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <a href="/login">← Return</a>
+
+</div>
+{% endblock %}

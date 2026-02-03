@@ -1,78 +1,101 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #E7F0FA;
-  color: #0D2440;
+.specialities-section {
+    padding: 80px 100px;
+    background: #E7F0FA;
+    min-height: 100vh;
 }
 
-/* HEADER */
-.top {
-  text-align: center;
-  padding: 80px 20px;
+.page-title {
+    text-align: center;
+    font-size: 42px;
+    color: #0D2440;
 }
 
-.top h1 {
-  font-size: 44px;
+.page-subtitle {
+    text-align: center;
+    color: #2E5E99;
+    margin-bottom: 60px;
+    font-size: 18px;
 }
 
-.top p {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* GRID */
 .specialities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
 }
 
-/* CARD BASE */
 .card {
-  padding: 50px 30px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: transform 0.4s, box-shadow 0.4s;
-}
-
-.card h2 {
-  margin-bottom: 15px;
-  font-size: 28px;
-}
-
-.card p {
-  font-size: 16px;
-  line-height: 1.5;
+    position: relative;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: inherit;
+    min-height: 230px;
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-12px) scale(1.02);
 }
 
-/* THEMES */
+.card h3 {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.card p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 42px;
+}
+
+/* 🎨 THEMES */
+
+/* Cardiology */
 .cardiology {
-  background: #FCE9E9;
-  color: #511010;
+    background: #FCE9E9;
 }
+.cardiology h3 { color: #8B1E1E; }
+.cardiology:hover { box-shadow: 0 25px 50px rgba(199,77,77,0.4); }
 
+/* Neurology */
 .neurology {
-  background: #FFFCFC;
-  color: #5D3543;
+    background: #FFFCFC;
 }
+.neurology h3 { color: #5D3543; }
+.neurology:hover { box-shadow: 0 25px 50px rgba(120,89,100,0.4); }
 
+/* Orthopedic */
 .orthopedic {
-  background: #F5F6F7;
-  color: #2B2E33;
+    background: #F5F6F7;
 }
+.orthopedic h3 { color: #2B2E33; }
+.orthopedic:hover { box-shadow: 0 25px 50px rgba(43,46,51,0.35); }
 
+/* Dental */
 .dental {
-  background: #E8F0F1;
-  color: #004B57;
+    background: #E8F0F1;
 }
+.dental h3 { color: #1E6F78; }
+.dental:hover { box-shadow: 0 25px 50px rgba(30,111,120,0.4); }
 
+/* Pediatrics */
 .pediatrics {
-  background: #F7F3ED;
-  color: #422B23;
+    background: #F7F3ED;
 }
+.pediatrics h3 { color: #422B23; }
+.pediatrics:hover { box-shadow: 0 25px 50px rgba(219,161,162,0.45); }
+
+/* Ophthalmology */
+.ophthalmology {
+    background: #E7F0FA;
+}
+.ophthalmology h3 { color: #2E5E99; }
+.ophthalmology:hover { box-shadow: 0 25px 50px rgba(46,94,153,0.45); }

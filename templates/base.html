@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Hospital System{% endblock %}</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+    <div class="logo">NovaCare</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/specialities">Specialities</a>
+        <a href="/news">News</a>
+        <a href="/about">About</a>
+        <a href="/login">Login</a>
+        <a href="/book-appointment" class="nav-btn">Book Appointment</a>
+    </div>
+</nav>
+
+
+    <!-- ===== RETURN BUTTON ===== -->
+    <div class="return-container">
+        <button class="back-btn" onclick="history.back()">← Return</button>
+    </div>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

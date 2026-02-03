@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}NovaCare Hospital{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-left fade-in">
+        <span class="badge">Trusted Medical Center</span>
+
+        <h1>
+            Caring for Life,<br>
+            <span>Every Step of the Way</span>
+        </h1>
+
+        <p>
+            NovaCare Hospital delivers world-class healthcare through
+            innovation, compassion, and expert medical professionals.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/book-appointment" class="btn-primary">Book Appointment</a>
+            <a href="/about" class="btn-outline">About Us</a>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card" onclick="location.href='/about'">
+                <h2>4500+</h2>
+                <span>Happy Patients</span>
+            </div>
+            <div class="stat-card" onclick="location.href='/about'">
+                <h2>200</h2>
+                <span>Hospital Rooms</span>
+            </div>
+            <div class="stat-card" onclick="location.href='/about'">
+                <h2>20+</h2>
+                <span>Ambulances</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-right slide-in">
+        <img src="{{ url_for('static', filename='images/doctor2.png') }}" alt="Doctor">
+    </div>
+
+</section>
+
+{% endblock %}

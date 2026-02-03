@@ -1,0 +1,42 @@
+:root {
+    --bg-main: #E7F0FA;
+    --primary: #7BA4D0;
+    --secondary: #2E5E99;
+    --dark: #0D2440;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--dark);
+}
+
+main {
+    padding: 40px;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.return-container {
+    padding: 20px 40px;
+}

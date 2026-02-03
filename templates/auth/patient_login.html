@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Patient Login{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <h2>Patient Login</h2>
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="/signup">Create account</a> ·
+            <a href="javascript:history.back()">Return</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
