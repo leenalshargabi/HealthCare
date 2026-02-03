@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+import os,json
 
 app = Flask(__name__)
 app.secret_key = "super-secret"
@@ -23,14 +24,20 @@ def home():
 def specialities():
     return render_template("specialities.html")
 
-@app.route("/news")
-def news():
-    return render_template("news.html")
-
 @app.route("/about")
 def about():
     return render_template("about.html")
 
+#=====================================
+
+@app.route("/news")
+def news():
+    file_path = os.path.join("data", "db", "news.json")
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        news_data = json.load(file)
+
+    return render_template("news.html", news=news_data)
 
 # ================= AUTH =================
 # @app.route("/choose-role")
