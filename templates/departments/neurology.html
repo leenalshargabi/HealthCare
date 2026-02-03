@@ -34,6 +34,7 @@
 <div class="section">
   <h2>Our Neurologists</h2>
 
+<<<<<<< Updated upstream
   <div class="doctors" id="doctor-list">
   {% for doctor in cDoctors %}
   <div class="doctor doctor-item">
@@ -43,6 +44,15 @@
 
     <div class="availability available">
         Available
+=======
+  <div class="doctors">
+    {% for doctor in cDoctors %}
+    <div class="doctor" style="background:#fff;">
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
+            <p>workingHours:{{doctor.workingHours.from }}- {{doctor.workingHours.to }} </p>
+>>>>>>> Stashed changes
     </div>
   </div>
 
@@ -54,6 +64,18 @@
 </div>
 
     {% endfor %}
+    <div class="pagination" style="text-align: center; margin: 30px;">
+      {% if current >1 %}
+      <a href="{{ url_for('neurology' ,page =current-1)}} " id="prev" >
+      previous</a>
+      {% endif %}
+<span style="margin: 0 15px;">page: {{current}}</span>
+      {% if has_next %}
+      <a href="{{ url_for('neurology' ,page =current+1)}}">
+      next</a>
+      {% endif %}
+  </div>
+  
   </div>
 
   <div class="pagination" id="pagination"></div>
