@@ -29,10 +29,6 @@
 
 <div class="section">
   <h2>Our Pediatricians</h2>
-    <div class="doctors" id="doctor-list">
-      {% for doctor in cDoctors %}
-      <div class="doctor doctor-item">
-
   <div class="doctors">
     {% for doctor in cDoctors %}
     <div class="doctor doctor-item">
@@ -47,16 +43,13 @@
     </div>
     {% endfor %}
   </div>
-
   <div class="pagination" style="text-align:center; margin:30px;">
       {% if current > 1 %}
-        <a href="{{ url_for('pediatrics', page=current-1) }}">Previous</a>
+        <a href="{{ url_for('neurology', page=current-1) }}">Previous</a>
       {% endif %}
-
       <span style="margin:0 15px;">Page: {{ current }}</span>
-
       {% if has_next %}
-        <a href="{{ url_for('pediatrics', page=current+1) }}">Next</a>
+        <a href="{{ url_for('neurology', page=current+1) }}">Next</a>
       {% endif %}
   </div>
 

@@ -20,15 +20,16 @@
         <a href="/specialities">Specialities</a>
         <a href="/news">News</a>
         <a href="/about">About</a>
-         <a class="nav-links" id="logout" href="/logout">Logout</a>
+        <a href="/dashboard/manager" class="nav-btn">control</a>
+        <a class="nav-links" id="logout" href="/logout">Logout</a>
         {% if session.get('role') == 'patient' %}
         <a href="/book-appointment" class="nav-btn">Book Appointment</a>
         <a href="/dashboard/patient" class="nav-btn">my Appointments</a>
-        {% elif session.get('role') == 'doctor' %}
+        <!-- {% elif session.get('role') == 'doctor' %} -->
         <a href="/book-appointment" class="nav-btn">Clinic Table</a>
         <!-- <a href="/book-appointment" class="nav-btn">Book Appointment</a> -->
-        {% elif session.get('role') == 'Admin' %}
-        <a href="/book-appointment" class="nav-btn">control</a>
+        <!-- {% elif session.get('role') == 'Admin' %} -->
+        <a href="/dashboard/manager" class="nav-btn">control</a>
         <!-- <a href="/book-appointment" class="nav-btn">Book Appointment</a> -->
          {% else %}
              <a href="/login">Login</a>
