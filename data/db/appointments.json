@@ -1,0 +1,3802 @@
+[
+  {
+    "patientId": {
+      "$oid": "Amina Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T15:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Basel Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T12:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T11:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T11:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T12:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mohammed Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T11:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T16:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T09:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T13:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Nadia Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T08:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T16:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T08:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T12:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T16:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Yousef Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T12:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T14:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T16:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T15:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T11:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T09:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T11:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T08:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T12:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amina Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T13:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Omar"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Zain Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T09:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mohammed Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T08:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amina Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Fadel"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:40Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Nadia Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ali Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T11:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T11:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amina Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T10:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T08:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T13:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T16:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mohammed Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T09:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T12:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T12:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lina Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T12:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T12:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Omar"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T12:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mohammed Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T11:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T11:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T11:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T12:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Omar"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T15:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amina Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T11:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T12:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T11:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T09:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T13:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T15:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ahmed Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Tamer"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T12:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T09:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T12:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Nasser"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T15:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T10:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T09:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T11:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T16:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Basel Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T11:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Basel Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T11:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hamid Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T11:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Yousef Omar"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ali Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Yousef Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T12:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Fadel"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T12:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T11:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lina Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hamid Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T12:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Tamer"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ahmed Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T10:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T10:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T14:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Tamer"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T08:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T13:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ahmed Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ali Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T11:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ali Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T08:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T13:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T16:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T11:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T16:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T09:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Basel Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Nasser"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T08:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T10:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T12:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Hassan Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T10:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T10:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lina Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Tamer"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T09:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yara Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T15:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ibrahim Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T14:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T10:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Zain Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Fadel"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T15:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Lina Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Khaled Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Ali"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Nadia Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T12:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T14:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T14:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T13:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Ali"
+    },
+    "doctorId": {
+      "$oid": "Dr. Nadia Youssef"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amira Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Zain Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T13:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T13:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T13:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amira Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T16:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Nadia Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T11:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T16:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Omar Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mahmoud Rashid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T09:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T09:30:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Zain Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mona Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Yousef Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Hassan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Amina Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Samir Adnan"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T15:00:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Samir Tamer"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T14:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T14:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T12:30:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T15:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Salma Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Najib"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T10:45:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Nasser"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T09:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Yousef Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T12:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ali Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Mohammed Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mahmoud Fahad"
+    },
+    "doctorId": {
+      "$oid": "Dr. Sara Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T09:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Mahdi"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T12:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Sara Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Omar"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T16:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Omar"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T10:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Amari"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-05T15:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Sami"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T11:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Fatima Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Rania Khalid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T16:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Ahmed Adnan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Huda Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-02T14:30:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Huda Mahdi"
+    },
+    "doctorId": {
+      "$oid": "Dr. Hassan Hussein"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T16:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Tariq Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T10:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Salma Jassim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T08:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Khalid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Omar Karim"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T12:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Hassan"
+    },
+    "doctorId": {
+      "$oid": "Dr. Yousef Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T14:45:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Hussein"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Hamid"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T08:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Khalid Najib"
+    },
+    "doctorId": {
+      "$oid": "Dr. Tariq Fahad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T14:00:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Noor Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Nasser"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Lama Rashid"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ali Tamer"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-04T10:15:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Rania Saif"
+    },
+    "doctorId": {
+      "$oid": "Dr. Fatima Nasser"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:45:00Z"
+    },
+    "status": "cancelled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Basel Saleh"
+    },
+    "doctorId": {
+      "$oid": "Dr. Ahmed Samad"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T13:15:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Zain Youssef"
+    },
+    "doctorId": {
+      "$oid": "Dr. Nadia Fadel"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:15:00Z"
+    },
+    "status": "scheduled",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  },
+  {
+    "patientId": {
+      "$oid": "Mohammed Karim"
+    },
+    "doctorId": {
+      "$oid": "Dr. Amina Saleh"
+    },
+    "departmentId": {
+      "$oid": "Cardiology"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-03T11:00:00Z"
+    },
+    "status": "completed",
+    "notes": "",
+    "createdAt": {
+      "$date": "2026-02-02T00:27:41Z"
+    }
+  }
+]
