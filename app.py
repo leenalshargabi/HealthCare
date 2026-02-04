@@ -5,14 +5,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 from datetime import timedelta
 from bson import ObjectId
-# import matplotlib
-# matplotlib.use('Agg')  # مهم لبيئة الخادم
-# import matplotlib.pyplot as plt
-# import io
-# import base64
-# import numpy as np
-# import os,json
-
+import matplotlib
+matplotlib.use('Agg')  # مهم لبيئة الخادم
+import matplotlib.pyplot as plt
+import io
+import base64
+import numpy as np
+import os,json
+# 
 app = Flask(__name__)
 app.secret_key = "super-secret"
 
@@ -26,7 +26,7 @@ def pages (pagNum,Collname):
     has_next =total>(page*per_page)
     return allItems,has_next ,page
 
-client = MongoClient("mongodb://localhost:2009/")
+client = MongoClient("mongodb://localhost:5000/")
 db = client["healthcare_db"]
 users_coll = db["users"]
 appointments_coll = db["appointments"]
@@ -557,11 +557,11 @@ def doctor_dashboard():
 # ================= ADMIN =================
 @app.route("/admin/dashboard")
 def dashboard():    
-    patientscount = len(list(patients.find({})))
-    doctorscount = len(list(doctors.find({})))
+    patientscount = len(list(patients_coll.find({})))
+    doctorscount = len(list(doctors_coll.find({})))
     roomscount = len(list(rooms_coll.find({})))
     operationscount = len(list(operations_coll.find({})))
-    appointmentscount =len(list(appointments.find({})))
+    appointmentscount =len(list(appointments_coll.find({})))
     return render_template("admin/dashboard.html",
                            patientscount=patientscount,
                            doctorscount=doctorscount,
@@ -570,19 +570,19 @@ def dashboard():
                            appointmentscount=appointmentscount)
 @app.route("/admin/users")
 def view_users():
-    all_users = list(users.find())
+    all_users = list(users_coll.find())
     return render_template("/admin/users.html", results=all_users)
 
 
 @app.route("/admin/delete-user/<user_id>", methods=["POST"])
 def delete_user(user_id):
-    users.delete_one({"_id": ObjectId(user_id)})
+    users_coll.delete_one({"_id": ObjectId(user_id)})
     return redirect(url_for('view_users'))
 
 
 @app.route("/admin/edit-user/<user_id>", methods=["POST"])
 def edit_user(user_id):
-    users.update_one(
+    users_coll.update_one(
         {"_id": ObjectId(user_id)},
         {"$set": {
             "fullName": request.form.get("fullName"),
@@ -602,7 +602,7 @@ def add_user():
         "email": request.form["email"],
         "role": request.form["role"]
     })
-    return redirect("/dashboard/manager")
+    return redirect("/admin/user")
 
 @app.route("/admin/create-db", methods=["POST"])
 def create_new_db():
@@ -621,16 +621,42 @@ def create_new_collection():
 
 @app.route("/admin/reports")
 def reports():
-    operationsbydepartment = operations_coll.aggregate([
-        {"$group": {"_id": "$department.name", "count": {"$sum": 1}}}
-    ])
-    patientsbygender = patients.aggregate([
-        {"$group": {"_id": "$gender", "count": {"$sum": 1}}}
-    ])
-    return render_template("reports.html",
-                           operationsbydepartment=list(operationsbydepartment),
-                           patientsbygender=list(patientsbygender))
     
+    u_labels, u_values = get_users_stats()
+    user_chart = generate_chart(u_labels, u_values, "Users by Role", 'pie')
+   
+    a_labels, a_values = get_appointments_stats()
+    appt_chart = generate_chart(a_labels, a_values, "Appointments Status", 'bar')
+   
+    return render_template("reports.html", user_chart=user_chart, appt_chart=appt_chart)
+
+def generate_chart(labels, values, title, chart_type='bar'):
+    plt.figure(figsize=(6, 4))
+    if chart_type == 'pie':
+        plt.pie(values, labels=labels, autopct='%1.1f%%', colors=['#7BA4D0', '#2E5E99', '#0D2440'])
+    else:
+        plt.bar(labels, values, color='#2E5E99')
+ 
+    plt.title(title)
+
+    img = io.BytesIO()
+    plt.savefig(img, format='png', bbox_inches='tight')
+    img.seek(0)
+    chart_url = base64.b64encode(img.getvalue()).decode()
+    plt.close()
+    return f"data:image/png;base64,{chart_url}"
+
+def get_users_stats():
+    # مثال: جلب عدد المستخدمين حسب الرول
+    roles = ["Admin", "Doctor", "Patient"]
+    counts = [users_coll.count_documents({"role": r}) for r in roles]
+    return roles, counts
+
+def get_appointments_stats():
+    # مثال: جلب عدد المواعيد حسب الحالة
+    statuses = ["pending", "scheduled", "completed"]
+    counts = [appointments_coll.count_documents({"status": s}) for s in statuses]
+    return statuses, counts
     
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

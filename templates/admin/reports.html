@@ -1,19 +1,40 @@
-{% extends "base.html" %}
+{% extends "/admin/baseDashboard.html" %}
 {% block title %}Reports{% endblock %}
 {% block content %}
-<h1>Reports</h1>
+<style>
+    /* تنسيق خاص ومنفصل للتقارير */
+    .reports-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background: #f0f2f5; /* لون خلفية مختلف */
+    }
+    .report-box {
+        background: white;
+        border: 2px solid #7BA4D0;
+        border-radius: 12px;
+        padding: 15px;
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .report-box img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 
-<h2>Operations by Department</h2>
-<ul>
-{% for op in operationsbydepartment %}
-    <li>{{ op._id }}: {{ op.count }}</li>
-{% endfor %}
-</ul>
+<div class="reports-wrapper">
+    <div class="report-box">
+        <h3>Distribution of User Roles</h3>
+        <img src="{{ user_chart }}" alt="User Stats Chart">
+    </div>
 
-<h2>Patients by Gender</h2>
-<ul>
-{% for p in patientsbygender %}
-    <li>{{ p._id }}: {{ p.count }}</li>
-{% endfor %}
-</ul>
+    <div class="report-box">
+        <h3>Appointment Status Overview</h3>
+        <img src="{{ appt_chart }}" alt="Appointment Stats Chart">
+    </div>
+</div>
 {% endblock %}
