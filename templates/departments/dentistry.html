@@ -15,17 +15,13 @@
   <h2>Our Dentists</h2>
 
   <div class="doctors">
+    {% for doctor in cDoctors %}
     <div class="doctor" style="background:#fff;">
-      <h3>Dr. Yasmin Ali</h3>
-      <span>Cosmetic Dentist</span>
-      <p>Specialist in veneers, whitening, and smile design.</p>
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
     </div>
-
-    <div class="doctor" style="background:#fff;">
-      <h3>Dr. Fadi Salem</h3>
-      <span>Oral Surgeon</span>
-      <p>Expert in extractions, implants, and jaw surgeries.</p>
-    </div>
+    {% endfor %}
   </div>
 </div>
 

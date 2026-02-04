@@ -28,19 +28,36 @@
 
     <!-- News Grid -->
     <div id="newsGrid" class="news-grid"></div>
-
+  {% for news in Pnews %}
+  <div class="news-card">
+      <h3>{{ news.title }}</h3>
+      <p>category:{{ news.category }}</p>
+      <span>{{ news.summary }}</span>
+      <p>{{ news.content }}</p>
+      <p class="dit">author:{{ news.author }}</p>
+      <p class="dit">{{ news.publishDate }}</p>
+  </div>
+    {% endfor %}
+  <div class="pagination" style="text-align: center; margin: 30px;">
+      {% if current >1 %}
+      <a href="{{ url_for('news_page' ,page =current-1)}} " id="prev" >
+      previous</a>
+      {% endif %}
+<span style="margin: 0 15px;">page: {{current}}</span>
+      {% if has_next %}
+      <a href="{{ url_for('news_page' ,page =current+1)}}">
+      next</a>
+      {% endif %}
+  </div>
     <!-- Pagination -->
-    <div id="pagination" class="pagination"></div>
-    <div class="more-pagination-container">
-        <button id="morePagesBtn" onclick="loadMorePages()">More</button>
-    </div>
+    <!-- <div id="pagination" class="pagination"></div> -->
+    <!-- <div class="more-pagination-container"> -->
+        <!-- <button id="morePagesBtn" onclick="loadMorePages()">More</button> -->
+    <!-- </div> -->
 
 </div>
 
-<script>
-    let newsData = {{ news | tojson }};
-</script>
-<script src="{{ url_for('static', filename='js/news.js') }}"></script>
+<!-- <script src="{{ url_for('static', filename='js/news.js') }}"></script> -->
 
 </body>
 </html>
