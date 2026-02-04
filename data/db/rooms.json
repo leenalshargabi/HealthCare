@@ -1,576 +1,1502 @@
 [
-  // ============================
-  // CARDIOLOGY DEPARTMENT (65a100000000000000000001)
-  // ============================
   {
-    "roomNumber": "CARD-101",
-    "roomType": "VIP",
-    "floor": "1",
-    "departmentId": {
-      "$oid": "65a100000000000000000001"
-    },
+    "roomNumber": "ADM-600",
+    "floor": 6,
+    "departmentName": "General Management",
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "General Director"
+    }
+  },
+  {
+    "roomNumber": "ADM-601",
+    "floor": 6,
+    "departmentName": "General Management",
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Deputy Director"
+    }
+  },
+  {
+    "roomNumber": "ADM-602",
+    "floor": 6,
+    "departmentName": "General Management",
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Supervisor"
+    }
+  },
+  {
+    "roomNumber": "CARD-HOD-201",
+    "floor": 2,
     "departmentName": "Cardiology",
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["Cardiac Monitor", "Private Bathroom", "WiFi", "Emergency Button"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-02-02T14:30:00Z"
-    },
-    "dailyRate": 450.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Head of Department"
     }
   },
   {
-    "roomNumber": "CARD-102",
-    "roomType": "Single",
-    "floor": "1",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": "PT1001",
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi"],
-    "status": "Occupied",
-    "cleaningStatus": "Needs Cleaning",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-01-31T09:00:00Z"
-    },
-    "dailyRate": 250.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "CARD-103",
-    "roomType": "Shared",
-    "floor": "1",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 4,
-    "occupiedBeds": 0,
-    "availableBeds": 4,
-    "features": ["Shared Bathroom", "Nurse Call Button"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T08:00:00Z"
-    },
-    "dailyRate": 120.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "CARD-104",
-    "roomType": "Single",
-    "floor": "1",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Cardiac Chair"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T09:30:00Z"
-    },
-    "dailyRate": 220.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "CARD-105",
-    "roomType": "Shared",
-    "floor": "1",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 6,
-    "occupiedBeds": 4,
-    "availableBeds": 2,
-    "features": ["Shared Bathroom", "Nurse Call Button", "TV Lounge"],
-    "status": "Partially Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T16:00:00Z"
-    },
-    "dailyRate": 90.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-
-  // ============================
-  // PEDIATRICS DEPARTMENT (65a100000000000000000002)
-  // ============================
-  {
-    "roomNumber": "PED-201",
-    "roomType": "VIP",
-    "floor": "2",
-    "departmentId": {
-      "$oid": "65a100000000000000000002"
-    },
+    "roomNumber": "PED-HOD-301",
+    "floor": 3,
     "departmentName": "Pediatrics",
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["Child Safety Features", "Private Bathroom", "WiFi", "Toy Corner", "Parent Bed"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-02-03T10:00:00Z"
-    },
-    "dailyRate": 400.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Head of Department"
     }
   },
   {
-    "roomNumber": "PED-202",
-    "roomType": "Shared",
-    "floor": "2",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 8,
-    "occupiedBeds": 8,
-    "availableBeds": 0,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Play Area", "Child-friendly Decor"],
-    "status": "Fully Occupied",
-    "cleaningStatus": "Being Cleaned",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T14:00:00Z"
-    },
-    "dailyRate": 80.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "PED-203",
-    "roomType": "Single",
-    "floor": "2",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Child Safety Features"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T11:00:00Z"
-    },
-    "dailyRate": 200.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "PED-204",
-    "roomType": "Shared",
-    "floor": "2",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 6,
-    "occupiedBeds": 3,
-    "availableBeds": 3,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Educational Toys"],
-    "status": "Partially Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T08:30:00Z"
-    },
-    "dailyRate": 75.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "PED-205",
-    "roomType": "Single",
-    "floor": "2",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": "PT2001",
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Breastfeeding Area"],
-    "status": "Occupied",
-    "cleaningStatus": "Needs Cleaning",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-01T10:00:00Z"
-    },
-    "dailyRate": 210.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-
-  // ============================
-  // ORTHOPEDICS DEPARTMENT (65a100000000000000000003)
-  // ============================
-  {
-    "roomNumber": "ORTHO-301",
-    "roomType": "VIP",
-    "floor": "3",
-    "departmentId": {
-      "$oid": "65a100000000000000000003"
-    },
+    "roomNumber": "ORTHO-HOD-401",
+    "floor": 4,
     "departmentName": "Orthopedics",
-    "isOccupied": true,
-    "currentPatientId": "PT3001",
-    "bedCount": 1,
-    "features": ["Adjustable Bed", "Private Bathroom", "WiFi", "Physical Therapy Area", "Grab Bars"],
-    "status": "Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-02-03T07:00:00Z"
-    },
-    "dailyRate": 420.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Head of Department"
     }
   },
   {
-    "roomNumber": "ORTHO-302",
-    "roomType": "Shared",
-    "floor": "3",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 4,
-    "occupiedBeds": 0,
-    "availableBeds": 4,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Mobility Aids", "Grab Bars"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T09:00:00Z"
-    },
-    "dailyRate": 110.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "ORTHO-303",
-    "roomType": "Single",
-    "floor": "3",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Adjustable Bed"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T10:30:00Z"
-    },
-    "dailyRate": 230.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "ORTHO-304",
-    "roomType": "Shared",
-    "floor": "3",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 6,
-    "occupiedBeds": 5,
-    "availableBeds": 1,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Walking Rails"],
-    "status": "Partially Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T15:30:00Z"
-    },
-    "dailyRate": 95.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-  {
-    "roomNumber": "ORTHO-305",
-    "roomType": "Single",
-    "floor": "3",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": "PT3002",
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Overhead Trapeze"],
-    "status": "Occupied",
-    "cleaningStatus": "Needs Cleaning",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T11:00:00Z"
-    },
-    "dailyRate": 240.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-
-  // ============================
-  // NEUROLOGY DEPARTMENT (65a100000000000000000004)
-  // ============================
-  {
-    "roomNumber": "NEURO-401",
-    "roomType": "VIP",
-    "floor": "4",
-    "departmentId": {
-      "$oid": "65a100000000000000000004"
-    },
+    "roomNumber": "NEURO-HOD-501",
+    "floor": 5,
     "departmentName": "Neurology",
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["Neurological Monitoring", "Private Bathroom", "WiFi", "Darkening Curtains", "Quiet Zone"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-02-03T08:00:00Z"
-    },
-    "dailyRate": 480.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Head of Department"
     }
   },
   {
-    "roomNumber": "NEURO-402",
-    "roomType": "Shared",
-    "floor": "4",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 4,
-    "occupiedBeds": 0,
-    "availableBeds": 4,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Seizure Precautions", "Soft Lighting"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T12:00:00Z"
-    },
-    "dailyRate": 130.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "DENT-HOD-601",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Office",
+    "category": "Offices/Clinics",
+    "status": "occupied",
+    "metadata": {
+      "isOffice": true,
+      "role": "Head of Department"
     }
   },
   {
-    "roomNumber": "NEURO-403",
-    "roomType": "Single",
-    "floor": "4",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": "PT4001",
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Monitoring Equipment"],
-    "status": "Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T06:30:00Z"
-    },
-    "dailyRate": 260.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "RAD-SER-010",
+    "floor": 0,
+    "departmentName": "Radiology & Tests",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "NEURO-404",
-    "roomType": "Shared",
-    "floor": "4",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 6,
-    "occupiedBeds": 4,
-    "availableBeds": 2,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Quiet Environment"],
-    "status": "Partially Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T17:00:00Z"
-    },
-    "dailyRate": 100.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "RAD-SER-011",
+    "floor": 0,
+    "departmentName": "Radiology & Tests",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "NEURO-405",
-    "roomType": "Single",
-    "floor": "4",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Adjustable Lighting"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T13:30:00Z"
-    },
-    "dailyRate": 250.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
-    }
-  },
-
-  // ============================
-  // DENTISTRY DEPARTMENT (65a100000000000000000005)
-  // ============================
-  {
-    "roomNumber": "DENT-501",
-    "roomType": "VIP",
-    "floor": "5",
-    "departmentId": {
-      "$oid": "65a100000000000000000005"
-    },
-    "departmentName": "Dentistry",
-    "isOccupied": true,
-    "currentPatientId": "PT5001",
-    "bedCount": 1,
-    "features": ["Dental Chair Access", "Private Bathroom", "WiFi", "Oral Care Station", "Ice Pack Machine"],
-    "status": "Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": true,
-    "lastCleaned": {
-      "$date": "2026-02-03T07:30:00Z"
-    },
-    "dailyRate": 380.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "RAD-SER-012",
+    "floor": 0,
+    "departmentName": "Radiology & Tests",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "DENT-502",
-    "roomType": "Shared",
-    "floor": "5",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 4,
-    "occupiedBeds": 0,
-    "availableBeds": 4,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Oral Rinse Station"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T11:00:00Z"
-    },
-    "dailyRate": 90.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "RAD-SER-013",
+    "floor": 0,
+    "departmentName": "Radiology & Tests",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "DENT-503",
-    "roomType": "Single",
-    "floor": "5",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": false,
-    "currentPatientId": null,
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Soft Food Preparation"],
-    "status": "Available",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-03T14:00:00Z"
-    },
-    "dailyRate": 190.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "RAD-SER-014",
+    "floor": 0,
+    "departmentName": "Radiology & Tests",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "DENT-504",
-    "roomType": "Shared",
-    "floor": "5",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": null,
-    "bedCount": 6,
-    "occupiedBeds": 2,
-    "availableBeds": 4,
-    "features": ["Shared Bathroom", "Nurse Call Button", "Ice Machine"],
-    "status": "Partially Occupied",
-    "cleaningStatus": "Clean",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-02T18:00:00Z"
-    },
-    "dailyRate": 85.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "ER-SER-110",
+    "floor": 1,
+    "departmentName": "Reception & ER",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   },
   {
-    "roomNumber": "DENT-505",
-    "roomType": "Single",
-    "floor": "5",
-    "departmentId": null,
-    "departmentName": null,
-    "isOccupied": true,
-    "currentPatientId": "PT5002",
-    "bedCount": 1,
-    "features": ["TV", "Private Bathroom", "WiFi", "Oral Medication Station"],
-    "status": "Occupied",
-    "cleaningStatus": "Needs Cleaning",
-    "isInpatient": false,
-    "lastCleaned": {
-      "$date": "2026-02-01T12:00:00Z"
-    },
-    "dailyRate": 200.00,
-    "createdAt": {
-      "$date": "2025-01-15T08:00:00Z"
+    "roomNumber": "ER-SER-111",
+    "floor": 1,
+    "departmentName": "Reception & ER",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ER-SER-112",
+    "floor": 1,
+    "departmentName": "Reception & ER",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ER-SER-113",
+    "floor": 1,
+    "departmentName": "Reception & ER",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ER-SER-114",
+    "floor": 1,
+    "departmentName": "Reception & ER",
+    "roomType": "Utility/Office",
+    "category": "Service/ER",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-STA-210",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "CARD-STA-211",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "CARD-STA-212",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "CARD-STA-213",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "CARD-STA-214",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-210",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-211",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-212",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-213",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-214",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-215",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-216",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-PRI-217",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-VIP-210",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-VIP-211",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-VIP-212",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-VIP-213",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-VIP-214",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-OFF-210",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-OFF-211",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-OFF-212",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-OFF-213",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "CARD-OFF-214",
+    "floor": 2,
+    "departmentName": "Cardiology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-STA-310",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "PED-STA-311",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "PED-STA-312",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "PED-STA-313",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "PED-STA-314",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-310",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-311",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-312",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-313",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-314",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-315",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-316",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-PRI-317",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-VIP-310",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-VIP-311",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-VIP-312",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-VIP-313",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-VIP-314",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-OFF-310",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-OFF-311",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-OFF-312",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-OFF-313",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "PED-OFF-314",
+    "floor": 3,
+    "departmentName": "Pediatrics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-STA-410",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "ORTHO-STA-411",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "ORTHO-STA-412",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "ORTHO-STA-413",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "ORTHO-STA-414",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-410",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-411",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-412",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-413",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-414",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-415",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-416",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-PRI-417",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-VIP-410",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-VIP-411",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-VIP-412",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-VIP-413",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-VIP-414",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-OFF-410",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-OFF-411",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-OFF-412",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-OFF-413",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "ORTHO-OFF-414",
+    "floor": 4,
+    "departmentName": "Orthopedics",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-STA-510",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "NEURO-STA-511",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "NEURO-STA-512",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "NEURO-STA-513",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "NEURO-STA-514",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Standard/Shared",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 4
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-510",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-511",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-512",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-513",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-514",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-515",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-516",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-PRI-517",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-VIP-510",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-VIP-511",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-VIP-512",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-VIP-513",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-VIP-514",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-OFF-510",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-OFF-511",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-OFF-512",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-OFF-513",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "NEURO-OFF-514",
+    "floor": 5,
+    "departmentName": "Neurology",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-OFF-610",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-OFF-611",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Utility/Office",
+    "category": "Offices/Clinics",
+    "status": "available",
+    "metadata": {
+      "isOffice": true,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-VIP-610",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-VIP-611",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-VIP-612",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-VIP-613",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-VIP-614",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "VIP/Suite",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-610",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-611",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-612",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-613",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-614",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-615",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-616",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
+    }
+  },
+  {
+    "roomNumber": "DENT-PRI-617",
+    "floor": 6,
+    "departmentName": "Dentistry & Admin",
+    "roomType": "Inpatient",
+    "category": "Private",
+    "status": "available",
+    "metadata": {
+      "isOffice": false,
+      "beds": 1
     }
   }
 ]
