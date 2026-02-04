@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h1>Reports</h1>
+
+<h2>Operations by Department</h2>
+<ul>
+{% for op in operationsbydepartment %}
+    <li>{{ op._id }}: {{ op.count }}</li>
+{% endfor %}
+</ul>
+
+<h2>Patients by Gender</h2>
+<ul>
+{% for p in patientsbygender %}
+    <li>{{ p._id }}: {{ p.count }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

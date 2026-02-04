@@ -1,0 +1,62 @@
+{% extends "/admin/baseDashboard.html" %}
+{% block title %}Users Management{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header"><h2>Users List</h2></div>
+   
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in results %}
+            <tr>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <!-- <a href="/admin/users/edit_id/{{ user._id }}" class="btn-edit">Edit</a> -->
+                    <form action="/admin/edit-user/{{ user._id }}" method="POST" style="display:inline;">
+    <button type="submit" class="btn-edit" >Edit</button>
+</form>
+                   
+                    <form action="/admin/delete-user/{{ user._id }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-delete" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% if request.args.get('edit_id') %}
+<div class="card" style="margin-top: 20px; border: 1px solid #2E5E99;">
+    <h3>Edit User Information</h3>
+    <form action="/admin/edit-user/{{ request.args.get('edit_id') }}" method="POST">
+        <label>Full Name:</label>
+        <input type="text" name="fullName" required style="width:100%; margin-bottom:10px; padding:8px;">
+       
+        <label>Role:</label>
+        <select name="role" style="width:100%; margin-bottom:10px; padding:8px;">
+            <option value="admin">Admin</option>
+            <option value="doctor">Doctor</option>
+            <option value="patient">Patient</option>
+        </select>
+       
+        <button type="submit" class="btn-edit" style="width:100%;">Save Changes</button>
+        <a href="/admin/users" style="display:block; text-align:center; margin-top:10px;">Cancel</a>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

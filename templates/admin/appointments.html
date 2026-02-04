@@ -1,0 +1,94 @@
+{% extends "baseDashboard.html" %}
+
+{% block title %}Appointments Management{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Appointments Management Content -->
+<div class="section-header">
+    <h2>Appointments Management</h2>
+    <div class="action-buttons">
+        <a href="{{ url_for('add_appointment') }}" class="btn btn-primary">
+            Add New Appointment
+        </a>
+        <form method="GET" action="{{ url_for('admin_dashboard') }}" style="display: inline;">
+            <input type="hidden" name="section" value="appointments">
+            <input type="date" name="date_filter" value="{{ date_filter or '' }}"
+                   onchange="this.form.submit()">
+        </form>
+    </div>
+</div>
+
+<!-- Appointments Table -->
+<div class="data-table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments_data %}
+            <tr>
+                <td>{{ appointment.patient_name }}</td>
+                <td>{{ appointment.doctor_name }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.time }}</td>
+                <td>{{ appointment.department }}</td>
+                <td>
+                    <span class="status-badge status-{{ appointment.status }}">
+                        {{ appointment.status|title }}
+                    </span>
+                </td>
+                <td class="action-buttons-cell">
+                    <form method="POST" action="{{ url_for('update_appointment_status', appointment_id=appointment._id) }}" style="display: inline;">
+                        <input type="hidden" name="status" value="confirmed">
+                        <button type="submit" class="btn-icon confirm-btn">Confirm</button>
+                    </form>
+                    <form method="POST" action="{{ url_for('cancel_appointment', appointment_id=appointment._id) }}" style="display: inline;">
+                        <button type="submit" class="btn-icon delete-btn"
+                                onclick="return confirm('Cancel this appointment?')">
+                            Cancel
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7" class="no-data">No appointments found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Pagination -->
+{% if total_pages > 1 %}
+<div class="pagination">
+    {% if current_page > 1 %}
+    <a href="{{ url_for('admin_dashboard', section='appointments', page=current_page-1, date_filter=date_filter, search=search_query) }}">&laquo; Previous</a>
+    {% endif %}
+   
+    {% for page_num in range(1, total_pages+1) %}
+    <a href="{{ url_for('admin_dashboard', section='appointments', page=page_num, date_filter=date_filter, search=search_query) }}"
+       class="{% if page_num == current_page %}active{% endif %}">
+        {{ page_num }}
+    </a>
+    {% endfor %}
+   
+    {% if current_page < total_pages %}
+    <a href="{{ url_for('admin_dashboard', section='appointments', page=current_page+1, date_filter=date_filter, search=search_query) }}">Next &raquo;</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

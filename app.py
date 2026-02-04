@@ -1,11 +1,16 @@
 import math
-from flask import Flask, render_template, request, redirect, session , request
+from flask import Flask, render_template, request, redirect, session, url_for
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 from bson import ObjectId
-
-
+# import matplotlib
+# matplotlib.use('Agg')  # مهم لبيئة الخادم
+# import matplotlib.pyplot as plt
+# import io
+# import base64
+# import numpy as np
 # import os,json
 
 app = Flask(__name__)
@@ -550,9 +555,45 @@ def doctor_dashboard():
         return f"Error: {e}"
     
 # ================= ADMIN =================
-@app.route("/dashboard/manager")
-def manager_dashboard():
-    return render_template("admin/manager_dashboard.html")
+@app.route("/admin/dashboard")
+def dashboard():    
+    patientscount = len(list(patients.find({})))
+    doctorscount = len(list(doctors.find({})))
+    roomscount = len(list(rooms_coll.find({})))
+    operationscount = len(list(operations_coll.find({})))
+    appointmentscount =len(list(appointments.find({})))
+    return render_template("admin/dashboard.html",
+                           patientscount=patientscount,
+                           doctorscount=doctorscount,
+                           roomscount=roomscount,
+                           operationscount=operationscount,
+                           appointmentscount=appointmentscount)
+@app.route("/admin/users")
+def view_users():
+    all_users = list(users.find())
+    return render_template("/admin/users.html", results=all_users)
+
+
+@app.route("/admin/delete-user/<user_id>", methods=["POST"])
+def delete_user(user_id):
+    users.delete_one({"_id": ObjectId(user_id)})
+    return redirect(url_for('view_users'))
+
+
+@app.route("/admin/edit-user/<user_id>", methods=["POST"])
+def edit_user(user_id):
+    users.update_one(
+        {"_id": ObjectId(user_id)},
+        {"$set": {
+            "fullName": request.form.get("fullName"),
+            "email": request.form.get("email"),
+            "role": request.form.get("role")
+        }}
+    )
+    return redirect(url_for('view_users'))
+@app.route("/admin/database")
+def database_page():
+    return render_template("/admin/database.html",db=db)
 
 @app.route("/admin/add-user", methods=["POST"])
 def add_user():
@@ -564,16 +605,32 @@ def add_user():
     return redirect("/dashboard/manager")
 
 @app.route("/admin/create-db", methods=["POST"])
-def create_db():
-    db_name = request.form["db_name"]
-    client[db_name]
-    return redirect("/dashboard/manager")
+def create_new_db():
+    db_name = request.form.get("db_name")
+    temp_client = MongoClient("mongodb://localhost:27017/")
+    new_db = temp_client[db_name]
+    new_db["init_collection"].insert_one({"message": "Database Created"})
+    return redirect(url_for('database_page'))
 
-@app.route("/admin/collections")
-def show_collections():
-    cols = db.list_collection_names()
-    return {"collections": cols}
+@app.route("/admin/create-collection", methods=["POST"])
+def create_new_collection():
+    col_name = request.form.get("collection_name")
+    if col_name:
+        db[col_name].insert_one({"init": True})
+    return redirect(url_for('database_page'))
 
-
+@app.route("/admin/reports")
+def reports():
+    operationsbydepartment = operations_coll.aggregate([
+        {"$group": {"_id": "$department.name", "count": {"$sum": 1}}}
+    ])
+    patientsbygender = patients.aggregate([
+        {"$group": {"_id": "$gender", "count": {"$sum": 1}}}
+    ])
+    return render_template("reports.html",
+                           operationsbydepartment=list(operationsbydepartment),
+                           patientsbygender=list(patientsbygender))
+    
+    
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
