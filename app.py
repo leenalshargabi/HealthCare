@@ -37,7 +37,7 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/rooms")
+@app.route("/surgeries")
 def rooms():
     operations = [
         {
@@ -49,7 +49,7 @@ def rooms():
             "status": "scheduled"
         }
     ]
-    return render_template("rooms.html", operations=operations)
+    return render_template("surgeries.html", operations=operations)
 
 
 #=====================================
