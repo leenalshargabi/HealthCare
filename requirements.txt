@@ -42,5 +42,39 @@ Flask-PyMongo==2.3.0
 
 #to make replica set and sharding you need to follow these steps:
 #1. run the file "RunHospitalCluster.bat" by double clicking it.
-#2. open mongodb and create new connection to "mongodb://localhost:2009" 
+#2. open mongodb and create new connection to "mongodb://localhost:2009"
 
+mongosh --port 2009
+sh.addShard("shard0rep/localhost:2005")
+sh.addShard("shard1rep/localhost:2007")
+sh.enableSharding("healthcare_db")
+sh.status()
+
+use healthcare_db
+db.departments.insertMany([
+  {
+    "name": "Cardiology",
+    "description": "Diagnosis and treatment of heart and blood vessel diseases",
+    "createdAt": new Date("2024-01-10T09:00:00Z")
+  },
+  {
+    "name": "Pediatrics",
+    "description": "Medical care for infants, children, and adolescents",
+    "createdAt": new Date("2024-01-12T09:00:00Z")
+  },
+  {
+    "name": "Orthopedics",
+    "description": "Treatment of musculoskeletal system disorders",
+    "createdAt": new Date("2024-01-15T09:00:00Z")
+  },
+  {
+    "name": "Neurology",
+    "description": "Diagnosis and treatment of nervous system disorders",
+    "createdAt": new Date("2024-01-18T09:00:00Z")
+  },
+  {
+    "name": "Dentistry",
+    "description": "Oral health and dental care services",
+    "createdAt": new Date("2024-01-20T09:00:00Z")
+  }
+]);
