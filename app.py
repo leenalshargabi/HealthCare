@@ -7,8 +7,10 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = "super-secret"
 
-client = MongoClient("mongodb://localhost:27017/")
+# 
+client = MongoClient("mongodb://localhost:2009/")
 db = client["healthcare_db"]
+
 users = db["users"]
 appointments = db["appointments"]
 patients = db["patients"]
