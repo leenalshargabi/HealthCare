@@ -36,6 +36,7 @@ def specialities():
 def about():
     return render_template("about.html")
 
+<<<<<<< HEAD
 
 @app.route("/surgeries")
 def rooms():
@@ -52,6 +53,8 @@ def rooms():
     return render_template("surgeries.html", operations=operations)
 
 
+=======
+>>>>>>> 6b354277b3b86f83dc4664a1ffd0ce2ac35f0b07
 #=====================================
 
 @app.route("/news")
@@ -232,10 +235,30 @@ def patient_dashboard():
 def doctor_dashboard():
     return render_template("dashboards/doctor_dashboard.html")
 
+# ================= ADMIN =================
 @app.route("/dashboard/manager")
 def manager_dashboard():
-    return render_template("dashboards/manager_dashboard.html")
+    return render_template("admin/manager_dashboard.html")
 
+@app.route("/admin/add-user", methods=["POST"])
+def add_user():
+    users.insert_one({
+        "name": request.form["name"],
+        "email": request.form["email"],
+        "role": request.form["role"]
+    })
+    return redirect("/dashboard/manager")
+
+@app.route("/admin/create-db", methods=["POST"])
+def create_db():
+    db_name = request.form["db_name"]
+    client[db_name]
+    return redirect("/dashboard/manager")
+
+@app.route("/admin/collections")
+def show_collections():
+    cols = db.list_collection_names()
+    return {"collections": cols}
 
 if __name__ == "__main__":
     app.run(debug=True)
