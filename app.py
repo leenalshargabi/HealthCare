@@ -36,10 +36,10 @@ def specialities():
 def about():
     return render_template("about.html")
 
-<<<<<<< HEAD
+
 
 @app.route("/surgeries")
-def rooms():
+def surgeries():
     operations = [
         {
             "operationCode": "OP-1001",
@@ -52,10 +52,97 @@ def rooms():
     ]
     return render_template("surgeries.html", operations=operations)
 
+#========================
+@app.route("/rooms")
+def rooms():
+    rooms_data = [
+        {
+            "roomNumber": "ADM-600",
+            "floor": 6,
+            "departmentName": "General Management",
+            "roomType": "Office",
+            "category": "Offices/Clinics",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": True,
+                "role": "General Director"
+            }
+        }
+    ]
+    return render_template("rooms.html", rooms=rooms_data)
 
-=======
->>>>>>> 6b354277b3b86f83dc4664a1ffd0ce2ac35f0b07
-#=====================================
+#=========================
+@app.route("/EmergencyRooms")
+def emergencyrooms():
+    EmergencyRooms_data = [
+        {
+            "roomNumber": "ER-101",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Full Emergency Kit",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-102",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "available",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Cardiac Monitor",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-103",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Trauma Kit",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-104",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "available",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Respiratory Support",
+                "priorityLevel": "Medium"
+            }
+        },
+        {
+            "roomNumber": "ER-105",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "maintenance",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Under Maintenance",
+                "priorityLevel": "High"
+            }
+        }
+    ]
+    return render_template("EmergencyRooms.html", rooms=EmergencyRooms_data)
+
 
 @app.route("/news")
 def news_page():
@@ -259,6 +346,7 @@ def create_db():
 def show_collections():
     cols = db.list_collection_names()
     return {"collections": cols}
+
 
 if __name__ == "__main__":
     app.run(debug=True)

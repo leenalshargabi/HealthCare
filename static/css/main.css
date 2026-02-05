@@ -70,6 +70,45 @@
   color: #721c24;
 }
 
+/* ===== Priority Levels ===== */
+.priority {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.priority-high {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.priority-medium {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.priority-low {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* ===== Emergency Room Category ===== */
+.category.emergency-rooms {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ===== Emergency Room Specific Styling ===== */
+.rooms-table td:first-child strong {
+  color: #dc3545; /* Red color for emergency rooms */
+}
+
 ---------------------
 
 body {
@@ -173,3 +212,6 @@ body {
     background: #7BA4D0;
     color: white;
 }
+
+-------------------------------------
+
