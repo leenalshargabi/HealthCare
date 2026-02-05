@@ -34,6 +34,22 @@ def specialities():
 def about():
     return render_template("about.html")
 
+
+@app.route("/rooms")
+def rooms():
+    operations = [
+        {
+            "operationCode": "OP-1001",
+            "procedure": "Bypass Surgery",
+            "operationRoom": "OR-3",
+            "startTime": "2026-02-04 10:45",
+            "endTime": "2026-02-04 13:45",
+            "status": "scheduled"
+        }
+    ]
+    return render_template("rooms.html", operations=operations)
+
+
 #=====================================
 
 @app.route("/news")
