@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #E7F0FA;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #0D2440;
+    color: white;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar input {
+    padding: 8px;
+    width: 300px;
+    border-radius: 6px;
+    border: none;
+}
+
+.topbar button {
+    background: #7BA4D0;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: #2E5E99;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    background: #7BA4D0;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* RESULTS */
+.card {
+    background: white;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
