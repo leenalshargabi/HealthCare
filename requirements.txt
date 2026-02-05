@@ -30,15 +30,15 @@ Flask-PyMongo==2.3.0
 
 #Database name is: healthcare_db
 #include this collection names:
-#1.patients
-#2.doctors
-#3.appointments
-#4.users
-#5.admins
-#6.rooms
-#7.news
-#8.operations
-#9.applications
+# 1.patients
+# 2.doctors
+# 3.appointments
+# 4.users
+# 5.admins
+# 6.rooms
+# 7.news
+# 8.operations
+# 9.applications
 
 #to make replica set and sharding you need to follow these steps:
 #1. run the file "RunHospitalCluster.bat" by double clicking it.

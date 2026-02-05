@@ -1,3802 +1,4002 @@
 [
   {
+    "appointmentCode": "APT-1000",
     "patientId": {
-      "$oid": "Amina Khalid"
+      "$oid": "219a3cbedde5dccccddbdcc2"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Hassan"
+      "$oid": "689294a057c7340542716872"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T15:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Fatima Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T14:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Basel Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Huda Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T10:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Noor Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T12:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yousef Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T11:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Tariq Saif"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
+      "$date": "2026-02-18T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Sara Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1001",
     "patientId": {
-      "$oid": "Sara Mahdi"
+      "$oid": "a4caa191eec376a56b59b4b6"
     },
     "doctorId": {
-      "$oid": "Dr. Ali Karim"
+      "$oid": "584a069b95362e3c6c8c0557"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T11:15:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Huda Najib"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T10:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Salma Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mahmoud Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T15:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Sara Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:45:00Z"
+      "$date": "2026-03-02T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Tamer",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1002",
     "patientId": {
-      "$oid": "Khalid Saleh"
+      "$oid": "123966a1483f0ede2d09498f"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Hussein"
+      "$oid": "2fe5a34d5dd78d69154bd293"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T14:30:00Z"
+      "$date": "2026-02-23T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ahmed Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1003",
     "patientId": {
-      "$oid": "Rania Amari"
+      "$oid": "c0e67913803037904b64b3e6"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Adnan"
+      "$oid": "bdae259e897784d391e4d99c"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T12:15:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mohammed Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T11:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mona Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amira Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T16:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T09:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T13:30:00Z"
+      "$date": "2026-02-10T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Nasser",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1004",
     "patientId": {
-      "$oid": "Amira Mahdi"
+      "$oid": "5fd796184f75b04d7b7fd445"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Hussein"
+      "$oid": "700a6c62463d2c30073f8f22"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T13:00:00Z"
+      "$date": "2026-02-20T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ahmed Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1005",
+    "patientId": {
+      "$oid": "173f97b0a10b555df9bdda03"
+    },
+    "doctorId": {
+      "$oid": "77365b1cf19b78b79512441a"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-02T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Hassan Youssef",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1006",
     "patientId": {
-      "$oid": "Salma Nasser"
+      "$oid": "4111bd5f4f76ab603b2253dd"
     },
     "doctorId": {
-      "$oid": "Dr. Nadia Hamid"
+      "$oid": "2e5f438123b68e4bb1979b6b"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T08:45:00Z"
+      "$date": "2026-02-15T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Omar Najib",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1007",
+    "patientId": {
+      "$oid": "9e3670171843871355a323c3"
+    },
+    "doctorId": {
+      "$oid": "dcb1d6742dce8690772cef36"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-14T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Zain Mahdi",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1008",
+    "patientId": {
+      "$oid": "46fcc11961b5803ff991e4d4"
+    },
+    "doctorId": {
+      "$oid": "da1b4b3105cd0f527a209a03"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ahmed Samad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1009",
     "patientId": {
-      "$oid": "Rania Omar"
+      "$oid": "a9ae4cfbc7421aad0b89598e"
     },
     "doctorId": {
-      "$oid": "Dr. Rania Rashid"
+      "$oid": "5e64317e3c07b7a2b3df045f"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T16:45:00Z"
+      "$date": "2026-02-24T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Amina Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1010",
+    "patientId": {
+      "$oid": "1362ea333b0dd7a07e75da44"
+    },
+    "doctorId": {
+      "$oid": "c7502f85d02b72b2c93c423c"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-04T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1011",
     "patientId": {
-      "$oid": "Tariq Nasser"
+      "$oid": "e2e7b8392b32651c90c69dd9"
     },
     "doctorId": {
-      "$oid": "Dr. Ali Hassan"
+      "$oid": "038b242edeb7b2015751697b"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T08:15:00Z"
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Yousef Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1012",
+    "patientId": {
+      "$oid": "802811d80b0dec8c26cda490"
+    },
+    "doctorId": {
+      "$oid": "c9d79bc7cd6dcd2efc90b440"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Hassan Fadel",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1013",
     "patientId": {
-      "$oid": "Noor Adnan"
+      "$oid": "a22a2386132ac355b7a8b863"
     },
     "doctorId": {
-      "$oid": "Dr. Mahmoud Rashid"
+      "$oid": "b44f37cb71ba6ea02bde73fd"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T12:00:00Z"
+      "$date": "2026-02-06T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1014",
+    "patientId": {
+      "$oid": "a42ea59168c2e7240939fb8f"
+    },
+    "doctorId": {
+      "$oid": "b4256dda42fde378f66116f4"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-03T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Zain Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1015",
+    "patientId": {
+      "$oid": "b4fbb2f9098e161d30ae4735"
+    },
+    "doctorId": {
+      "$oid": "69aee95f9a540bd9ae57c70e"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-09T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Samir Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1016",
     "patientId": {
-      "$oid": "Sara Ali"
+      "$oid": "1f9c44343f481a6e575bf9d4"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Hussein"
+      "$oid": "b0e85c0e2fa8ca0d194ade14"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T16:30:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Yousef Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T10:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yousef Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:30:00Z"
+      "$date": "2026-03-06T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Amina Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1017",
     "patientId": {
-      "$oid": "Nadia Omar"
+      "$oid": "6c89beff335964ee2f130516"
     },
     "doctorId": {
-      "$oid": "Dr. Fatima Sami"
+      "$oid": "b44f37cb71ba6ea02bde73fd"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T12:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Youssef"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T14:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Noor Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T16:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amira Saif"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T15:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Najib"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T10:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ibrahim Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T14:30:00Z"
+      "$date": "2026-02-20T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Amina Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1018",
     "patientId": {
-      "$oid": "Rania Amari"
+      "$oid": "5a916199b415f97c49368686"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Mahdi"
+      "$oid": "c6dea262ed407b584be75619"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T10:15:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mohammed Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T11:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Samir Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Mahdi"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T09:15:00Z"
+      "$date": "2026-02-26T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Omar Samad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1019",
     "patientId": {
-      "$oid": "Lama Saif"
+      "$oid": "2f32e761a4be5ef1592500aa"
     },
     "doctorId": {
-      "$oid": "Dr. Ahmed Fahad"
+      "$oid": "c429384d96f7de89a65596eb"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T11:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Youssef"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T08:00:00Z"
+      "$date": "2026-03-04T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Omar Mahdi",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1020",
     "patientId": {
-      "$oid": "Sara Youssef"
+      "$oid": "e12e4e41e3c4f2c608baa2ba"
     },
     "doctorId": {
-      "$oid": "Dr. Mahmoud Khalid"
+      "$oid": "996580e3c08efc778f259572"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T12:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amina Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amira Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T13:00:00Z"
+      "$date": "2026-02-20T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1021",
     "patientId": {
-      "$oid": "Hassan Nasser"
+      "$oid": "123966a1483f0ede2d09498f"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Omar"
+      "$oid": "04b193468c60513bbf294827"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T13:00:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Samir Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Zain Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T09:45:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Samir Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T15:45:00Z"
+      "$date": "2026-02-23T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Najib",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1022",
     "patientId": {
-      "$oid": "Mohammed Hassan"
+      "$oid": "d9a6f0b2658e4219882a9056"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Jassim"
+      "$oid": "6fe8b795e023baaae1d4b1d7"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T08:30:00Z"
+      "$date": "2026-02-13T15:17:56Z"
     },
-    "status": "completed",
-    "notes": "",
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Sara Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1023",
     "patientId": {
-      "$oid": "Amina Khalid"
+      "$oid": "d77e839f395428f34663a10d"
     },
     "doctorId": {
-      "$oid": "Dr. Amira Sami"
+      "$oid": "a19c09672156846f39ae19dd"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T14:00:00Z"
+      "$date": "2026-02-16T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Samir Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1024",
+    "patientId": {
+      "$oid": "8f2d09384264927e0b6f50d2"
+    },
+    "doctorId": {
+      "$oid": "76be1c2d1a091968109d4cae"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1025",
     "patientId": {
-      "$oid": "Tariq Saif"
+      "$oid": "aeede4afda4ec6cc8cd108e2"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Fadel"
+      "$oid": "700a6c62463d2c30073f8f22"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
+      "$date": "2026-03-04T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ahmed Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:40Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1026",
     "patientId": {
-      "$oid": "Fatima Amari"
+      "$oid": "753adaf7c93f92df5e8c2bd3"
     },
     "doctorId": {
-      "$oid": "Dr. Nadia Samad"
+      "$oid": "f95aa32bc5a370e65be6d922"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T10:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ali Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Samir Youssef"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T14:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Saif"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T10:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T10:30:00Z"
+      "$date": "2026-02-11T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1027",
     "patientId": {
-      "$oid": "Mona Amari"
+      "$oid": "4111bd5f4f76ab603b2253dd"
     },
     "doctorId": {
-      "$oid": "Dr. Mahmoud Mahdi"
+      "$oid": "6d038d3754ab5a98c627a392"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T11:00:00Z"
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Tariq Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1028",
+    "patientId": {
+      "$oid": "f9aa98034ea7cb34c8595b6e"
+    },
+    "doctorId": {
+      "$oid": "76be1c2d1a091968109d4cae"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1029",
     "patientId": {
-      "$oid": "Tariq Hussein"
+      "$oid": "5309824df6495180aa43ed46"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Saleh"
+      "$oid": "6acc85c04d07abf9e6a23545"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T11:15:00Z"
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1030",
+    "patientId": {
+      "$oid": "691e59c1a649d228dc49d687"
+    },
+    "doctorId": {
+      "$oid": "dde8b9481137e0bc82acf7d6"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-06T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Jassim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1031",
     "patientId": {
-      "$oid": "Hassan Youssef"
+      "$oid": "5fd796184f75b04d7b7fd445"
     },
     "doctorId": {
-      "$oid": "Dr. Amira Jassim"
+      "$oid": "76be1c2d1a091968109d4cae"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T10:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amina Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mahmoud Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T10:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mohammed Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T13:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Salma Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T08:15:00Z"
+      "$date": "2026-02-14T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1032",
     "patientId": {
-      "$oid": "Nadia Youssef"
+      "$oid": "853189f3307b13de771a4be0"
     },
     "doctorId": {
-      "$oid": "Dr. Mahmoud Rashid"
+      "$oid": "fa1b537f89b1747c6c63d3ba"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T13:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lama Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T10:45:00Z"
+      "$date": "2026-02-23T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ali Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1033",
     "patientId": {
-      "$oid": "Hassan Khalid"
+      "$oid": "ef252aa5d60c0366ecc08109"
     },
     "doctorId": {
-      "$oid": "Dr. Rania Khalid"
+      "$oid": "3904d093a0127edfe4745928"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T13:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Youssef"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T10:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amira Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T16:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mohammed Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T09:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Sara Hussein"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mahmoud Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T12:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ibrahim Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Mahdi"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T10:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Nadia Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mahmoud Mahdi"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T13:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T12:00:00Z"
+      "$date": "2026-02-24T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mohammed Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1034",
     "patientId": {
-      "$oid": "Lina Khalid"
+      "$oid": "8f2d09384264927e0b6f50d2"
     },
     "doctorId": {
-      "$oid": "Dr. Amina Saleh"
+      "$oid": "034bca073f28bf0df2a080ea"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T12:30:00Z"
+      "$date": "2026-02-08T15:17:56Z"
     },
-    "status": "scheduled",
-    "notes": "",
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1035",
     "patientId": {
-      "$oid": "Hassan Ali"
+      "$oid": "5daccbc4498079c0bd6cc47e"
     },
     "doctorId": {
-      "$oid": "Dr. Khaled Jassim"
+      "$oid": "ec2cdb01e629177b4b8c6de4"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T12:45:00Z"
+      "$date": "2026-02-20T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1036",
     "patientId": {
-      "$oid": "Tariq Omar"
+      "$oid": "b1a7dcc904e28528c9993ed2"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Omar"
+      "$oid": "77365b1cf19b78b79512441a"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T12:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Hassan Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T14:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mohammed Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Lina Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T11:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Fatima Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T13:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ibrahim Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Karim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T14:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Khalid Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T11:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ali Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T13:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Sara Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T11:15:00Z"
+      "$date": "2026-02-09T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Hassan Youssef",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1037",
     "patientId": {
-      "$oid": "Fatima Hassan"
+      "$oid": "acea3475e112cf4f8c03e741"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Mahdi"
+      "$oid": "5aacef5ab02a0b1e92e6ae88"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T12:00:00Z"
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Omar Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1038",
+    "patientId": {
+      "$oid": "3e7d7431986f6606b028d8c1"
+    },
+    "doctorId": {
+      "$oid": "946735776734bc28be4a665f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-05T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Nasser",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1039",
+    "patientId": {
+      "$oid": "8bf4f048e3418f3557ed4d7e"
+    },
+    "doctorId": {
+      "$oid": "dca9ac7a4c7e7111db1139ce"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Mohammed Najib",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1040",
+    "patientId": {
+      "$oid": "36d4167e0a741379a5dc909e"
+    },
+    "doctorId": {
+      "$oid": "31043c3606bb8d12bed6362f"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-17T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Amira Jassim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1041",
     "patientId": {
-      "$oid": "Sara Najib"
+      "$oid": "fc4a7073f825b34f4faa4d26"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Omar"
+      "$oid": "f95aa32bc5a370e65be6d922"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T10:15:00Z"
+      "$date": "2026-02-15T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1042",
     "patientId": {
-      "$oid": "Salma Nasser"
+      "$oid": "44ecbb3809c20cc12445e0fd"
     },
     "doctorId": {
-      "$oid": "Dr. Rania Youssef"
+      "$oid": "593ea7e825e46b191f04b4b9"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T13:00:00Z"
+      "$date": "2026-02-17T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Salma Ali",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1043",
+    "patientId": {
+      "$oid": "8f2d09384264927e0b6f50d2"
+    },
+    "doctorId": {
+      "$oid": "57acec5309f15226522df3ce"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-03T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Ali Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1044",
+    "patientId": {
+      "$oid": "f9aa98034ea7cb34c8595b6e"
+    },
+    "doctorId": {
+      "$oid": "c7502f85d02b72b2c93c423c"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-07T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1045",
     "patientId": {
-      "$oid": "Sara Saleh"
+      "$oid": "802811d80b0dec8c26cda490"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Rashid"
+      "$oid": "f00e49b397d4f3da5710c6d0"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T15:30:00Z"
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Samir Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1046",
     "patientId": {
-      "$oid": "Amira Nasser"
+      "$oid": "9de3804a03538101f36732db"
     },
     "doctorId": {
-      "$oid": "Dr. Rania Khalid"
+      "$oid": "541b4e4b8b1eba8705a89320"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T14:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amina Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T11:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T12:45:00Z"
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ali Karim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1047",
     "patientId": {
-      "$oid": "Yousef Amari"
+      "$oid": "e7a2a69bac89ea13aacb9b00"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Najib"
+      "$oid": "a815b0ac0590e9488a79cec8"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T11:45:00Z"
+      "$date": "2026-02-13T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Khaled Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1048",
+    "patientId": {
+      "$oid": "cded1f6cd7ef21e3f5725574"
+    },
+    "doctorId": {
+      "$oid": "283054409ba1919c4111d9aa"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Khaled Fadel",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1049",
     "patientId": {
-      "$oid": "Khalid Nasser"
+      "$oid": "1b07f0d23e4812d752e08f24"
     },
     "doctorId": {
-      "$oid": "Dr. Lina Mahdi"
+      "$oid": "2120d784c62c941eda081b25"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T09:00:00Z"
+      "$date": "2026-02-13T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Hassan Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1050",
     "patientId": {
-      "$oid": "Khalid Saleh"
+      "$oid": "03331ed20f7ec9747ed62dc8"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Jassim"
+      "$oid": "996580e3c08efc778f259572"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T13:00:00Z"
+      "$date": "2026-02-12T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Mahmoud Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1051",
+    "patientId": {
+      "$oid": "fddbf55ff77db7bdc62e15dd"
+    },
+    "doctorId": {
+      "$oid": "a19c09672156846f39ae19dd"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-09T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Samir Tamer",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1052",
     "patientId": {
-      "$oid": "Ibrahim Tamer"
+      "$oid": "7a01eda7d8608ebe05f630e0"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Karim"
+      "$oid": "262802bb7144cb97aef75267"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T15:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ahmed Adnan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Samir Tamer"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T12:45:00Z"
+      "$date": "2026-02-06T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1053",
     "patientId": {
-      "$oid": "Mona Najib"
+      "$oid": "618740beaadc9147529120a9"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Fahad"
+      "$oid": "ba6c40027330d456c4d8f8f8"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T13:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T09:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amira Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Lina Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T13:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Sara Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T12:45:00Z"
+      "$date": "2026-03-07T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Rania Youssef",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1054",
     "patientId": {
-      "$oid": "Khalid Tamer"
+      "$oid": "123966a1483f0ede2d09498f"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Hamid"
+      "$oid": "dde8b9481137e0bc82acf7d6"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T13:30:00Z"
+      "$date": "2026-03-03T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Jassim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1055",
     "patientId": {
-      "$oid": "Samir Adnan"
+      "$oid": "0ebfb82e6e4f4f827faf5910"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Hamid"
+      "$oid": "0fc585addb49084d239027c6"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T13:45:00Z"
+      "$date": "2026-02-23T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Amira Najib",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1056",
+    "patientId": {
+      "$oid": "dca31a9bdfbf03d8fe117ba2"
+    },
+    "doctorId": {
+      "$oid": "31043c3606bb8d12bed6362f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Amira Jassim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1057",
+    "patientId": {
+      "$oid": "0e15a2b50dcda9aa5b47fe5b"
+    },
+    "doctorId": {
+      "$oid": "5e64317e3c07b7a2b3df045f"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Amina Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1058",
+    "patientId": {
+      "$oid": "5b5fe818d2b9f3a8f78526e8"
+    },
+    "doctorId": {
+      "$oid": "7b3871a1443909975ba8eb79"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-09T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Ali",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1059",
     "patientId": {
-      "$oid": "Nadia Youssef"
+      "$oid": "2f32e761a4be5ef1592500aa"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Nasser"
+      "$oid": "6fe5fb93fe5c7a890f7e90a4"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T15:00:00Z"
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Nadia Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1060",
+    "patientId": {
+      "$oid": "ab2a0c37b82b7429698ea68e"
+    },
+    "doctorId": {
+      "$oid": "dde8b9481137e0bc82acf7d6"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-02T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Jassim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1061",
     "patientId": {
-      "$oid": "Zain Saleh"
+      "$oid": "19ef1b7fedf4ae558d00fce2"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Samad"
+      "$oid": "35dc39889cb66acc93bc44b2"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T10:00:00Z"
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Khalid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1062",
     "patientId": {
-      "$oid": "Ibrahim Adnan"
+      "$oid": "c0e67913803037904b64b3e6"
     },
     "doctorId": {
-      "$oid": "Dr. Amina Sami"
+      "$oid": "353615728b9c81839637f4d2"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T09:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mona Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T11:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Hassan Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T16:30:00Z"
+      "$date": "2026-02-13T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Yousef Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1063",
     "patientId": {
-      "$oid": "Basel Fahad"
+      "$oid": "085b8bf080558a2b31ab59f7"
     },
     "doctorId": {
-      "$oid": "Dr. Sara Sami"
+      "$oid": "586a85d55dfc9ebc5b91c894"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T15:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Hassan Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T11:45:00Z"
+      "$date": "2026-02-24T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1064",
     "patientId": {
-      "$oid": "Basel Ali"
+      "$oid": "7918e69f599b37bacd42ff7e"
     },
     "doctorId": {
-      "$oid": "Dr. Samir Adnan"
+      "$oid": "c7502f85d02b72b2c93c423c"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T11:30:00Z"
+      "$date": "2026-03-07T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1065",
     "patientId": {
-      "$oid": "Samir Ali"
+      "$oid": "3794a4e30a3734c918bfcf2e"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Hamid"
+      "$oid": "e10748562a6457eaa2691a57"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T10:15:00Z"
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Rania Rashid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1066",
     "patientId": {
-      "$oid": "Huda Najib"
+      "$oid": "bbdd3e74418397a3633a7815"
     },
     "doctorId": {
-      "$oid": "Dr. Mahmoud Mahdi"
+      "$oid": "c7502f85d02b72b2c93c423c"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T13:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T14:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Hamid Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T11:30:00Z"
+      "$date": "2026-02-25T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1067",
     "patientId": {
-      "$oid": "Amira Saif"
+      "$oid": "76efc8c071251decd196cbd3"
     },
     "doctorId": {
-      "$oid": "Dr. Yousef Omar"
+      "$oid": "6fbcbd2526246cfd24b0f7bb"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T14:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ali Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Yousef Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T12:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yousef Fahad"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Fadel"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lama Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T12:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T11:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lina Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:45:00Z"
+      "$date": "2026-03-05T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Nadia Youssef",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1068",
     "patientId": {
-      "$oid": "Hamid Hussein"
+      "$oid": "be66ebc4324931ff1a7dd483"
     },
     "doctorId": {
-      "$oid": "Dr. Ali Karim"
+      "$oid": "cc6bd600270296d2af29fd78"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T12:30:00Z"
+      "$date": "2026-02-19T15:17:56Z"
     },
-    "status": "cancelled",
-    "notes": "",
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1069",
     "patientId": {
-      "$oid": "Ibrahim Tamer"
+      "$oid": "b25f2e528ad6386488638096"
     },
     "doctorId": {
-      "$oid": "Dr. Mohammed Tamer"
+      "$oid": "44f02e137661d340f69e5157"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T10:30:00Z"
+      "$date": "2026-02-16T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Zain Adnan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1070",
+    "patientId": {
+      "$oid": "94bb67f71602730811ade7e0"
+    },
+    "doctorId": {
+      "$oid": "abe99748f8ba16f66159bc3a"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-17T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1071",
     "patientId": {
-      "$oid": "Ahmed Saif"
+      "$oid": "5309824df6495180aa43ed46"
     },
     "doctorId": {
-      "$oid": "Dr. Ahmed Fahad"
+      "$oid": "0fc585addb49084d239027c6"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T10:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Lina Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T10:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Fatima Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T14:45:00Z"
+      "$date": "2026-03-05T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Amira Najib",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1072",
     "patientId": {
-      "$oid": "Mona Saif"
+      "$oid": "3794a4e30a3734c918bfcf2e"
     },
     "doctorId": {
-      "$oid": "Dr. Mohammed Tamer"
+      "$oid": "283054409ba1919c4111d9aa"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T08:15:00Z"
+      "$date": "2026-02-18T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Khaled Fadel",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1073",
     "patientId": {
-      "$oid": "Mahmoud Rashid"
+      "$oid": "3d21e5be5d367985ff287b46"
     },
     "doctorId": {
-      "$oid": "Dr. Lina Fahad"
+      "$oid": "4cd0dbe70aaa54ee83dd3453"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T15:00:00Z"
+      "$date": "2026-03-06T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mohammed Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1074",
     "patientId": {
-      "$oid": "Salma Ali"
+      "$oid": "6a5eb16804ff28e803292833"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Hamid"
+      "$oid": "fa1b537f89b1747c6c63d3ba"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T13:45:00Z"
+      "$date": "2026-02-06T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ali Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1075",
     "patientId": {
-      "$oid": "Sara Mahdi"
+      "$oid": "085b8bf080558a2b31ab59f7"
     },
     "doctorId": {
-      "$oid": "Dr. Samir Fahad"
+      "$oid": "459c3867eb4900499372d850"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T13:45:00Z"
+      "$date": "2026-03-02T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1076",
+    "patientId": {
+      "$oid": "a9bf937963c84e4b5abf4ac7"
+    },
+    "doctorId": {
+      "$oid": "c7502f85d02b72b2c93c423c"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-13T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1077",
+    "patientId": {
+      "$oid": "8bf4f048e3418f3557ed4d7e"
+    },
+    "doctorId": {
+      "$oid": "f057b3a41669fca4f40bf0de"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-25T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Samir Youssef",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1078",
+    "patientId": {
+      "$oid": "44ecbb3809c20cc12445e0fd"
+    },
+    "doctorId": {
+      "$oid": "689294a057c7340542716872"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Sara Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1079",
+    "patientId": {
+      "$oid": "52c34472ad02ee77226e22d3"
+    },
+    "doctorId": {
+      "$oid": "ca29c7f4e3622b688a28b18b"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-14T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1080",
     "patientId": {
-      "$oid": "Lama Amari"
+      "$oid": "be84d7467a54d68f42386b6b"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Sami"
+      "$oid": "593ea7e825e46b191f04b4b9"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T13:00:00Z"
+      "$date": "2026-02-20T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Ali",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1081",
     "patientId": {
-      "$oid": "Ahmed Adnan"
+      "$oid": "d0a11d3a1df44ccbc4dbb248"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Rashid"
+      "$oid": "35a178ba7a65c28c38f72faf"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T10:15:00Z"
+      "$date": "2026-02-19T15:17:56Z"
     },
-    "status": "scheduled",
-    "notes": "",
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ahmed Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1082",
     "patientId": {
-      "$oid": "Ali Fahad"
+      "$oid": "7918e69f599b37bacd42ff7e"
     },
     "doctorId": {
-      "$oid": "Dr. Fatima Rashid"
+      "$oid": "6fe8b795e023baaae1d4b1d7"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T10:15:00Z"
+      "$date": "2026-03-07T15:17:56Z"
     },
-    "status": "scheduled",
-    "notes": "",
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Sara Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1083",
     "patientId": {
-      "$oid": "Mahmoud Hussein"
+      "$oid": "d0a11d3a1df44ccbc4dbb248"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Saleh"
+      "$oid": "c429384d96f7de89a65596eb"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T11:00:00Z"
+      "$date": "2026-02-24T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Omar Mahdi",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1084",
+    "patientId": {
+      "$oid": "5fd796184f75b04d7b7fd445"
+    },
+    "doctorId": {
+      "$oid": "da3be2869f1e3cb78a0c9dd6"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-02T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Nadia Fadel",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1085",
+    "patientId": {
+      "$oid": "105f5b3cc25e7d9c8b3ac56f"
+    },
+    "doctorId": {
+      "$oid": "d4c844aa214c2c60d8d44068"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-02T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Rania Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1086",
     "patientId": {
-      "$oid": "Ali Amari"
+      "$oid": "2c78c75b5c5c9786667ba1ce"
     },
     "doctorId": {
-      "$oid": "Dr. Amira Najib"
+      "$oid": "45d7f6c3483df1d345d1bf3f"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T08:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Karim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T13:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Nadia Ali"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T16:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yousef Amari"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T11:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Hussein"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ali Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amira Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T16:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Huda Najib"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T09:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Basel Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T14:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amira Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Hassan Nasser"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T14:30:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Salma Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Mahdi"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T10:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Samir Adnan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T08:00:00Z"
+      "$date": "2026-02-06T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Fadel",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1087",
     "patientId": {
-      "$oid": "Ibrahim Tamer"
+      "$oid": "f081996ea6c339ef22db62b2"
     },
     "doctorId": {
-      "$oid": "Dr. Amina Youssef"
+      "$oid": "ca29c7f4e3622b688a28b18b"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T10:00:00Z"
+      "$date": "2026-03-06T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1088",
     "patientId": {
-      "$oid": "Hassan Adnan"
+      "$oid": "15236279b129c8920f6b6062"
     },
     "doctorId": {
-      "$oid": "Dr. Khaled Khalid"
+      "$oid": "76da4202274915ca9e4c712d"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T12:30:00Z"
+      "$date": "2026-03-01T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1089",
     "patientId": {
-      "$oid": "Hassan Youssef"
+      "$oid": "eceadfcabfd233ea03761542"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Sami"
+      "$oid": "76be1c2d1a091968109d4cae"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T10:15:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T10:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Noor Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T10:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lina Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Saleh"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Huda Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amira Karim"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Tamer"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Sara Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Sara Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T09:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Sara Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T14:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Fahad"
-    },
-    "doctorId": {
-      "$oid": "Dr. Salma Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T10:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yara Adnan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Khaled Jassim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T15:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ibrahim Fahad"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T14:00:00Z"
+      "$date": "2026-03-04T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1090",
     "patientId": {
-      "$oid": "Khalid Mahdi"
+      "$oid": "965d34bf72a678e9ff4aec1f"
     },
     "doctorId": {
-      "$oid": "Dr. Ahmed Hussein"
+      "$oid": "034bca073f28bf0df2a080ea"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T10:30:00Z"
+      "$date": "2026-02-24T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1091",
     "patientId": {
-      "$oid": "Amira Fahad"
+      "$oid": "5daccbc4498079c0bd6cc47e"
     },
     "doctorId": {
-      "$oid": "Dr. Zain Hussein"
+      "$oid": "62d9cafcc2bbbea368b0baeb"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T13:45:00Z"
+      "$date": "2026-02-25T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Lina Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1092",
     "patientId": {
-      "$oid": "Yousef Fahad"
+      "$oid": "1b07f0d23e4812d752e08f24"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Fadel"
+      "$oid": "b8a4bab8d2acac620eadd48b"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T15:30:00Z"
+      "$date": "2026-02-10T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Mahmoud Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1093",
+    "patientId": {
+      "$oid": "2717cff46bfa2a2c7ee3831b"
+    },
+    "doctorId": {
+      "$oid": "33f4450ad7f2b6edebf51801"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Zain Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1094",
     "patientId": {
-      "$oid": "Noor Hassan"
+      "$oid": "448ce1e2041ffe5dac13cdb7"
     },
     "doctorId": {
-      "$oid": "Dr. Lina Fahad"
+      "$oid": "fa1b537f89b1747c6c63d3ba"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T15:45:00Z"
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Ali Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1095",
+    "patientId": {
+      "$oid": "829d92170629e34f78b3c720"
+    },
+    "doctorId": {
+      "$oid": "5e64317e3c07b7a2b3df045f"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-11T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1096",
+    "patientId": {
+      "$oid": "f081996ea6c339ef22db62b2"
+    },
+    "doctorId": {
+      "$oid": "6c6264100b11d0c2ccba2913"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Mahmoud Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1097",
+    "patientId": {
+      "$oid": "738f7aa64cf864924b5a4f5b"
+    },
+    "doctorId": {
+      "$oid": "6fbcbd2526246cfd24b0f7bb"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-04T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Nadia Youssef",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1098",
+    "patientId": {
+      "$oid": "0d63f121aae1440e392ffcfb"
+    },
+    "doctorId": {
+      "$oid": "4f639098ab9e3aa9cc46697f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-07T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Huda Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1099",
+    "patientId": {
+      "$oid": "5daccbc4498079c0bd6cc47e"
+    },
+    "doctorId": {
+      "$oid": "35a178ba7a65c28c38f72faf"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ahmed Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1100",
+    "patientId": {
+      "$oid": "19ef1b7fedf4ae558d00fce2"
+    },
+    "doctorId": {
+      "$oid": "35dc39889cb66acc93bc44b2"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1101",
+    "patientId": {
+      "$oid": "6f3f39e10f821e5d4eaa44b7"
+    },
+    "doctorId": {
+      "$oid": "700f6902c7687514e3148d27"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Rashid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1102",
     "patientId": {
-      "$oid": "Samir Najib"
+      "$oid": "ed451298ad122541aa7e23aa"
     },
     "doctorId": {
-      "$oid": "Dr. Khaled Jassim"
+      "$oid": "c09b4310621839ec7b04c044"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T13:45:00Z"
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Omar",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1103",
     "patientId": {
-      "$oid": "Sara Saleh"
+      "$oid": "2f32e761a4be5ef1592500aa"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Ali"
+      "$oid": "cc6bd600270296d2af29fd78"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T13:30:00Z"
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1104",
+    "patientId": {
+      "$oid": "fddbf55ff77db7bdc62e15dd"
+    },
+    "doctorId": {
+      "$oid": "e3daadafa405ed302bf5ca6f"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-10T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Omar Karim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1105",
+    "patientId": {
+      "$oid": "d9a6f0b2658e4219882a9056"
+    },
+    "doctorId": {
+      "$oid": "33f4450ad7f2b6edebf51801"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Zain Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1106",
     "patientId": {
-      "$oid": "Zain Hussein"
+      "$oid": "05fc7d6593849f1e2af33781"
     },
     "doctorId": {
-      "$oid": "Dr. Nadia Samad"
+      "$oid": "7029540c799632fc6f6cc786"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T14:15:00Z"
+      "$date": "2026-02-06T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Amira Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1107",
     "patientId": {
-      "$oid": "Mahmoud Saif"
+      "$oid": "fc4a7073f825b34f4faa4d26"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Hassan"
+      "$oid": "700f6902c7687514e3148d27"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T12:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Nadia Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Youssef"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T14:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T14:30:00Z"
+      "$date": "2026-02-07T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Rashid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1108",
     "patientId": {
-      "$oid": "Huda Fahad"
+      "$oid": "0d3da5a1b5cbeeee7bce74ed"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Najib"
+      "$oid": "eeb6a1cf583522a8460fb2b8"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T13:30:00Z"
+      "$date": "2026-03-07T15:17:56Z"
     },
-    "status": "scheduled",
-    "notes": "",
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Huda Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1109",
     "patientId": {
-      "$oid": "Samir Ali"
+      "$oid": "090d28742feef687c98749a5"
     },
     "doctorId": {
-      "$oid": "Dr. Nadia Youssef"
+      "$oid": "44f02e137661d340f69e5157"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T14:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Amira Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Zain Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T13:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Nadia Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Rania Khalid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T13:15:00Z"
+      "$date": "2026-02-26T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Zain Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1110",
     "patientId": {
-      "$oid": "Lama Fahad"
+      "$oid": "4ad7c0338295bb844d3d6656"
     },
     "doctorId": {
-      "$oid": "Dr. Omar Najib"
+      "$oid": "840a2bce54aac2285f84e622"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "3505fe5b23f57403f7c7c4e5"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T13:30:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Khalid Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amira Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T16:15:00Z"
+      "$date": "2026-02-09T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Tariq Sami",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1111",
     "patientId": {
-      "$oid": "Nadia Saleh"
+      "$oid": "bbdd3e74418397a3633a7815"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Rashid"
+      "$oid": "35dc39889cb66acc93bc44b2"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T11:30:00Z"
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Khalid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1112",
     "patientId": {
-      "$oid": "Sara Mahdi"
+      "$oid": "1008b96b987d68d1603bad17"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Rashid"
+      "$oid": "f00e49b397d4f3da5710c6d0"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T16:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Omar Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mahmoud Rashid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T09:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Sara Fahad"
-    },
-    "doctorId": {
-      "$oid": "Dr. Samir Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T09:30:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Khalid Nasser"
-    },
-    "doctorId": {
-      "$oid": "Dr. Zain Adnan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T14:30:00Z"
+      "$date": "2026-02-27T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Samir Fahad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1113",
     "patientId": {
-      "$oid": "Mona Amari"
+      "$oid": "a085b2c0d724daf808ce7478"
     },
     "doctorId": {
-      "$oid": "Dr. Mohammed Najib"
+      "$oid": "2fe5a34d5dd78d69154bd293"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T15:00:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Yousef Nasser"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Hassan"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T10:00:00Z"
+      "$date": "2026-02-17T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ahmed Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1114",
     "patientId": {
-      "$oid": "Amina Hassan"
+      "$oid": "829d92170629e34f78b3c720"
     },
     "doctorId": {
-      "$oid": "Dr. Samir Adnan"
+      "$oid": "0e41763c3ab0379c0c2b520e"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T15:00:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Samir Tamer"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mohammed Najib"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T14:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Sara Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T14:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mohammed Najib"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T12:30:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Tariq Youssef"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-02T15:00:00Z"
+      "$date": "2026-02-10T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ali Saleh",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1115",
     "patientId": {
-      "$oid": "Salma Karim"
+      "$oid": "d0add30779b932fe67970827"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Najib"
+      "$oid": "c7502f85d02b72b2c93c423c"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T10:45:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Khalid Nasser"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T09:00:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Adnan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Yousef Hussein"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T12:15:00Z"
-    },
-    "status": "completed",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Ali Rashid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Mohammed Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T13:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Mahmoud Fahad"
-    },
-    "doctorId": {
-      "$oid": "Dr. Sara Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-05T09:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Hussein"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Mahdi"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-08T12:30:00Z"
+      "$date": "2026-02-24T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1116",
     "patientId": {
-      "$oid": "Sara Hassan"
+      "$oid": "5b911c2ad98505d218136f69"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Omar"
+      "$oid": "c09b4310621839ec7b04c044"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T16:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Tariq Omar"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ali Karim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T10:45:00Z"
+      "$date": "2026-02-12T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Salma Omar",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1117",
     "patientId": {
-      "$oid": "Fatima Amari"
+      "$oid": "97c67a5f3d65139fae763fd6"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Samad"
+      "$oid": "d4c844aa214c2c60d8d44068"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-05T15:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lama Mahdi"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Sami"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T11:00:00Z"
+      "$date": "2026-02-26T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Rania Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1118",
     "patientId": {
-      "$oid": "Fatima Saif"
+      "$oid": "eede817ebcb90053a70d7401"
     },
     "doctorId": {
-      "$oid": "Dr. Rania Khalid"
+      "$oid": "c6dea262ed407b584be75619"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T16:15:00Z"
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Omar Samad",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1119",
     "patientId": {
-      "$oid": "Ahmed Adnan"
+      "$oid": "7d58e62f960ed2b2361ed5b5"
     },
     "doctorId": {
-      "$oid": "Dr. Huda Saleh"
+      "$oid": "c7502f85d02b72b2c93c423c"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-02T14:30:00Z"
+      "$date": "2026-03-03T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Mahmoud Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1120",
+    "patientId": {
+      "$oid": "6f3f39e10f821e5d4eaa44b7"
+    },
+    "doctorId": {
+      "$oid": "fa1b537f89b1747c6c63d3ba"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Ali Hassan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1121",
     "patientId": {
-      "$oid": "Huda Mahdi"
+      "$oid": "0646c64a6faa313ce92612d2"
     },
     "doctorId": {
-      "$oid": "Dr. Hassan Hussein"
+      "$oid": "04b193468c60513bbf294827"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-08T16:15:00Z"
+      "$date": "2026-02-21T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Huda Najib",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1122",
     "patientId": {
-      "$oid": "Tariq Rashid"
+      "$oid": "5b51968059166ae2206a36f7"
     },
     "doctorId": {
-      "$oid": "Dr. Tariq Fahad"
+      "$oid": "33f4450ad7f2b6edebf51801"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "308907bb592eb52f520d9a73"
     },
     "appointmentDate": {
-      "$date": "2026-02-07T10:15:00Z"
+      "$date": "2026-02-24T15:17:56Z"
     },
     "status": "cancelled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Zain Hussein",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1123",
     "patientId": {
-      "$oid": "Zain Hussein"
+      "$oid": "0099f29f867a53933f3fd1bb"
     },
     "doctorId": {
-      "$oid": "Dr. Salma Jassim"
+      "$oid": "6b3ff547d4b8a7fae738fd6d"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T08:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Noor Khalid"
-    },
-    "doctorId": {
-      "$oid": "Dr. Omar Karim"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-07T12:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Lama Hassan"
-    },
-    "doctorId": {
-      "$oid": "Dr. Yousef Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T14:45:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Zain Hussein"
-    },
-    "doctorId": {
-      "$oid": "Dr. Amina Hamid"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-03T08:15:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Khalid Najib"
-    },
-    "doctorId": {
-      "$oid": "Dr. Tariq Fahad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T14:00:00Z"
-    },
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Noor Saif"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Nasser"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-04T10:00:00Z"
+      "$date": "2026-02-19T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Khaled Jassim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1124",
     "patientId": {
-      "$oid": "Lama Rashid"
+      "$oid": "a42ea59168c2e7240939fb8f"
     },
     "doctorId": {
-      "$oid": "Dr. Ali Tamer"
+      "$oid": "e3daadafa405ed302bf5ca6f"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "d56473b2b73973ed24d69290"
     },
     "appointmentDate": {
-      "$date": "2026-02-04T10:15:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Rania Saif"
-    },
-    "doctorId": {
-      "$oid": "Dr. Fatima Nasser"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T13:45:00Z"
-    },
-    "status": "cancelled",
-    "notes": "",
-    "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
-    }
-  },
-  {
-    "patientId": {
-      "$oid": "Basel Saleh"
-    },
-    "doctorId": {
-      "$oid": "Dr. Ahmed Samad"
-    },
-    "departmentId": {
-      "$oid": "Cardiology"
-    },
-    "appointmentDate": {
-      "$date": "2026-02-06T13:15:00Z"
+      "$date": "2026-03-01T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Omar Karim",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1125",
     "patientId": {
-      "$oid": "Zain Youssef"
+      "$oid": "d0a11d3a1df44ccbc4dbb248"
     },
     "doctorId": {
-      "$oid": "Dr. Nadia Fadel"
+      "$oid": "b95774069f330bc538421a7f"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "fd711c6171bc27e45eb71ad2"
     },
     "appointmentDate": {
-      "$date": "2026-02-06T15:15:00Z"
+      "$date": "2026-02-28T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Nadia Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1126",
+    "patientId": {
+      "$oid": "6f4c5337d3e8a5d94dd2708f"
+    },
+    "doctorId": {
+      "$oid": "e670e928cf2b7fecbd42c2bc"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Tariq Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1127",
+    "patientId": {
+      "$oid": "44ecbb3809c20cc12445e0fd"
+    },
+    "doctorId": {
+      "$oid": "f95aa32bc5a370e65be6d922"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Huda Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1128",
+    "patientId": {
+      "$oid": "691e59c1a649d228dc49d687"
+    },
+    "doctorId": {
+      "$oid": "123bb02edff45ac99ccff470"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Yousef Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1129",
+    "patientId": {
+      "$oid": "566536a0979dd92ed854f7f1"
+    },
+    "doctorId": {
+      "$oid": "bdae259e897784d391e4d99c"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
     },
     "status": "scheduled",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Fatima Nasser",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
     }
   },
   {
+    "appointmentCode": "APT-1130",
     "patientId": {
-      "$oid": "Mohammed Karim"
+      "$oid": "c0e67913803037904b64b3e6"
     },
     "doctorId": {
-      "$oid": "Dr. Amina Saleh"
+      "$oid": "35dc39889cb66acc93bc44b2"
     },
     "departmentId": {
-      "$oid": "Cardiology"
+      "$oid": "69646afe7eb4c007a6a2bc60"
     },
     "appointmentDate": {
-      "$date": "2026-02-03T11:00:00Z"
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1131",
+    "patientId": {
+      "$oid": "691e59c1a649d228dc49d687"
+    },
+    "doctorId": {
+      "$oid": "689294a057c7340542716872"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Sara Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1132",
+    "patientId": {
+      "$oid": "c67bd8ffc40a9323f6ca849f"
+    },
+    "doctorId": {
+      "$oid": "da1b4b3105cd0f527a209a03"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-13T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ahmed Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1133",
+    "patientId": {
+      "$oid": "090d28742feef687c98749a5"
+    },
+    "doctorId": {
+      "$oid": "7b3871a1443909975ba8eb79"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Ali",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1134",
+    "patientId": {
+      "$oid": "e932cbc3cfd1a7e770580008"
+    },
+    "doctorId": {
+      "$oid": "44f02e137661d340f69e5157"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-07T15:17:56Z"
     },
     "status": "completed",
-    "notes": "",
+    "notes": "Routine checkup with Dr. Zain Adnan",
     "createdAt": {
-      "$date": "2026-02-02T00:27:41Z"
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1135",
+    "patientId": {
+      "$oid": "f05457f6098f9ed570aa1c86"
+    },
+    "doctorId": {
+      "$oid": "946735776734bc28be4a665f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-16T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Hassan Nasser",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1136",
+    "patientId": {
+      "$oid": "3e7d7431986f6606b028d8c1"
+    },
+    "doctorId": {
+      "$oid": "840a2bce54aac2285f84e622"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-10T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Tariq Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1137",
+    "patientId": {
+      "$oid": "aa0128cf155ad28c25025130"
+    },
+    "doctorId": {
+      "$oid": "eeb6a1cf583522a8460fb2b8"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-12T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Huda Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1138",
+    "patientId": {
+      "$oid": "931f5e2efc57a4c02cfdda3c"
+    },
+    "doctorId": {
+      "$oid": "459c3867eb4900499372d850"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-12T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1139",
+    "patientId": {
+      "$oid": "de404dde8eb33a2a97c87246"
+    },
+    "doctorId": {
+      "$oid": "f057b3a41669fca4f40bf0de"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-03T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Samir Youssef",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1140",
+    "patientId": {
+      "$oid": "0d63f121aae1440e392ffcfb"
+    },
+    "doctorId": {
+      "$oid": "cc6bd600270296d2af29fd78"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Hassan Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1141",
+    "patientId": {
+      "$oid": "1626d081adad3c7142fd6d48"
+    },
+    "doctorId": {
+      "$oid": "fa1b537f89b1747c6c63d3ba"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-17T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Ali Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1142",
+    "patientId": {
+      "$oid": "53885c5f935314fb0f48c8ca"
+    },
+    "doctorId": {
+      "$oid": "541b4e4b8b1eba8705a89320"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ali Karim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1143",
+    "patientId": {
+      "$oid": "e932cbc3cfd1a7e770580008"
+    },
+    "doctorId": {
+      "$oid": "6b3ff547d4b8a7fae738fd6d"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-24T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Khaled Jassim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1144",
+    "patientId": {
+      "$oid": "7088ef961c38de8cb0e08cb4"
+    },
+    "doctorId": {
+      "$oid": "898103e45284a42a8e31eec1"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-07T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Salma Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1145",
+    "patientId": {
+      "$oid": "829d92170629e34f78b3c720"
+    },
+    "doctorId": {
+      "$oid": "034bca073f28bf0df2a080ea"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Fatima Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1146",
+    "patientId": {
+      "$oid": "7b56012963879906b0bd269b"
+    },
+    "doctorId": {
+      "$oid": "0fc585addb49084d239027c6"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-25T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Amira Najib",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1147",
+    "patientId": {
+      "$oid": "23211928429a72e2c914470b"
+    },
+    "doctorId": {
+      "$oid": "ec2cdb01e629177b4b8c6de4"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Tariq Adnan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1148",
+    "patientId": {
+      "$oid": "90d40380ce232f0e3b2ae14a"
+    },
+    "doctorId": {
+      "$oid": "a815b0ac0590e9488a79cec8"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Khaled Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1149",
+    "patientId": {
+      "$oid": "9dbb942ccff03d3cd9004593"
+    },
+    "doctorId": {
+      "$oid": "541b4e4b8b1eba8705a89320"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Ali Karim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1150",
+    "patientId": {
+      "$oid": "1626d081adad3c7142fd6d48"
+    },
+    "doctorId": {
+      "$oid": "eeb6a1cf583522a8460fb2b8"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-07T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Huda Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1151",
+    "patientId": {
+      "$oid": "0646c64a6faa313ce92612d2"
+    },
+    "doctorId": {
+      "$oid": "97b3d6863c6a36c86947b66e"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Lina Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1152",
+    "patientId": {
+      "$oid": "fff17c769f8d77357709c1b0"
+    },
+    "doctorId": {
+      "$oid": "262802bb7144cb97aef75267"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1153",
+    "patientId": {
+      "$oid": "691e59c1a649d228dc49d687"
+    },
+    "doctorId": {
+      "$oid": "6b3ff547d4b8a7fae738fd6d"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-15T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Khaled Jassim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1154",
+    "patientId": {
+      "$oid": "19ef1b7fedf4ae558d00fce2"
+    },
+    "doctorId": {
+      "$oid": "584a069b95362e3c6c8c0557"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-21T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Huda Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1155",
+    "patientId": {
+      "$oid": "062946f890adaa4813ee00ac"
+    },
+    "doctorId": {
+      "$oid": "c4e32daa6f59cf67558cce38"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-21T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1156",
+    "patientId": {
+      "$oid": "21ce25a254378af7d1d1150c"
+    },
+    "doctorId": {
+      "$oid": "dcb1d6742dce8690772cef36"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Zain Mahdi",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1157",
+    "patientId": {
+      "$oid": "3e7d7431986f6606b028d8c1"
+    },
+    "doctorId": {
+      "$oid": "ca29c7f4e3622b688a28b18b"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-28T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Salma Adnan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1158",
+    "patientId": {
+      "$oid": "f9aa98034ea7cb34c8595b6e"
+    },
+    "doctorId": {
+      "$oid": "6fe8b795e023baaae1d4b1d7"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-10T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Sara Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1159",
+    "patientId": {
+      "$oid": "915aeb398ce19c74dddfa2d4"
+    },
+    "doctorId": {
+      "$oid": "752b9b966b8278f3719f50c6"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Hassan Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1160",
+    "patientId": {
+      "$oid": "aeede4afda4ec6cc8cd108e2"
+    },
+    "doctorId": {
+      "$oid": "b8a4bab8d2acac620eadd48b"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Mahmoud Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1161",
+    "patientId": {
+      "$oid": "7088ef961c38de8cb0e08cb4"
+    },
+    "doctorId": {
+      "$oid": "fa1b537f89b1747c6c63d3ba"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-16T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Ali Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1162",
+    "patientId": {
+      "$oid": "531eb0921bbe264db40aa10b"
+    },
+    "doctorId": {
+      "$oid": "e3daadafa405ed302bf5ca6f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Omar Karim",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1163",
+    "patientId": {
+      "$oid": "44ecbb3809c20cc12445e0fd"
+    },
+    "doctorId": {
+      "$oid": "5aacef5ab02a0b1e92e6ae88"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-16T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Omar Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1164",
+    "patientId": {
+      "$oid": "15236279b129c8920f6b6062"
+    },
+    "doctorId": {
+      "$oid": "c5b32f91513efaa2c1eb5056"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-21T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Omar Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1165",
+    "patientId": {
+      "$oid": "bdb3b3250b6afa24d8f0078c"
+    },
+    "doctorId": {
+      "$oid": "92da487971b48050700fb859"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amira Adnan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1166",
+    "patientId": {
+      "$oid": "db342dbcbef95a0ced4dc39b"
+    },
+    "doctorId": {
+      "$oid": "913bd273b5e92ec4ee1c819c"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Yousef Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1167",
+    "patientId": {
+      "$oid": "d9a6f0b2658e4219882a9056"
+    },
+    "doctorId": {
+      "$oid": "262802bb7144cb97aef75267"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-17T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1168",
+    "patientId": {
+      "$oid": "ef252aa5d60c0366ecc08109"
+    },
+    "doctorId": {
+      "$oid": "0e41763c3ab0379c0c2b520e"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-21T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ali Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1169",
+    "patientId": {
+      "$oid": "bbdd3e74418397a3633a7815"
+    },
+    "doctorId": {
+      "$oid": "038b242edeb7b2015751697b"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Yousef Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1170",
+    "patientId": {
+      "$oid": "c67bd8ffc40a9323f6ca849f"
+    },
+    "doctorId": {
+      "$oid": "038b242edeb7b2015751697b"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-20T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Yousef Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1171",
+    "patientId": {
+      "$oid": "61a04ec3e876a3e340f9b5a5"
+    },
+    "doctorId": {
+      "$oid": "752b9b966b8278f3719f50c6"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-06T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Hassan Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1172",
+    "patientId": {
+      "$oid": "407298b179c7c39944a7970b"
+    },
+    "doctorId": {
+      "$oid": "898103e45284a42a8e31eec1"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-11T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Salma Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1173",
+    "patientId": {
+      "$oid": "821bae9072b297f36e848037"
+    },
+    "doctorId": {
+      "$oid": "b0e85c0e2fa8ca0d194ade14"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1174",
+    "patientId": {
+      "$oid": "d0a11d3a1df44ccbc4dbb248"
+    },
+    "doctorId": {
+      "$oid": "459c3867eb4900499372d850"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-01T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Hassan Omar",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1175",
+    "patientId": {
+      "$oid": "738f7aa64cf864924b5a4f5b"
+    },
+    "doctorId": {
+      "$oid": "c4e32daa6f59cf67558cce38"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-06T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1176",
+    "patientId": {
+      "$oid": "bbdd3e74418397a3633a7815"
+    },
+    "doctorId": {
+      "$oid": "ca29c7f4e3622b688a28b18b"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-03T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Salma Adnan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1177",
+    "patientId": {
+      "$oid": "b25f2e528ad6386488638096"
+    },
+    "doctorId": {
+      "$oid": "35a178ba7a65c28c38f72faf"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-18T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Ahmed Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1178",
+    "patientId": {
+      "$oid": "d162cbf9a9e837c47aeff187"
+    },
+    "doctorId": {
+      "$oid": "6d038d3754ab5a98c627a392"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-09T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Tariq Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1179",
+    "patientId": {
+      "$oid": "2941e264fef5edddde9af746"
+    },
+    "doctorId": {
+      "$oid": "4f639098ab9e3aa9cc46697f"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-10T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Huda Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1180",
+    "patientId": {
+      "$oid": "7d7ce4fad8a32d2992752394"
+    },
+    "doctorId": {
+      "$oid": "b0e85c0e2fa8ca0d194ade14"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-14T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Amina Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1181",
+    "patientId": {
+      "$oid": "7088ef961c38de8cb0e08cb4"
+    },
+    "doctorId": {
+      "$oid": "6d038d3754ab5a98c627a392"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-28T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Tariq Rashid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1182",
+    "patientId": {
+      "$oid": "05fc7d6593849f1e2af33781"
+    },
+    "doctorId": {
+      "$oid": "c5b32f91513efaa2c1eb5056"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-07T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Omar Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1183",
+    "patientId": {
+      "$oid": "8bf4f048e3418f3557ed4d7e"
+    },
+    "doctorId": {
+      "$oid": "77365b1cf19b78b79512441a"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Hassan Youssef",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1184",
+    "patientId": {
+      "$oid": "f8ce9542c9c6abecd1d98544"
+    },
+    "doctorId": {
+      "$oid": "689294a057c7340542716872"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-22T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Sara Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1185",
+    "patientId": {
+      "$oid": "9de3804a03538101f36732db"
+    },
+    "doctorId": {
+      "$oid": "f95aa32bc5a370e65be6d922"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-28T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Huda Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1186",
+    "patientId": {
+      "$oid": "65088de95ebd2ceafcab0618"
+    },
+    "doctorId": {
+      "$oid": "9e606896f1c0fd0ceb1c1318"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-04T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Yousef Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1187",
+    "patientId": {
+      "$oid": "21ae13c29c86e3c6e4731474"
+    },
+    "doctorId": {
+      "$oid": "353615728b9c81839637f4d2"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-25T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Yousef Hamid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1188",
+    "patientId": {
+      "$oid": "21ce25a254378af7d1d1150c"
+    },
+    "doctorId": {
+      "$oid": "da1b4b3105cd0f527a209a03"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Ahmed Samad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1189",
+    "patientId": {
+      "$oid": "44ecbb3809c20cc12445e0fd"
+    },
+    "doctorId": {
+      "$oid": "a815b0ac0590e9488a79cec8"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-12T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Khaled Khalid",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1190",
+    "patientId": {
+      "$oid": "4141ff02b6a43aec6f1975e4"
+    },
+    "doctorId": {
+      "$oid": "33f4450ad7f2b6edebf51801"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-08T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Zain Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1191",
+    "patientId": {
+      "$oid": "af225430b3a4aed159e1ec3d"
+    },
+    "doctorId": {
+      "$oid": "2fe5a34d5dd78d69154bd293"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-27T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Ahmed Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1192",
+    "patientId": {
+      "$oid": "829d92170629e34f78b3c720"
+    },
+    "doctorId": {
+      "$oid": "76be1c2d1a091968109d4cae"
+    },
+    "departmentId": {
+      "$oid": "3505fe5b23f57403f7c7c4e5"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-12T15:17:56Z"
+    },
+    "status": "completed",
+    "notes": "Routine checkup with Dr. Tariq Fahad",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1193",
+    "patientId": {
+      "$oid": "d8034267928e114eed06500c"
+    },
+    "doctorId": {
+      "$oid": "bdae259e897784d391e4d99c"
+    },
+    "departmentId": {
+      "$oid": "69646afe7eb4c007a6a2bc60"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-06T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Fatima Nasser",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1194",
+    "patientId": {
+      "$oid": "e3bcdec0ca10662857211ad7"
+    },
+    "doctorId": {
+      "$oid": "57acec5309f15226522df3ce"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-09T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Ali Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1195",
+    "patientId": {
+      "$oid": "44ecbb3809c20cc12445e0fd"
+    },
+    "doctorId": {
+      "$oid": "584a069b95362e3c6c8c0557"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Huda Tamer",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1196",
+    "patientId": {
+      "$oid": "36d4167e0a741379a5dc909e"
+    },
+    "doctorId": {
+      "$oid": "f95aa32bc5a370e65be6d922"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-11T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Huda Saleh",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1197",
+    "patientId": {
+      "$oid": "72f15d29cd9ed3c122c096ce"
+    },
+    "doctorId": {
+      "$oid": "b44f37cb71ba6ea02bde73fd"
+    },
+    "departmentId": {
+      "$oid": "fd711c6171bc27e45eb71ad2"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-19T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Amina Sami",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1198",
+    "patientId": {
+      "$oid": "738f7aa64cf864924b5a4f5b"
+    },
+    "doctorId": {
+      "$oid": "913bd273b5e92ec4ee1c819c"
+    },
+    "departmentId": {
+      "$oid": "308907bb592eb52f520d9a73"
+    },
+    "appointmentDate": {
+      "$date": "2026-03-05T15:17:56Z"
+    },
+    "status": "cancelled",
+    "notes": "Routine checkup with Dr. Yousef Hussein",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
+    }
+  },
+  {
+    "appointmentCode": "APT-1199",
+    "patientId": {
+      "$oid": "8f9067a4b25a04ad4f935706"
+    },
+    "doctorId": {
+      "$oid": "d4c844aa214c2c60d8d44068"
+    },
+    "departmentId": {
+      "$oid": "d56473b2b73973ed24d69290"
+    },
+    "appointmentDate": {
+      "$date": "2026-02-26T15:17:56Z"
+    },
+    "status": "scheduled",
+    "notes": "Routine checkup with Dr. Rania Hassan",
+    "createdAt": {
+      "$date": "2026-02-05T15:17:56Z"
     }
   }
 ]
