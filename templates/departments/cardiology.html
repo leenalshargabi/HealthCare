@@ -13,20 +13,13 @@
 
 <div class="section">
   <h2>Our Cardiologists</h2>
-
-  <div class="doctors">
+{% for doctor in cDoctors %}
     <div class="doctor" style="background:#fff;">
-      <h3>Dr. Ahmed Hassan</h3>
-      <span>Interventional Cardiologist</span>
-      <p>Specialized in heart catheterization and complex coronary procedures.</p>
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
     </div>
-
-    <div class="doctor" style="background:#fff;">
-      <h3>Dr. Lina Omar</h3>
-      <span>Heart Failure Specialist</span>
-      <p>Expert in chronic heart failure management and rehabilitation.</p>
-    </div>
-  </div>
+    {% endfor %}
 </div>
 
 </body>

@@ -15,17 +15,13 @@
   <h2>Our Pediatricians</h2>
 
   <div class="doctors">
+    {% for doctor in cDoctors %}
     <div class="doctor" style="background:#fff;">
-      <h3>Dr. Huda Mansour</h3>
-      <span>Child Health Specialist</span>
-      <p>Focused on growth, nutrition, and child development.</p>
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{doctor.mainSpecialty }}</span>
+      <p>{{doctor.subSpecialty }}</p>
     </div>
-
-    <div class="doctor" style="background:#fff;">
-      <h3>Dr. Adam Faris</h3>
-      <span>Neonatologist</span>
-      <p>Expert in newborn intensive care and early diagnosis.</p>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
