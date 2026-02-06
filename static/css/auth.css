@@ -1,4 +1,6 @@
-/* Base */
+/* =========================
+   Base
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +14,16 @@ body {
     radial-gradient(circle at 10% 20%, rgba(118,75,162,0.35), transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(102,126,234,0.35), transparent 40%),
     linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-/* Card */
+/* =========================
+   Auth Card
+========================= */
 .auth-box {
+  margin: auto; /* يخليها في منتصف الصفحة */
   width: 380px;
   padding: 42px 36px;
   border-radius: 22px;
@@ -30,10 +35,12 @@ body {
     0 30px 60px rgba(0, 0, 0, 0.45),
     inset 0 0 0.5px rgba(255,255,255,0.6);
   text-align: center;
-  animation: cardEnter 1s ease;
+  animation: cardEnter 0.9s ease;
 }
 
-/* Title */
+/* =========================
+   Title
+========================= */
 .auth-box h2 {
   color: #fff;
   font-size: 26px;
@@ -51,7 +58,9 @@ body {
   background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
-/* Inputs */
+/* =========================
+   Inputs
+========================= */
 .auth-box input {
   width: 100%;
   padding: 14px 16px;
@@ -75,7 +84,9 @@ body {
   box-shadow: 0 0 0 4px rgba(143,140,255,0.25);
 }
 
-/* Button */
+/* =========================
+   Button
+========================= */
 .auth-box button {
   width: 100%;
   padding: 14px;
@@ -95,7 +106,9 @@ body {
   box-shadow: 0 20px 40px rgba(118,75,162,0.45);
 }
 
-/* Error */
+/* =========================
+   Error Message
+========================= */
 .error {
   background: rgba(255, 80, 80, 0.15);
   color: #ffb4b4;
@@ -106,7 +119,9 @@ body {
   border: 1px solid rgba(255,80,80,0.3);
 }
 
-/* Footer */
+/* =========================
+   Footer Text
+========================= */
 .auth-box p {
   margin-top: 22px;
   font-size: 13px;
@@ -123,7 +138,9 @@ body {
   text-decoration: underline;
 }
 
-/* Animation */
+/* =========================
+   Animation
+========================= */
 @keyframes cardEnter {
   from {
     opacity: 0;
