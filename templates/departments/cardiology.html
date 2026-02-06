@@ -3,8 +3,11 @@
 <head>
   <title>Cardiology</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
+  <script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 </head>
-<body style="background:#FCE9E9; color:#511010;">
+<body class="cardiology-theme">
+
+  <button class="return-btn" onclick="goBack()">Return</button>
 
 <div class="hero" style="background:#C74D4D; color:#fff;">
   <h1>Cardiology Department</h1>

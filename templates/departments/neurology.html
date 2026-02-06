@@ -3,8 +3,11 @@
 <head>
   <title>Neurology</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
+  <script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 </head>
-<body style="background:#FFFCFC; color:#5D3543;">
+<body class="neurology-theme">
+
+  <button class="return-btn" onclick="goBack()">Return</button>
 
 <div class="hero" style="background:#785964; color:#fff;">
   <h1>Neurology Department</h1>

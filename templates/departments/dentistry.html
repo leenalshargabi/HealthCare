@@ -3,8 +3,11 @@
 <head>
   <title>Dental Care</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
+  <script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 </head>
-<body style="background:#E8F0F1; color:#004B57;">
+<body class="dentistry-theme">
+
+  <button class="return-btn" onclick="goBack()">Return</button>
 
 <div class="hero" style="background:#C7E7EC;">
   <h1>Dental Care Department</h1>
