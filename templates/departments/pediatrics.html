@@ -3,27 +3,63 @@
 <head>
   <title>Pediatrics</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
+  <script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 </head>
-<body style="background:#F7F3ED; color:#422B23;">
+<body class="pediatric-theme">
 
-<div class="hero" style="background:#DBA1A2; color:#fff;">
-  <h1>Pediatrics Department</h1>
-  <p>Gentle and compassionate healthcare for children and infants.</p>
+  <div class="dept-navbar">
+    <div class="dept-logo">NovaCare</div>
+
+    <div class="dept-links">
+        <a href="/">Home</a>
+        <a href="/specialities">Specialities</a>
+        <a href="/about">About</a>
+    </div>
 </div>
+
+<button class="return-btn" onclick="goBack()">Return</button>
+
+<div class="hero">
+
+  <div class="hero-content">
+      <h1>Pediatrics Department</h1>
+      <p>Gentle and compassionate healthcare for children and infants.</p>
+  </div>
+
+  <div class="wave"></div>
+
+</div>
+
 
 <div class="section">
   <h2>Our Pediatricians</h2>
 
-  <div class="doctors">
-    {% for doctor in cDoctors %}
-    <div class="doctor" style="background:#fff;">
-      <h3>{{ doctor.fullName }}</h3>
-      <span>{{doctor.mainSpecialty }}</span>
-      <p>{{doctor.subSpecialty }}</p>
+  <div class="doctors" id="doctor-list">
+  {% for doctor in cDoctors %}
+  <div class="doctor doctor-item">
+
+  <div class="doctor-top">
+    <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
+
+    <div class="availability available">
+        Available
     </div>
+  </div>
+
+  <h3>{{ doctor.fullName }}</h3>
+  <span>{{doctor.mainSpecialty }}</span>
+  <p>{{doctor.subSpecialty }}</p>
+  <p>{{doctor.workingHours }}</p>
+
+</div>
+
     {% endfor %}
   </div>
+
+  <div class="pagination" id="pagination"></div>
+
 </div>
 
 </body>
+
 </html>

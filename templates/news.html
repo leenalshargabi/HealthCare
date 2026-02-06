@@ -17,38 +17,54 @@
 
     <!-- Filter -->
     <div class="filter-bar">
-        <label for="dateFilter">Filter by</label>
-        <select id="dateFilter">
-            <option value="all">All</option>
-            <option value="new">Most Recent</option>
-            <option value="old">Oldest First</option>
-        </select>
-        <button class="filter-btn" onclick="applyFilter()">Filter</button>
-    </div>
+    <form method="GET" action="{{ url_for('news_page') }}" class="search-form">
+        <div class="search-box">
+            <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="form-control">
+        </div>
 
-    <!-- News Grid -->
-    <div id="newsGrid" class="news-grid"></div>
-  {% for news in Pnews %}
-  <div class="news-card">
-      <h3>{{ news.title }}</h3>
-      <p>category:{{ news.category }}</p>
-      <span>{{ news.summary }}</span>
-      <p>{{ news.content }}</p>
-      <p class="dit">author:{{ news.author }}</p>
-      <p class="dit">{{ news.publishDate }}</p>
-  </div>
+        <div class="sort-box">
+            <select name="sort" class="form-select">
+                <option value="new" {% if sort_type == 'new' %}selected{% endif %}>Most Recent</option>
+                <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest First</option>
+            </select>
+        </div>
+
+        <button type="submit" class="filter-btn">Apply</button>
+        {% if query_text or sort_type != 'new' %}
+            <a href="{{ url_for('news_page') }}" class="btn-clear">Clear</a>
+        {% endif %}
+    </form>
+</div>
+
+<div class="news-grid">
+    {% for n in Pnews %}
+    <div class="news-card">
+        <span class="category-tag">{{ n.category }}</span>
+        <h3>{{ n.title }}</h3>
+        <p class="summary">{{ n.summary }}</p>
+        <div class="news-footer">
+            <span class="author">By: {{ n.author }}</span>
+            <span class="date">{{ n.publishDate }}</span>
+        </div>
+    </div>
+    {% else %}
+    <div class="no-results">
+        <p>No news found matching "{{ query_text }}"</p>
+    </div>
     {% endfor %}
-  <div class="pagination" style="text-align: center; margin: 30px;">
-      {% if current >1 %}
-      <a href="{{ url_for('news_page' ,page =current-1)}} " id="prev" >
-      previous</a>
-      {% endif %}
-<span style="margin: 0 15px;">page: {{current}}</span>
-      {% if has_next %}
-      <a href="{{ url_for('news_page' ,page =current+1)}}">
-      next</a>
-      {% endif %}
-  </div>
+</div>
+
+<div class="pagination">
+    {% if current > 1 %}
+    <a href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ current }}</span>
+
+    {% if has_next %}
+    <a href="{{ url_for('news_page', page=current+1, sort=sort_type, q=query_text) }}">Next</a>
+    {% endif %}
+</div>
     <!-- Pagination -->
     <!-- <div id="pagination" class="pagination"></div> -->
     <!-- <div class="more-pagination-container"> -->
@@ -56,8 +72,5 @@
     <!-- </div> -->
 
 </div>
-
-<!-- <script src="{{ url_for('static', filename='js/news.js') }}"></script> -->
-
 </body>
 </html>

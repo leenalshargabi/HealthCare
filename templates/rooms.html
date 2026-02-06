@@ -9,58 +9,108 @@
 {% block content %}
 
 <section class="rooms-page">
-  <h1>Hospital Rooms Management</h1>
-  <p class="subtitle">Comprehensive overview of all hospital rooms and their status</p>
+    <h1>Hospital Rooms Management</h1>
+    <p class="subtitle">Comprehensive overview of all hospital rooms and their real-time status</p>
 
-  <div class="table-container">
-    <table class="rooms-table">
-      <thead>
-        <tr>
-          <th>Room Number</th>
-          <th>Floor</th>
-          <th>Department</th>
-          <th>Room Type</th>
-          <th>Category</th>
-          <th>Status</th>
-          <th>Details</th>
-        </tr>
-      </thead>
+    <form method="GET" class="row g-3 mb-4">
+        <div class="col-md-4">
+            <input type="text" name="roomNumber" class="form-control" placeholder="Room Number..." value="{{ q_room or '' }}">
+        </div>
+        <div class="col-md-3">
+            <input type="number" name="floor" class="form-control" placeholder="Floor..." value="{{ q_floor or '' }}">
+        </div>
+        
+        <input type="hidden" name="sort" value="{{ sort_by }}">
+        <input type="hidden" name="order" value="{{ order }}">
+        
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="/rooms" class="btn btn-secondary">Clear Filters</a>
+        </div>
+    </form>
 
-      <tbody>
-        {% for room in rooms %}
-        <tr>
-          <td>
-            <strong>{{ room.roomNumber }}</strong>
-          </td>
-          <td>{{ room.floor }}</td>
-          <td>{{ room.departmentName }}</td>
-          <td>{{ room.roomType }}</td>
-          <td>
-            <span class="category {{ room.category|replace('/', '-')|lower }}">
-              {{ room.category }}
-            </span>
-          </td>
-          <td>
-            <span class="status {{ room.status }}">
-              {{ room.status.capitalize() }}
-            </span>
-          </td>
-          <td>
-            {% if room.metadata.isOffice %}
-            <span class="office-badge">
-              {{ room.metadata.role }}
-            </span>
-            {% else %}
-            <span class="room-badge">
-              Room
-            </span>
-            {% endif %}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    <div class="table-container">
+        <table class="rooms-table">
+            <thead>
+                <tr>
+                    <th>
+                        <a href="?roomNumber={{ q_room }}&floor={{ q_floor }}&sort=roomNumber&order={{ -1 if order == 1 else 1 }}">
+                            Room Number {{ '▲' if (sort_by == 'roomNumber' and order == 1) else '▼' }}
+                        </a>
+                    </th>
+                    <th>
+                        <a href="?roomNumber={{ q_room }}&floor={{ q_floor }}&sort=floor&order={{ -1 if order == 1 else 1 }}">
+                            Floor {{ '▲' if (sort_by == 'floor' and order == 1) else '▼' }}
+                        </a>
+                    </th>
+                    <th>Department</th>
+                    <th>Room Type</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Assignment / Role</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for room in rooms %}
+                <tr>
+                    <td><strong>{{ room.roomNumber }}</strong></td>
+                    <td>{{ room.floor }}</td>
+                    <td>{{ room.departmentName  or 'N/A' }}</td>
+                    <td>{{ room.roomType or '-' }}</td>
+                    <td>
+                        <span class="category {{ (room.category or 'default')|replace('/', '-')|lower }}">
+                            {{ room.category or room.roomName or 'Unassigned' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status {{ room.status }}">
+                            {{ room.status|capitalize }}
+                        </span>
+                    </td>
+                    <td>
+                        {% if room.metadata and room.metadata.isOffice %}
+                        <span class="office-badge" title="Role: {{ room.metadata.role }}">
+                            Office: {{ room.metadata.role }}
+                        </span>
+                        {% else %}
+                        <span class="room-badge">Patient Ward</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No rooms found matching your search criteria.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if total_pages > 1 %}
+    <div class="pagination-container mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if current > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ current - 1 }}&roomNumber={{ q_room }}&floor={{ q_floor }}&sort={{ sort_by }}&order={{ order }}">Previous</a>
+                </li>
+                {% endif %}
+                
+                <li class="page-item active">
+                    <span class="page-link">{{ current }} of {{ total_pages }}</span>
+                </li>
+                
+                {% if has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ current + 1 }}&roomNumber={{ q_room }}&floor={{ q_floor }}&sort={{ sort_by }}&order={{ order }}">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
 </section>
 
 {% endblock %}
