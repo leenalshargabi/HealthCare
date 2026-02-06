@@ -1,3 +1,4 @@
+import math
 from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -23,12 +24,12 @@ db = client["healthcare_db"]
 users = db["users"]
 appointments = db["appointments"]
 patients = db["patients"]
-operations = db["operations"]
+operations_coll = db["operations"]
 doctors = db["doctors"]
 news = db["news"]
 departments = db["departments"]
 admin = db["admin"]
-rooms = db["rooms"]
+rooms_coll = db["rooms"]
 emergency_rooms = db["rooms"]
 
 
@@ -54,109 +55,112 @@ def about():
 def surgeries():
     page = int(request.args.get('page', 1))
     per_page = 10
-    
-    # Search Parameters
     q_doctor = request.args.get('doctor', '').strip()
     q_date = request.args.get('date', '').strip()
-    order = int(request.args.get('order', -1)) # Default: Newest first
+    order = int(request.args.get('order', -1))
 
     query = {}
+
     if q_doctor:
         query["doctor.fullName"] = {"$regex": q_doctor, "$options": "i"}
-    
-    if q_date:
-        start_date = datetime.strptime(q_date, '%Y-%m-%d')
-        end_date = start_date + timedelta(days=1)
-        query["scheduling.startTime"] = {"$gte": start_date, "$lt": end_date}
 
-    skip = (page - 1) * per_page
+    if q_date:
+        try:
+            start_date = datetime.strptime(q_date, '%Y-%m-%d')
+            end_date = start_date + timedelta(days=1)
+            query["scheduling.startTime"] = {"$gte": start_date, "$lt": end_date}
+        except ValueError:
+            pass
+
     projection = {
-        "operationCode": 1, "department.name": 1, "doctor.fullName": 1, 
-        "patient.fullName": 1, "medicalDetails.procedure": 1, "status": 1, 
-        "scheduling": 1, "_id": 0
+        "operationCode": 1,
+        "patient.fullName": 1,
+        "doctor.fullName": 1,
+        "medicalDetails.procedure": 1,
+        "scheduling.room": 1,
+        "scheduling.startTime": 1,
+        "status": 1,
+        "_id": 0
     }
-    
-    ops_data = list(operations.find(query, projection)
-                      .sort('scheduling.startTime', order)
-                      .skip(skip)
-                      .limit(per_page))
-    
-    total = operations.count_documents(query)
-    has_next = total > (page * per_page)
+
+    total = operations_coll.count_documents(query)
+    total_pages = math.ceil(total / per_page)
+    skip = (page - 1) * per_page
+
+    ops_data = list(operations_coll.find(query, projection)
+                                   .sort('scheduling.startTime', order)
+                                   .skip(skip)
+                                   .limit(per_page))
 
     return render_template("surgeries.html", 
                            operations=ops_data, 
                            current=page, 
-                           has_next=has_next, 
+                           has_next=(page < total_pages), 
+                           total_pages=total_pages,
                            q_doctor=q_doctor, 
-                           q_date=q_date,
+                           q_date=q_date, 
                            order=order)
+
 # ROOMS PAGE
 @app.route("/rooms")
 def rooms():
     page = int(request.args.get('page', 1))
     per_page = 10
-    
-    # Search Parameters
     q_room = request.args.get('roomNumber', '').strip()
     q_floor = request.args.get('floor', '').strip()
-    
-    # Sorting Parameters
     sort_by = request.args.get('sort', 'roomNumber')
-    order = int(request.args.get('order', 1)) # 1 for Asc, -1 for Desc
+    order = int(request.args.get('order', 1))
 
-    # Build Dynamic Query
-    query = {}
-    if q_room:
-        query["roomNumber"] = {"$regex": q_room, "$options": "i"}
-    if q_floor:
-        try:
-            query["floor"] = int(q_floor)
-        except ValueError:
-            pass
-
-    skip = (page - 1) * per_page
     projection = {
-        "roomNumber": 1, "floor": 1, "departmentName": 1, 
-        "roomType": 1, "category": 1, "status": 1, "metadata": 1, "_id": 0
+        "roomNumber": 1,
+        "floor": 1,
+        "departmentName": 1,
+        "roomType": 1,
+        "category": 1,   
+        "roomName": 1,   
+        "status": 1,
+        "metadata": 1,   
+        "_id": 0         
     }
+
+    query = {}
+    if q_room: query["roomNumber"] = {"$regex": q_room, "$options": "i"}
+    if q_floor:
+        try: query["floor"] = int(q_floor)
+        except: pass
+
+    total = rooms_coll.count_documents(query)
+    total_pages = math.ceil(total / per_page) 
     
-    rooms_data = list(rooms.find(query, projection)
-                      .sort(sort_by, order)
-                      .skip(skip)
-                      .limit(per_page))
-    
-    total = rooms.count_documents(query)
-    has_next = total > (page * per_page)
+    skip = (page - 1) * per_page
+    rooms_data = list(rooms_coll.find(query, projection).sort(sort_by, order).skip(skip).limit(per_page))
 
     return render_template("rooms.html", 
                            rooms=rooms_data, 
                            current=page, 
-                           has_next=has_next, 
+                           has_next=(page < total_pages), 
+                           total_pages=total_pages,
                            q_room=q_room, 
-                           q_floor=q_floor,
-                           sort_by=sort_by,
+                           q_floor=q_floor, 
+                           sort_by=sort_by, 
                            order=order)
+
 # EMERGENCY ROOMS 
 @app.route("/EmergencyRooms")
 def emergencyrooms():
     page = int(request.args.get('page', 1))
     per_page = 10
-    skip = (page - 1) * per_page
-    
     query = {"category": "Service/ER"} 
     
-    projection = {
-        "roomNumber": 1, "floor": 1, "departmentName": 1, 
-        "roomType": 1, "category": 1, "status": 1, "metadata": 1, "_id": 0
-    }
+    total = rooms_coll.count_documents(query)
+    total_pages = math.ceil(total / per_page)
     
-    e_rooms = list(rooms.find(query, projection).skip(skip).limit(per_page))
-    total = rooms.count_documents(query)
-    has_next = total > (page * per_page)
-    
-    return render_template("EmergencyRooms.html", rooms=e_rooms, current=page, has_next=has_next)
+    skip = (page - 1) * per_page
+    rooms_data = list(rooms_coll.find(query).skip(skip).limit(per_page))
 
+    return render_template("EmergencyRooms.html", rooms=rooms_data, 
+                           current=page, has_next=(page < total_pages), 
+                           total_pages=total_pages)
 @app.route("/news")
 def news_page():
     page = int(request.args.get('page',1))
@@ -361,4 +365,4 @@ def show_collections():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=2009)
+    app.run(debug=True, port=5000)
