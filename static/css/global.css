@@ -39,5 +39,9 @@ main {
 }
 
 .return-container {
-    padding: 20px 40px;
+    position: fixed;
+    top: 100px; /* تحت الـ navbar */
+    left: 30px;
+    z-index: 90;
 }
+
