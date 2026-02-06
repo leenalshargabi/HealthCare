@@ -7,59 +7,60 @@
 </head>
 <body class="pediatric-theme">
 
-  <div class="dept-navbar">
-    <div class="dept-logo">NovaCare</div>
+<div class="dept-navbar">
+  <div class="dept-logo">NovaCare</div>
 
-    <div class="dept-links">
-        <a href="/">Home</a>
-        <a href="/specialities">Specialities</a>
-        <a href="/about">About</a>
-    </div>
+  <div class="dept-links">
+      <a href="/">Home</a>
+      <a href="/specialities">Specialities</a>
+      <a href="/about">About</a>
+  </div>
 </div>
 
 <button class="return-btn" onclick="goBack()">Return</button>
 
 <div class="hero">
-
   <div class="hero-content">
       <h1>Pediatrics Department</h1>
       <p>Gentle and compassionate healthcare for children and infants.</p>
   </div>
-
   <div class="wave"></div>
-
 </div>
-
 
 <div class="section">
   <h2>Our Pediatricians</h2>
+    <div class="doctors" id="doctor-list">
+      {% for doctor in cDoctors %}
+      <div class="doctor doctor-item">
 
-  <div class="doctors" id="doctor-list">
-  {% for doctor in cDoctors %}
-  <div class="doctor doctor-item">
+  <div class="doctors">
+    {% for doctor in cDoctors %}
+    <div class="doctor doctor-item">
 
-  <div class="doctor-top">
-    <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
+        <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
 
-    <div class="availability available">
-        Available
+        <h3>{{ doctor.fullName }}</h3>
+        <span>{{ doctor.mainSpecialty }}</span>
+        <p>{{ doctor.subSpecialty }}</p>
+        <p>Working Hours: {{ doctor.workingHours.from }} - {{ doctor.workingHours.to }}</p>
+
     </div>
-  </div>
-
-  <h3>{{ doctor.fullName }}</h3>
-  <span>{{doctor.mainSpecialty }}</span>
-  <p>{{doctor.subSpecialty }}</p>
-  <p>{{doctor.workingHours }}</p>
-
-</div>
-
     {% endfor %}
   </div>
 
-  <div class="pagination" id="pagination"></div>
+  <div class="pagination" style="text-align:center; margin:30px;">
+      {% if current > 1 %}
+        <a href="{{ url_for('pediatrics', page=current-1) }}">Previous</a>
+      {% endif %}
+
+      <span style="margin:0 15px;">Page: {{ current }}</span>
+
+      {% if has_next %}
+        <a href="{{ url_for('pediatrics', page=current+1) }}">Next</a>
+      {% endif %}
+  </div>
 
 </div>
 
 </body>
-
 </html>
