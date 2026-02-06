@@ -56,11 +56,11 @@
                 <tr>
                     <td><strong>{{ room.roomNumber }}</strong></td>
                     <td>{{ room.floor }}</td>
-                    <td>{{ room.departmentName }}</td>
+                    <td>{{ room.departmentName  or 'N/A' }}</td>
                     <td>{{ room.roomType or '-' }}</td>
                     <td>
-                        <span class="category {{ room.category|replace('/', '-')|lower }}">
-                            {{ room.category }}
+                        <span class="category {{ (room.category or 'default')|replace('/', '-')|lower }}">
+                            {{ room.category or room.roomName or 'Unassigned' }}
                         </span>
                     </td>
                     <td>
