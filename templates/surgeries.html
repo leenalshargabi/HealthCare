@@ -12,22 +12,46 @@
     <h1>Operation Rooms Schedule</h1>
     <p class="subtitle">Real-time overview of surgical room usage and scheduling</p>
 
+    <!-- FILTER FORM -->
     <form method="GET" class="row g-3 mb-4">
         <div class="col-md-4">
-            <input type="text" name="doctor" class="form-control" placeholder="Search by Doctor Name..." value="{{ q_doctor or '' }}">
+            <input type="text" name="doctor" class="form-control"
+                   placeholder="Search by Doctor Name..."
+                   value="{{ q_doctor or '' }}">
         </div>
+
         <div class="col-md-3">
-            <input type="date" name="date" class="form-control" value="{{ q_date or '' }}">
+            <input type="date" name="date" class="form-control"
+                   value="{{ q_date or '' }}">
         </div>
-        
+
         <input type="hidden" name="order" value="{{ order }}">
-        
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-success">Filter Schedule</button>
-            <a href="/surgeries" class="btn btn-secondary">Reset</a>
+
+        <div class="col-md-4 d-flex gap-2">
+            <button type="submit" class="btn btn-success shadow-sm">
+                <i class="fas fa-filter"></i> Apply Filter
+            </button>
+            <a href="/surgeries" class="btn btn-secondary">
+                Reset
+            </a>
         </div>
     </form>
 
+    <!-- FILTER INFO -->
+    {% if q_doctor or q_date %}
+    <div class="filter-info">
+        Showing filtered results
+        {% if q_doctor %} for doctor <strong>{{ q_doctor }}</strong>{% endif %}
+        {% if q_date %} on <strong>{{ q_date }}</strong>{% endif %}
+    </div>
+    {% endif %}
+
+    <!-- RESULTS COUNT -->
+    <p class="results-count">
+        Total results: <strong>{{ operations|length }}</strong>
+    </p>
+
+    <!-- TABLE -->
     <div class="table-container">
         <table class="rooms-table">
             <thead>
@@ -54,10 +78,7 @@
                     <td>{{ op.doctor.fullName or 'Not Assigned' }}</td>
                     <td>{{ op.medicalDetails.procedure }}</td>
                     <td><span class="room-badge">{{ op.scheduling.room }}</span></td>
-                    <td>
-                        {# Formatting the MongoDB Date Object #}
-                        {{ op.scheduling.startTime.strftime('%Y-%m-%d | %H:%M') }}
-                    </td>
+                    <td>{{ op.scheduling.startTime.strftime('%Y-%m-%d | %H:%M') }}</td>
                     <td>
                         <span class="status-pill {{ op.status }}">
                             {{ op.status|capitalize }}
@@ -66,32 +87,45 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="7" class="text-center">No surgeries scheduled for the selected criteria.</td>
+                    <td colspan="7" class="text-center">
+                        No surgeries scheduled for the selected criteria.
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
+    <!-- PAGINATION -->
     {% if total_pages > 1 or has_next or current > 1 %}
-    <div class="pagination-container mt-4">
+    <div class="pagination-container mt-5">
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
+            <ul class="pagination justify-content-center align-items-center">
+
                 {% if current > 1 %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ current - 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">Previous</a>
+                    <a class="page-link"
+                       href="?page={{ current - 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">
+                        Previous
+                    </a>
                 </li>
                 {% endif %}
-                
+
                 <li class="page-item active">
-                    <span class="page-link">Page {{ current }}</span>
+                    <span class="page-link">
+                        Page {{ current }}
+                    </span>
                 </li>
-                
+
                 {% if has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ current + 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">Next</a>
+                    <a class="page-link"
+                       href="?page={{ current + 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">
+                        Next
+                    </a>
                 </li>
                 {% endif %}
+
             </ul>
         </nav>
     </div>

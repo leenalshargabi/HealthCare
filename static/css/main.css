@@ -1,5 +1,5 @@
 main {
-    padding-top: 90px; /* يعوّض ارتفاع الـ navbar */
+  padding-top: 90px; /* يعوّض ارتفاع الـ navbar */
 }
 
 /* ================= GLOBAL ================= */
@@ -42,6 +42,26 @@ body {
   font-size: 15px;
 }
 
+/* ================= FILTER INFO ================= */
+
+.filter-info {
+  background: #e7f1ff;
+  color: #0d6efd;
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ================= RESULTS COUNT ================= */
+
+.results-count {
+  margin: 10px 0 15px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
 /* ================= FILTER FORM ================= */
 
 .rooms-page form {
@@ -63,7 +83,7 @@ body {
   box-shadow: 0 0 0 3px rgba(13,110,253,0.1);
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 
 .btn {
   border-radius: 10px;
@@ -237,19 +257,36 @@ body {
   color: #155724;
 }
 
-/* ================= PAGINATION ================= */
+/* ================= PAGINATION (ENHANCED) ================= */
 
 .pagination-container {
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.pagination {
+  background: var(--card-bg);
+  padding: 14px 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
 .pagination .page-link {
-  border-radius: 10px !important;
-  margin: 0 5px;
+  min-width: 90px;
+  text-align: center;
+  border-radius: 12px !important;
+  margin: 0 6px;
   border: none;
   background: #e9f0ff;
   color: var(--primary);
   font-weight: 600;
+  transition: 0.25s;
+}
+
+.pagination .page-link:hover {
+  background: var(--primary);
+  color: white;
 }
 
 .pagination .page-item.active .page-link {
