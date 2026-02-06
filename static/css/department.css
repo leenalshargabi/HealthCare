@@ -1,125 +1,137 @@
-/* GENERAL DEPARTMENT STYLE */
+/* GLOBAL */
 
 body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #f4f7fb;
-    scroll-behavior: smooth;
-}
-
-.department-container {
-    padding: 40px;
-    animation: fadeIn 1s ease;
-}
-
-.department-header {
-    font-size: 38px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.department-description {
-    font-size: 18px;
-    max-width: 900px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-/* DOCTOR CARDS */
-
-.doctors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.doctor-card {
-    background: white;
-    padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-}
-
-.doctor-card:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-.doctor-name {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.doctor-info {
-    margin-top: 10px;
-    color: #555;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fb;
 }
 
 /* RETURN BUTTON */
 
 .return-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 18px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* HERO */
+
+.hero {
+  padding: 70px 40px;
+  color: white;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 700px;
+}
+
+/* SECTION */
+
+.section {
+  padding: 50px 40px;
+}
+
+.section h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* DOCTORS GRID */
+
+.doctors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
+}
+
+/* DOCTOR CARD */
+
+.doctor {
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.doctor h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.doctor span {
+  display: block;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.doctor p {
+  margin-top: 6px;
+  color: #555;
 }
 
 /* THEMES */
 
 /* CARDIOLOGY */
-.cardiology-theme {
-    background: #FCE9E9;
-}
-
-.cardiology-theme .department-header { color: #8B1E1E; }
-.cardiology-theme .return-btn { background: #C74D4D; color: white; }
-.cardiology-theme .doctor-card:hover { box-shadow: 0 10px 25px rgba(139,30,30,0.3); }
+.cardiology-theme .hero { background: linear-gradient(135deg,#C74D4D,#8B1E1E); }
+.cardiology-theme .section h2 { color: #8B1E1E; }
+.cardiology-theme .doctor:hover { box-shadow: 0 12px 25px rgba(139,30,30,0.3); }
 
 /* NEUROLOGY */
-.neurology-theme {
-    background: #FFFCFC;
-}
-
-.neurology-theme .department-header { color: #5D3543; }
-.neurology-theme .return-btn { background: #785964; color: white; }
-.neurology-theme .doctor-card:hover { box-shadow: 0 10px 25px rgba(93,53,67,0.3); }
+.neurology-theme .hero { background: linear-gradient(135deg,#785964,#5D3543); }
+.neurology-theme .section h2 { color: #5D3543; }
+.neurology-theme .doctor:hover { box-shadow: 0 12px 25px rgba(93,53,67,0.3); }
 
 /* ORTHOPEDIC */
-.orthopedic-theme {
-    background: #F5F6F7;
-}
-
-.orthopedic-theme .department-header { color: #2B2E33; }
-.orthopedic-theme .return-btn { background: #7B7F85; color: white; }
-.orthopedic-theme .doctor-card:hover { box-shadow: 0 10px 25px rgba(43,46,51,0.3); }
+.orthopedic-theme .hero { background: linear-gradient(135deg,#7B7F85,#2B2E33); }
+.orthopedic-theme .section h2 { color: #2B2E33; }
+.orthopedic-theme .doctor:hover { box-shadow: 0 12px 25px rgba(43,46,51,0.3); }
 
 /* DENTISTRY */
-.dentistry-theme {
-    background: #E8F0F1;
-}
-
-.dentistry-theme .department-header { color: #2F6F73; }
-.dentistry-theme .return-btn { background: #C7E7EC; color: #0D2440; }
-.dentistry-theme .doctor-card:hover { box-shadow: 0 10px 25px rgba(47,111,115,0.3); }
+.dentistry-theme .hero { background: linear-gradient(135deg,#C7E7EC,#2F6F73); }
+.dentistry-theme .section h2 { color: #2F6F73; }
+.dentistry-theme .doctor:hover { box-shadow: 0 12px 25px rgba(47,111,115,0.3); }
 
 /* PEDIATRIC */
-.pediatric-theme {
-    background: #F7F3ED;
+.pediatric-theme .hero { background: linear-gradient(135deg,#DBA1A2,#422B23); }
+.pediatric-theme .section h2 { color: #422B23; }
+.pediatric-theme .doctor:hover { box-shadow: 0 12px 25px rgba(66,43,35,0.3); }
+
+/* ANIMATION */
+
+.doctor {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s forwards;
 }
 
-.pediatric-theme .department-header { color: #422B23; }
-.pediatric-theme .return-btn { background: #DBA1A2; color: white; }
-.pediatric-theme .doctor-card:hover { box-shadow: 0 10px 25px rgba(66,43,35,0.3); }
+.doctor:nth-child(2){ animation-delay: .2s }
+.doctor:nth-child(3){ animation-delay: .3s }
+.doctor:nth-child(4){ animation-delay: .4s }
 
-/* ANIMATIONS */
-
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(30px);}
-    to {opacity:1; transform:translateY(0);}
+@keyframes fadeUp {
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
 }

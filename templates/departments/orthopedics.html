@@ -7,9 +7,9 @@
 </head>
 <body class="orthopedic-theme">
 
-  <button class="return-btn" onclick="goBack()">Return</button>
+<button class="return-btn" onclick="goBack()">Return</button>
 
-<div class="hero" style="background:#7B7F85; color:#fff;">
+<div class="hero">
   <h1>Orthopedics Department</h1>
   <p>Comprehensive care for bones, joints, muscles, and sports injuries.</p>
 </div>
@@ -19,14 +19,17 @@
 
   <div class="doctors">
     {% for doctor in cDoctors %}
-    <div class="doctor" style="background:#fff;">
+    <div class="doctor">
       <h3>{{ doctor.fullName }}</h3>
       <span>{{doctor.mainSpecialty }}</span>
       <p>{{doctor.subSpecialty }}</p>
+      <p>{{doctor.workingHours }}</p>
     </div>
     {% endfor %}
   </div>
+
 </div>
 
 </body>
+
 </html>
