@@ -17,9 +17,9 @@
 <div class="section">
   <h2>Our Cardiologists</h2>
 
-  <div class="doctors">
-    {% for doctor in cDoctors %}
-    <div class="doctor">
+  <div class="doctors" id="doctor-list">
+  {% for doctor in cDoctors %}
+  <div class="doctor doctor-item">
       <h3>{{ doctor.fullName }}</h3>
       <span>{{doctor.mainSpecialty }}</span>
       <p>{{doctor.subSpecialty }}</p>
@@ -27,6 +27,8 @@
     </div>
     {% endfor %}
   </div>
+
+  <div class="pagination" id="pagination"></div>
 
 </div>
 

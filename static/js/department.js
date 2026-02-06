@@ -30,3 +30,45 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// PAGINATION SYSTEM
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const doctors = document.querySelectorAll(".doctor-item");
+  const pagination = document.getElementById("pagination");
+
+  const perPage = 6;
+  let currentPage = 1;
+
+  function showPage(page) {
+    currentPage = page;
+
+    doctors.forEach((doc, index) => {
+      doc.style.display =
+        index >= (page - 1) * perPage && index < page * perPage
+          ? "block"
+          : "none";
+    });
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(doctors.length / perPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.innerText = i;
+
+      if (i === currentPage) btn.classList.add("active");
+
+      btn.addEventListener("click", () => showPage(i));
+      pagination.appendChild(btn);
+    }
+  }
+
+  showPage(1);
+});
