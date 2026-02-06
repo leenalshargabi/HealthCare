@@ -19,7 +19,7 @@ def pages (pagNum,Collname):
     has_next =total>(page*per_page)
     return allItems,has_next ,page
 
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://localhost:2009/")
 db = client["healthcare_db"]
 users = db["users"]
 appointments = db["appointments"]
@@ -36,17 +36,18 @@ emergency_rooms = db["rooms"]
 # ================= HOME =================
 @app.route("/")
 def home():
+    current_role = session.get("role")
+    
     total_patients = operations_coll.count_documents({}) 
-
     total_rooms = rooms_coll.count_documents({})
-
     total_er = rooms_coll.count_documents({"category": "Service/ER"})
 
     return render_template("index.html", 
                            patients_count=total_patients, 
                            rooms_count=total_rooms, 
-                           er_count=total_er)
-
+                           er_count=total_er,
+                           role=current_role)
+    
 # ================= MAIN PAGES =================
 @app.route("/specialities")
 def specialities():
@@ -61,6 +62,8 @@ def about():
 # SURGERIES PAGE
 @app.route("/surgeries")
 def surgeries():
+    if session.get("role") != "doctor":
+        return redirect("/")
     page = int(request.args.get('page', 1))
     per_page = 10
     q_doctor = request.args.get('doctor', '').strip()
@@ -112,6 +115,8 @@ def surgeries():
 # ROOMS PAGE
 @app.route("/rooms")
 def rooms():
+    if session.get("role") != "doctor":
+        return redirect("/")
     page = int(request.args.get('page', 1))
     per_page = 10
     q_room = request.args.get('roomNumber', '').strip()
@@ -156,6 +161,8 @@ def rooms():
 # EMERGENCY ROOMS 
 @app.route("/EmergencyRooms")
 def emergencyrooms():
+    if session.get("role") != "doctor":
+        return redirect("/")
     page = int(request.args.get('page', 1))
     per_page = 10
     query = {"category": "Service/ER"} 
@@ -244,42 +251,51 @@ def patient_login():
            
     return render_template("auth/patient_login.html")
 
+#login doctor page
 @app.route("/login/doctor", methods=["GET", "POST"])
 def doctor_login():
     if request.method == "POST":
-        email = request.form["email"]
-        password_input = request.form["password"]
-        user = users.find_one({"email": email, "role": "doctor"})
+        email_input = request.form.get("email").strip().lower()
+        password_input = request.form.get("password")
+        
+        user = users.find_one({"email": email_input, "role": "doctor"})
+        
         if user:
-            if check_password_hash(user["passwordHash"], password_input) or password_input == user["passwordHash"]:
+            stored_hash = user.get("passwordHash")
+            
+            if check_password_hash(stored_hash, password_input) or stored_hash == password_input:
                 session["user_id"] = str(user["_id"])
                 session["role"] = "doctor"
-                session["name"] = user.get("name", "doctor")
-                return redirect("/")
+                session["name"] = user.get("fullName", "Doctor")
+                return redirect("/dashboard/doctor")
             else:
-                return "Invalid password. Please try again."
+                return "Password is not correct."
         else:
-            return "Email not found. Please register first."
-
+            return "Doctor account not found"
+            
     return render_template("auth/doctor_login.html")
-
+#login manager page
 @app.route("/login/manager", methods=["GET", "POST"])
 def manager_login():
     if request.method == "POST":
-        email = request.form["email"]
-        password_input = request.form["password"]
-        user = users.find_one({"email": email, "role": "manager"})
+        email_input = request.form.get("email").strip().lower()
+        password_input = request.form.get("password")
+        
+        user = users.find_one({"email": email_input, "role": "admin"})
+        
         if user:
-            if check_password_hash(user["password"], password_input) or password_input == user["password"]:
+            if check_password_hash(user.get("passwordHash"), password_input):
                 session["user_id"] = str(user["_id"])
-                session["role"] = "manager"
-                session["name"] = user.get("name", "manager")
-                return redirect("/")
+                session["role"] = "admin"
+                session["name"] = user.get("fullName", "Admin")
+                return redirect("/dashboard/manager")
             else:
-                return "Invalid password. Please try again."
+                return "Password is not correct."
         else:
-            return "Email not found. Please register first."
+            return "Manager account not found"
+            
     return render_template("auth/manager_login.html")
+#Signup Page
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -321,7 +337,6 @@ def book_appointment():
         if not assigned_time:
             return "All slots for today are fully booked. Please try tomorrow."
 
-        # 3. تنفيذ الحجز في كولكشن appointments
         appointments.insert_one({
             "patient_id": session["user_id"],
             "doctor_id": str(doctor["_id"]),
@@ -427,8 +442,18 @@ def patient_dashboard():
 
 @app.route("/dashboard/doctor")
 def doctor_dashboard():
-    return render_template("dashboards/doctor_dashboard.html")
+    if session.get("role") != "doctor":
+        return redirect("/login/doctor")
 
+    total_patients = operations_coll.count_documents({}) 
+    total_rooms = rooms_coll.count_documents({})
+    total_er = rooms_coll.count_documents({"category": "Service/ER"})
+
+    return render_template("dashboards/doctor_dashboard.html", 
+                           role='doctor', 
+                           patients_count=total_patients, 
+                           rooms_count=total_rooms, 
+                           er_count=total_er)
 # ================= ADMIN =================
 @app.route("/dashboard/manager")
 def manager_dashboard():
