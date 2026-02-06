@@ -159,7 +159,7 @@ def rooms():
                            order=order)
 
 # EMERGENCY ROOMS 
-@app.route("/EmergencyRooms")
+@app.route("/EmergencyRoomspython")
 def emergencyrooms():
     if session.get("role") != "doctor":
         return redirect("/")
@@ -362,7 +362,7 @@ def cardiology():
     page = int(request.args.get('page',1))
     skip_among=(page-1)*6
     cardiology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents({})
+    total=doctors.count_documents(query)
     has_next =total>(page*6)
     return render_template("departments/cardiology.html", cDoctors=cardiology_doctors,current=page,has_next= has_next)
 
@@ -374,7 +374,7 @@ def neurology():
     page = int(request.args.get('page',1))
     skip_among=(page-1)*6
     neurology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents({})
+    total=doctors.count_documents(query)
     has_next =total>(page*6)
 
     return render_template("departments/neurology.html", cDoctors=neurology_doctors,current=page,has_next= has_next)
@@ -388,7 +388,7 @@ def orthopedic():
     page = int(request.args.get('page',1))
     skip_among=(page-1)*6
     orthopedics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents({})
+    total=doctors.count_documents(query)
     has_next =total>(page*6)
     return render_template("departments/orthopedics.html", cDoctors=orthopedics_doctors,current=page,has_next= has_next)
 
@@ -401,7 +401,7 @@ def dental():
     page = int(request.args.get('page',1))
     skip_among=(page-1)*6
     dentistry_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents({})
+    total=doctors.count_documents(query)
     has_next =total>(page*6)
     return render_template("departments/dentistry.html", cDoctors=dentistry_doctors,current=page,has_next= has_next)
 
@@ -414,7 +414,7 @@ def pediatrics():
     page = int(request.args.get('page',1))
     skip_among=(page-1)*6
     pediatrics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents({})
+    total=doctors.count_documents(query)
     has_next =total>(page*6)
     return render_template("departments/pediatrics.html", cDoctors=pediatrics_doctors,current=page,has_next= has_next)
 
