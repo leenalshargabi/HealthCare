@@ -8,20 +8,28 @@
 
 {% block content %}
 
+<!-- Full Width Header -->
+<div class="top-header">
+    <h1>News & Updates</h1>
+    <p>Stay informed about the latest hospital announcements</p>
+</div>
+
 <div class="page-container">
 
-    <!-- Filter Bar -->
+    <!-- Filter -->
     <div class="filter-bar">
         <form method="GET" action="{{ url_for('news_page') }}" class="search-form">
             <div class="search-box">
                 <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="form-control">
             </div>
+
             <div class="sort-box">
                 <select name="sort" class="form-select">
                     <option value="new" {% if sort_type == 'new' %}selected{% endif %}>Most Recent</option>
                     <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest First</option>
                 </select>
             </div>
+
             <button type="submit" class="filter-btn">Apply</button>
             {% if query_text or sort_type != 'new' %}
                 <a href="{{ url_for('news_page') }}" class="btn-clear">Clear</a>
@@ -36,9 +44,11 @@
             <span class="category-tag">{{ n.category }}</span>
             <h3>{{ n.title }}</h3>
             <p class="summary">{{ n.summary }}</p>
+            <p class="full-text">{{ n.content }}</p>
+            <button class="more-btn">Read More</button>
             <div class="news-footer">
                 <span class="author">By: {{ n.author }}</span>
-                <span class="date">{{ n.publishDate.strftime('%Y-%m-%d') if n.publishDate else '' }}</span>
+                <span class="date">{{ n.publishDate }}</span>
             </div>
         </div>
         {% else %}
@@ -50,19 +60,19 @@
 
     <!-- Pagination -->
     <div class="pagination">
+        {% set total_pages = (news.count_documents({}) // 10) + (1 if news.count_documents({}) % 10 > 0 else 0) %}
+        {% set start_page = current - 3 if current > 3 else 1 %}
+        {% set end_page = current + 3 if current + 3 <= total_pages else total_pages %}
+
         {% if current > 1 %}
         <a href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Previous</a>
         {% endif %}
 
-        {% set start_page = current - 3 if current - 3 > 1 else 1 %}
-        {% set end_page = current + 3 %}
-        {% for i in range(start_page, end_page + 1) %}
-            {% if i <= (total // 10) + 1 %}
-                {% if i == current %}
-                    <button class="active">{{ i }}</button>
-                {% else %}
-                    <a href="{{ url_for('news_page', page=i, sort=sort_type, q=query_text) }}">{{ i }}</a>
-                {% endif %}
+        {% for p in range(start_page, end_page+1) %}
+            {% if p == current %}
+                <button class="active">{{ p }}</button>
+            {% else %}
+                <a href="{{ url_for('news_page', page=p, sort=sort_type, q=query_text) }}">{{ p }}</a>
             {% endif %}
         {% endfor %}
 
@@ -73,4 +83,8 @@
 
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/news.js') }}"></script>
 {% endblock %}
