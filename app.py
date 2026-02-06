@@ -169,17 +169,36 @@ def emergencyrooms():
     return render_template("EmergencyRooms.html", rooms=rooms_data, 
                            current=page, has_next=(page < total_pages), 
                            total_pages=total_pages)
+
+#NEWS PAGE
 @app.route("/news")
 def news_page():
-    page = int(request.args.get('page',1))
-    # per_page = 10
-    skip_among=(page-1)*10
-    allItem = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
-    total=news.count_documents({})
-    has_next =total>(page*10)
-    # nextpage=pages (6,news)
-    # return render_template("news.html",Pnews=nextpage.allItem,current=nextpage.page,has_next=nextpage.has_next)
-    return render_template("news.html",Pnews=allItem,current=page,has_next= has_next)
+    page = int(request.args.get('page', 1))
+    sort_type = request.args.get('sort', 'new')
+    query_text = request.args.get('q', '').strip() 
+    
+    direction = -1 if sort_type == 'new' else 1
+    skip_among = (page - 1) * 10
+    
+    query = {}
+    if query_text:
+        query["$or"] = [
+            {"title": {"$regex": query_text, "$options": "i"}},
+            {"content": {"$regex": query_text, "$options": "i"}},
+            {"category": {"$regex": query_text, "$options": "i"}}
+        ]
+    
+    allItem = list(news.find(query).sort('publishDate', direction).skip(skip_among).limit(10))
+    
+    total = news.count_documents(query)
+    has_next = total > (page * 10)
+    
+    return render_template("news.html", 
+                           Pnews=allItem, 
+                           current=page, 
+                           has_next=has_next, 
+                           sort_type=sort_type,
+                           query_text=query_text)
 
 # ================= AUTH =================
 # @app.route("/choose-role")
