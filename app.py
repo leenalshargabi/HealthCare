@@ -8,9 +8,17 @@ app = Flask(__name__)
 app.secret_key = "super-secret"
 
 # 
+def pages (pagNum,Collname):
+    page = int(request.args.get('page',1))
+    per_page = pagNum
+    skip_among=(page-1)*per_page
+    allItems = list(Collname.find().sort('_id',-1).skip(skip_among).limit(per_page))
+    total=Collname.count_documents({})
+    has_next =total>(page*per_page)
+    return allItems,has_next ,page
+
 client = MongoClient("mongodb://localhost:2009/")
 db = client["healthcare_db"]
-
 users = db["users"]
 appointments = db["appointments"]
 patients = db["patients"]
@@ -36,17 +44,125 @@ def specialities():
 def about():
     return render_template("about.html")
 
-#=====================================
+
+
+@app.route("/surgeries")
+def surgeries():
+    operations = [
+        {
+            "operationCode": "OP-1001",
+            "procedure": "Bypass Surgery",
+            "operationRoom": "OR-3",
+            "startTime": "2026-02-04 10:45",
+            "endTime": "2026-02-04 13:45",
+            "status": "scheduled"
+        }
+    ]
+    return render_template("surgeries.html", operations=operations)
+
+#========================
+@app.route("/rooms")
+def rooms():
+    rooms_data = [
+        {
+            "roomNumber": "ADM-600",
+            "floor": 6,
+            "departmentName": "General Management",
+            "roomType": "Office",
+            "category": "Offices/Clinics",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": True,
+                "role": "General Director"
+            }
+        }
+    ]
+    return render_template("rooms.html", rooms=rooms_data)
+
+#=========================
+@app.route("/EmergencyRooms")
+def emergencyrooms():
+    EmergencyRooms_data = [
+        {
+            "roomNumber": "ER-101",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Full Emergency Kit",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-102",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "available",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Cardiac Monitor",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-103",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "occupied",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Trauma Kit",
+                "priorityLevel": "High"
+            }
+        },
+        {
+            "roomNumber": "ER-104",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "available",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Respiratory Support",
+                "priorityLevel": "Medium"
+            }
+        },
+        {
+            "roomNumber": "ER-105",
+            "floor": 1,
+            "departmentName": "Emergency Department",
+            "roomType": "Emergency Room",
+            "category": "Emergency Rooms",
+            "status": "maintenance",
+            "metadata": {
+                "isOffice": False,
+                "equipment": "Under Maintenance",
+                "priorityLevel": "High"
+            }
+        }
+    ]
+    return render_template("EmergencyRooms.html", rooms=EmergencyRooms_data)
+
 
 @app.route("/news")
 def news_page():
     page = int(request.args.get('page',1))
     # per_page = 10
     skip_among=(page-1)*10
-    allNews = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
+    allItem = list(news.find().sort('_id',-1).skip(skip_among).limit(10))
     total=news.count_documents({})
     has_next =total>(page*10)
-    return render_template("news.html",Pnews=allNews,current=page,has_next=has_next)
+    # nextpage=pages (6,news)
+    # return render_template("news.html",Pnews=nextpage.allItem,current=nextpage.page,has_next=nextpage.has_next)
+    return render_template("news.html",Pnews=allItem,current=page,has_next= has_next)
 
 # ================= AUTH =================
 # @app.route("/choose-role")
@@ -65,8 +181,9 @@ def logout():
 def patient_login():
     if request.method == "POST":
         user = users.find_one({"email": request.form["email"], "role": "patient"})
-        check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
-        if user and  check:
+        # check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
+        if user:
+            password_input=request.form["password"]
             session["user_id"] = str(user["_id"])
             session["role"] = "patient"
             return redirect("/book-appointment")
@@ -102,7 +219,7 @@ def signup():
             "role": "patient",
             "created_at": datetime.now()
         })
-        return redirect("/login")
+        return redirect("/login/patient")
     return render_template("auth/signup.html")
 
 
@@ -123,7 +240,7 @@ def book_appointment():
         })
         return redirect("/dashboard/patient")
 
-    return render_template("book_appointment.html")
+    return render_template("index.html")
 
 
 # ================= DEPARTMENTS =================
@@ -143,12 +260,9 @@ def neurology():
     query = {
    
   'mainSpecialty': {
-    '$in': [
-        'Neurologist', 'Epileptologist'
-    ]
-}
-
-}
+    '$in': ['Neurologist', 'Epileptologist']
+                    }
+            }
     neurology_doctors = list(doctors.find(query))
     return render_template("departments/neurology.html", cDoctors=neurology_doctors)
 
@@ -240,5 +354,6 @@ def show_collections():
     cols = db.list_collection_names()
     return {"collections": cols}
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=2009)

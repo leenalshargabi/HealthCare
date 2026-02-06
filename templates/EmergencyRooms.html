@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Emergency Rooms{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="rooms-page">
+  <h1>Emergency Rooms Status</h1>
+  <p class="subtitle">Real-time monitoring of emergency room availability and status</p>
+
+  <div class="table-container">
+    <table class="rooms-table">
+      <thead>
+        <tr>
+          <th>Room Number</th>
+          <th>Floor</th>
+          <th>Department</th>
+          <th>Room Type</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Equipment</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for room in rooms %}
+        <tr>
+          <td>
+            <strong>{{ room.roomNumber }}</strong>
+          </td>
+          <td>{{ room.floor }}</td>
+          <td>{{ room.departmentName }}</td>
+          <td>{{ room.roomType }}</td>
+          <td>
+            <span class="category {{ room.category|replace(' ', '-')|lower }}">
+              {{ room.category }}
+            </span>
+          </td>
+          <td>
+            <span class="status {{ room.status }}">
+              {{ room.status.capitalize() }}
+            </span>
+          </td>
+          <td>{{ room.metadata.equipment }}</td>
+          <td>
+            <span class="priority priority-{{ room.metadata.priorityLevel|lower }}">
+              {{ room.metadata.priorityLevel }}
+            </span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Operation Rooms{% endblock %}
+{% block title %}Rooms Management{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
@@ -9,39 +9,56 @@
 {% block content %}
 
 <section class="rooms-page">
-  <h1>Operation Rooms Schedule</h1>
-  <p class="subtitle">Real-time overview of surgical room usage</p>
+  <h1>Hospital Rooms Management</h1>
+  <p class="subtitle">Comprehensive overview of all hospital rooms and their status</p>
 
   <div class="table-container">
     <table class="rooms-table">
       <thead>
         <tr>
-          <th>Operation Code</th>
-          <th>Procedure</th>
-          <th>Operation Room</th>
-          <th>Start Time</th>
-          <th>End Time</th>
+          <th>Room Number</th>
+          <th>Floor</th>
+          <th>Department</th>
+          <th>Room Type</th>
+          <th>Category</th>
           <th>Status</th>
+          <th>Details</th>
         </tr>
       </thead>
 
       <tbody>
-        {% for op in operations %}
+        {% for room in rooms %}
         <tr>
-          <td>{{ op.operationCode }}</td>
-          <td>{{ op.procedure }}</td>
-          <td>{{ op.operationRoom }}</td>
-          <td>{{ op.startTime }}</td>
-          <td>{{ op.endTime }}</td>
           <td>
-            <span class="status {{ op.status }}">
-              {{ op.status.capitalize() }}
+            <strong>{{ room.roomNumber }}</strong>
+          </td>
+          <td>{{ room.floor }}</td>
+          <td>{{ room.departmentName }}</td>
+          <td>{{ room.roomType }}</td>
+          <td>
+            <span class="category {{ room.category|replace('/', '-')|lower }}">
+              {{ room.category }}
             </span>
+          </td>
+          <td>
+            <span class="status {{ room.status }}">
+              {{ room.status.capitalize() }}
+            </span>
+          </td>
+          <td>
+            {% if room.metadata.isOffice %}
+            <span class="office-badge">
+              {{ room.metadata.role }}
+            </span>
+            {% else %}
+            <span class="room-badge">
+              Room
+            </span>
+            {% endif %}
           </td>
         </tr>
         {% endfor %}
       </tbody>
-
     </table>
   </div>
 </section>
