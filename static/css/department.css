@@ -252,6 +252,9 @@ body {
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
+  width: 70px;
+  text-align: center;
+  margin-left: 65%;
 }
 
 .available {

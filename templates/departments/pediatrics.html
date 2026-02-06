@@ -29,35 +29,31 @@
 
 <div class="section">
   <h2>Our Pediatricians</h2>
-    <div class="doctors" id="doctor-list">
-      {% for doctor in cDoctors %}
-      <div class="doctor doctor-item">
 
-  <div class="doctors">
+  <div class="doctors" id="doctor-list">
     {% for doctor in cDoctors %}
     <div class="doctor doctor-item">
-
-        <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
-
-        <h3>{{ doctor.fullName }}</h3>
-        <span>{{ doctor.mainSpecialty }}</span>
-        <p>{{ doctor.subSpecialty }}</p>
-        <p>Working Hours: {{ doctor.workingHours.from }} - {{ doctor.workingHours.to }}</p>
-
-    </div>
-    {% endfor %}
+ <div >
+  <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
+  <div class="availability available">Available</div>
+    <h3>{{ doctor.fullName }}</h3>
+    <span>{{doctor.mainSpecialty }}</span>
+    <p>{{doctor.subSpecialty }}</p>
+    <p>workingHours:{{doctor.workingHours.from }}- {{doctor.workingHours.to }} </p>
+  </div>
+</div>
+ 
+      {% endfor %}
   </div>
 
-  <div class="pagination" style="text-align:center; margin:30px;">
-      {% if current > 1 %}
-        <a href="{{ url_for('pediatrics', page=current-1) }}">Previous</a>
-      {% endif %}
-
-      <span style="margin:0 15px;">Page: {{ current }}</span>
-
-      {% if has_next %}
-        <a href="{{ url_for('pediatrics', page=current+1) }}">Next</a>
-      {% endif %}
+  <div class="pagination"  id="pagination">
+ {% if current > 1 %}
+   <a href="{{ url_for('cardiology', page=current-1) }}">Previous</a>
+ {% endif %}
+ <span style="margin:0 15px;">Page: {{ current }}</span>
+ {% if has_next %}
+   <a href="{{ url_for('cardiology', page=current+1) }}">Next</a>
+ {% endif %}
   </div>
 
 </div>
