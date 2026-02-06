@@ -1,76 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>News & Updates</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<!-- Full Width Header -->
-<div class="top-header">
-    <h1>News & Updates</h1>
-    <p>Stay informed about the latest hospital announcements</p>
-</div>
+{% block title %}News & Updates{% endblock %}
 
-<div class="page-container">
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+{% endblock %}
 
-    <!-- Filter -->
+{% block content %}
+
+<section class="news-hero">
+    <div class="hero-overlay"></div>
+    <h1>Hospital News & Updates</h1>
+    <p>Stay informed about the latest medical advancements and hospital announcements</p>
+</section>
+
+
+<section class="news-container">
+
+    <!-- FILTER BAR -->
     <div class="filter-bar">
-    <form method="GET" action="{{ url_for('news_page') }}" class="search-form">
-        <div class="search-box">
-            <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="form-control">
-        </div>
+        <form method="GET" action="{{ url_for('news_page') }}" class="search-form">
 
-        <div class="sort-box">
-            <select name="sort" class="form-select">
+            <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="search-input">
+
+            <select name="sort" class="sort-select">
                 <option value="new" {% if sort_type == 'new' %}selected{% endif %}>Most Recent</option>
-                <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest First</option>
+                <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest</option>
             </select>
-        </div>
 
-        <button type="submit" class="filter-btn">Apply</button>
-        {% if query_text or sort_type != 'new' %}
-            <a href="{{ url_for('news_page') }}" class="btn-clear">Clear</a>
+            <button type="submit" class="apply-btn">Apply</button>
+
+            {% if query_text or sort_type != 'new' %}
+                <a href="{{ url_for('news_page') }}" class="clear-btn">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+
+
+    <!-- NEWS GRID -->
+    <div class="news-grid">
+
+        {% for n in Pnews %}
+        <div class="news-card">
+
+            <span class="category">{{ n.category }}</span>
+
+            <h3>{{ n.title }}</h3>
+
+            <p class="summary">{{ n.summary }}</p>
+
+            <div class="news-footer">
+                <span>{{ n.author }}</span>
+                <span>{{ n.publishDate }}</span>
+            </div>
+
+        </div>
+        {% else %}
+        <div class="no-results">
+            No news found matching "{{ query_text }}"
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+
+        {% if current > 1 %}
+        <a class="page-btn" href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Prev</a>
         {% endif %}
-    </form>
-</div>
 
-<div class="news-grid">
-    {% for n in Pnews %}
-    <div class="news-card">
-        <span class="category-tag">{{ n.category }}</span>
-        <h3>{{ n.title }}</h3>
-        <p class="summary">{{ n.summary }}</p>
-        <div class="news-footer">
-            <span class="author">By: {{ n.author }}</span>
-            <span class="date">{{ n.publishDate }}</span>
-        </div>
+        <span class="current-page">Page {{ current }}</span>
+
+        {% if has_next %}
+        <a class="page-btn" href="{{ url_for('news_page', page=current+1, sort=sort_type, q=query_text) }}">Next</a>
+        {% endif %}
+
     </div>
-    {% else %}
-    <div class="no-results">
-        <p>No news found matching "{{ query_text }}"</p>
-    </div>
-    {% endfor %}
-</div>
 
-<div class="pagination">
-    {% if current > 1 %}
-    <a href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Previous</a>
-    {% endif %}
+</section>
 
-    <span>Page {{ current }}</span>
+{% endblock %}
 
-    {% if has_next %}
-    <a href="{{ url_for('news_page', page=current+1, sort=sort_type, q=query_text) }}">Next</a>
-    {% endif %}
-</div>
-    <!-- Pagination -->
-    <!-- <div id="pagination" class="pagination"></div> -->
-    <!-- <div class="more-pagination-container"> -->
-        <!-- <button id="morePagesBtn" onclick="loadMorePages()">More</button> -->
-    <!-- </div> -->
 
-</div>
-</body>
-</html>
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/news.js') }}"></script>
+{% endblock %}

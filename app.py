@@ -19,7 +19,7 @@ def pages (pagNum,Collname):
     has_next =total>(page*per_page)
     return allItems,has_next ,page
 
-client = MongoClient("mongodb://localhost:2009/")
+client = MongoClient("mongodb://localhost:27017/")
 db = client["healthcare_db"]
 users = db["users"]
 appointments = db["appointments"]
@@ -170,41 +170,54 @@ def emergencyrooms():
                            current=page, has_next=(page < total_pages), 
                            total_pages=total_pages)
 
-#NEWS PAGE
+# NEWS PAGE
 @app.route("/news")
 def news_page():
+
     page = int(request.args.get('page', 1))
     sort_type = request.args.get('sort', 'new')
-    query_text = request.args.get('q', '').strip() 
-    
+    query_text = request.args.get('q', '').strip()
+
+    # sort direction
     direction = -1 if sort_type == 'new' else 1
-    skip_among = (page - 1) * 10
-    
+
+    # pagination
+    per_page = 6
+    skip_amount = (page - 1) * per_page
+
+    # search query
     query = {}
+
     if query_text:
         query["$or"] = [
             {"title": {"$regex": query_text, "$options": "i"}},
-            {"content": {"$regex": query_text, "$options": "i"}},
-            {"category": {"$regex": query_text, "$options": "i"}}
+            {"summary": {"$regex": query_text, "$options": "i"}},
+            {"category": {"$regex": query_text, "$options": "i"}},
+            {"author": {"$regex": query_text, "$options": "i"}}
         ]
-    
-    allItem = list(news.find(query).sort('publishDate', direction).skip(skip_among).limit(10))
-    
+
+    # fetch news
+    all_items = list(
+        news.find(query)
+        .sort("publishDate", direction)
+        .skip(skip_amount)
+        .limit(per_page)
+    )
+
     total = news.count_documents(query)
-    has_next = total > (page * 10)
-    
-    return render_template("news.html", 
-                           Pnews=allItem, 
-                           current=page, 
-                           has_next=has_next, 
-                           sort_type=sort_type,
-                           query_text=query_text)
+    has_next = total > (page * per_page)
+
+    return render_template(
+        "news.html",
+        Pnews=all_items,
+        current=page,
+        has_next=has_next,
+        sort_type=sort_type,
+        query_text=query_text
+    )
+
 
 # ================= AUTH =================
-# @app.route("/choose-role")
-# def choose_role():
-#     return render_template("auth/choose_role.html")
-
 @app.route("/login")
 def choose_role():
     return render_template("auth/choose_role.html")
@@ -212,39 +225,61 @@ def choose_role():
 def logout():
     session.clear()
     return redirect("/")
-
 @app.route("/login/patient", methods=["GET", "POST"])
 def patient_login():
     if request.method == "POST":
-        user = users.find_one({"email": request.form["email"], "role": "patient"})
-        # check=check_password_hash(user["password"], request.form["password"]) or request.form["password"] == user["password"]
+        email = request.form["email"]
+        password_input = request.form["password"]
+        user = users.find_one({"email": email, "role": "patient"})
         if user:
-            password_input=request.form["password"]
-            session["user_id"] = str(user["_id"])
-            session["role"] = "patient"
-            return redirect("/book-appointment")
+            if check_password_hash(user["password"], password_input) or password_input == user["password"]:
+                session["user_id"] = str(user["_id"])
+                session["role"] = "patient"
+                session["name"] = user.get("name", "Patient")
+                return redirect("/")
+            else:
+                return "Invalid password. Please try again."
+        else:
+            return "Email not found. Please register first."
+           
     return render_template("auth/patient_login.html")
 
 @app.route("/login/doctor", methods=["GET", "POST"])
 def doctor_login():
     if request.method == "POST":
-        user = users.find_one({"email": request.form["email"], "role": "doctor"})
-        if user and check_password_hash(user["password"], request.form["password"]):
-            session["user_id"] = str(user["_id"])
-            session["role"] = "doctor"
-            return redirect("/dashboard/doctor")
+        email = request.form["email"]
+        password_input = request.form["password"]
+        user = users.find_one({"email": email, "role": "doctor"})
+        if user:
+            if check_password_hash(user["passwordHash"], password_input) or password_input == user["passwordHash"]:
+                session["user_id"] = str(user["_id"])
+                session["role"] = "doctor"
+                session["name"] = user.get("name", "doctor")
+                return redirect("/")
+            else:
+                return "Invalid password. Please try again."
+        else:
+            return "Email not found. Please register first."
+
     return render_template("auth/doctor_login.html")
 
 @app.route("/login/manager", methods=["GET", "POST"])
 def manager_login():
     if request.method == "POST":
-        user = users.find_one({"email": request.form["email"], "role": "manager"})
-        if user and check_password_hash(user["password"], request.form["password"]):
-            session["user_id"] = str(user["_id"])
-            session["role"] = "manager"
-            return redirect("/dashboard/manager")
+        email = request.form["email"]
+        password_input = request.form["password"]
+        user = users.find_one({"email": email, "role": "manager"})
+        if user:
+            if check_password_hash(user["password"], password_input) or password_input == user["password"]:
+                session["user_id"] = str(user["_id"])
+                session["role"] = "manager"
+                session["name"] = user.get("name", "manager")
+                return redirect("/")
+            else:
+                return "Invalid password. Please try again."
+        else:
+            return "Email not found. Please register first."
     return render_template("auth/manager_login.html")
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -266,78 +301,107 @@ def book_appointment():
         return redirect("/login")
 
     if request.method == "POST":
+        dept = request.form["department"]
+        available_slots = ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM"]
+        today_date = datetime.now().strftime("%Y-%m-%d")
+       
+        doctor = doctors.find_one({"mainSpecialty": {"$regex": dept, "$options": "i"}})
+       
+        if not doctor:
+            return "No doctor available in this department currently."
+
+        booked_slots = appointments.distinct("time", {"doctor_id": str(doctor["_id"]), "date": today_date})
+       
+        assigned_time = None
+        for slot in available_slots:
+            if slot not in booked_slots:
+                assigned_time = slot
+                break
+       
+        if not assigned_time:
+            return "All slots for today are fully booked. Please try tomorrow."
+
+        # 3. تنفيذ الحجز في كولكشن appointments
         appointments.insert_one({
             "patient_id": session["user_id"],
-            "department": request.form["department"],
-            "date": request.form["date"],
-            "time": request.form["time"],
+            "doctor_id": str(doctor["_id"]),
+            "doctor_name": doctor["fullName"],
+            "department": dept,
+            "date": today_date,
+            "time": assigned_time,
             "status": "pending",
             "created_at": datetime.now()
         })
         return redirect("/dashboard/patient")
 
-    return render_template("index.html")
+    return render_template("book_appointment.html")
 
 
 # ================= DEPARTMENTS =================
 @app.route("/department/cardiology")
 def cardiology():
-    query = {
-  "mainSpecialty": {'$in':[
+    query = {  "mainSpecialty": {'$in':[
       "Interventional Cardiologist",'Heart Failure Specialist',
-  'Interventional Cardiologist',
-  ] }
-}
-    cardiology_doctors = list(doctors.find(query))
-    return render_template("departments/cardiology.html", cDoctors=cardiology_doctors)
+  'Interventional Cardiologist',  ] }}
+    
+    page = int(request.args.get('page',1))
+    skip_among=(page-1)*6
+    cardiology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
+    total=doctors.count_documents({})
+    has_next =total>(page*6)
+    return render_template("departments/cardiology.html", cDoctors=cardiology_doctors,current=page,has_next= has_next)
 
 @app.route("/department/neurology")
 def neurology():
-    query = {
-   
-  'mainSpecialty': {
-    '$in': ['Neurologist', 'Epileptologist']
-                    }
-            }
-    neurology_doctors = list(doctors.find(query))
-    return render_template("departments/neurology.html", cDoctors=neurology_doctors)
+    query = {  'mainSpecialty': {
+    '$in': ['Neurologist', 'Epileptologist']                    }            }
+    
+    page = int(request.args.get('page',1))
+    skip_among=(page-1)*6
+    neurology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
+    total=doctors.count_documents({})
+    has_next =total>(page*6)
+
+    return render_template("departments/neurology.html", cDoctors=neurology_doctors,current=page,has_next= has_next)
 
 @app.route("/department/orthopedics")
 def orthopedic():
-    query = {
-    'mainSpecialty': {
+    query = {    'mainSpecialty': {
         '$in': [
-            'Spine Surgeon',  'Orthopedic Surgeon',
-        ]
-    }
-}
-    orthopedics_doctors = list(doctors.find(query))
-    return render_template("departments/orthopedics.html", cDoctors=orthopedics_doctors)
+            'Spine Surgeon',  'Orthopedic Surgeon',        ]    }}
+    
+    page = int(request.args.get('page',1))
+    skip_among=(page-1)*6
+    orthopedics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
+    total=doctors.count_documents({})
+    has_next =total>(page*6)
+    return render_template("departments/orthopedics.html", cDoctors=orthopedics_doctors,current=page,has_next= has_next)
 
 @app.route("/department/dentistry")
 def dental():
-    query = {
-  'mainSpecialty': {
+    query = { 'mainSpecialty': {
     '$in': [
-        'Periodontist', 'Dentist',
-    ]
-}
-}
-    dentistry_doctors = list(doctors.find(query))
-    return render_template("departments/dentistry.html", cDoctors=dentistry_doctors)
+        'Periodontist', 'Dentist', ]}}
+
+    page = int(request.args.get('page',1))
+    skip_among=(page-1)*6
+    dentistry_doctors = list(doctors.find(query).skip(skip_among).limit(6))
+    total=doctors.count_documents({})
+    has_next =total>(page*6)
+    return render_template("departments/dentistry.html", cDoctors=dentistry_doctors,current=page,has_next= has_next)
 
 @app.route("/department/pediatrics")
 def pediatrics():
-    query = {
-  'mainSpecialty': {
+    query = {  'mainSpecialty': {
     '$in': [
         'Pediatrician', 'Pediatric Cardiologist',
-  'Pediatric Neurologist'
-    ]
-}
-}
-    pediatrics_doctors = list(doctors.find(query))
-    return render_template("departments/pediatrics.html", cDoctors=pediatrics_doctors)
+  'Pediatric Neurologist'    ]}}
+    page = int(request.args.get('page',1))
+    skip_among=(page-1)*6
+    pediatrics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
+    total=doctors.count_documents({})
+    has_next =total>(page*6)
+    return render_template("departments/pediatrics.html", cDoctors=pediatrics_doctors,current=page,has_next= has_next)
 
 
 # ================= DASHBOARDS =================
