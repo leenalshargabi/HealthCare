@@ -2,9 +2,9 @@
 
 {% block title %}Cardiology{% endblock %}
 
-{% block extra_css %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
-{% endblock %}
+<script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 
 {% block content %}
 <body class="cardiology-theme">
@@ -43,8 +43,4 @@
 </div>
 
 </body>
-{% endblock %}
-
-{% block extra_js %}
-<script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
 {% endblock %}
