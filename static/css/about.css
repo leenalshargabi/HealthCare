@@ -1,3 +1,4 @@
+/* Base */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -5,26 +6,33 @@ body {
     color: #333;
 }
 
-/* Hero */
+/* =====================
+   Hero
+===================== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+    background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 48px;
+    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 18px;
+    opacity: 0.9;
 }
 
-/* About */
+/* =====================
+   About
+===================== */
 .about {
     padding: 60px 20px;
     max-width: 900px;
@@ -32,7 +40,14 @@ body {
     text-align: center;
 }
 
-/* Vision Mission */
+.about h2 {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+/* =====================
+   Vision / Mission
+===================== */
 .vm {
     display: flex;
     justify-content: center;
@@ -45,9 +60,14 @@ body {
     background: white;
     padding: 30px;
     width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.vm .card:hover {
+    transform: translateY(-6px);
 }
 
 .vm i {
@@ -56,11 +76,17 @@ body {
     margin-bottom: 15px;
 }
 
-/* Services */
+/* =====================
+   Services
+===================== */
 .services {
     padding: 60px 20px;
     background: #ffffff;
     text-align: center;
+}
+
+.services h2 {
+    color: #0d6efd;
 }
 
 .service-cards {
@@ -75,7 +101,7 @@ body {
     background: #f1f3f5;
     padding: 25px;
     width: 200px;
-    border-radius: 12px;
+    border-radius: 14px;
     transition: 0.3s;
 }
 
@@ -90,22 +116,9 @@ body {
     margin-bottom: 10px;
 }
 
-/* Stats */
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    padding: 50px 20px;
-    background: #0d6efd;
-    color: white;
-}
-
-.stat h3 {
-    font-size: 36px;
-    margin: 0;
-}
-
-/* Contact Section */
+/* =====================
+   Contact
+===================== */
 .contact-section {
     padding: 60px 20px;
     background: #0d6efd;
@@ -113,23 +126,6 @@ body {
     text-align: center;
 }
 
-.contact-card {
-    background: white;
-    color: #333;
-    max-width: 400px;
-    margin: 30px auto 0;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.contact-section h2 {
+    margin-bottom: 20px;
 }
-
-.contact-card p {
-    font-size: 18px;
-    margin: 15px 0;
-}
-
-.contact-card i {
-    color: #0d6efd;
-    margin-right: 10px;
-}
-

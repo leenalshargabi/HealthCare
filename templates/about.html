@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About Us | Hospital</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}About Us | Hospital{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
 
 <!-- Hero Section -->
 <section class="hero">
@@ -26,30 +27,24 @@
     </div>
 </section>
 
-<!-- Vision Mission -->
+<!-- Vision / Mission / Values -->
 <section class="vm">
     <div class="card">
         <i class="fa-solid fa-eye"></i>
         <h3>Our Vision</h3>
-        <p>
-            To be a trusted healthcare provider delivering world-class medical services.
-        </p>
+        <p>To be a trusted healthcare provider delivering world-class medical services.</p>
     </div>
 
     <div class="card">
         <i class="fa-solid fa-bullseye"></i>
         <h3>Our Mission</h3>
-        <p>
-            Providing compassionate, affordable, and advanced healthcare for all.
-        </p>
+        <p>Providing compassionate, affordable, and advanced healthcare for all.</p>
     </div>
 
     <div class="card">
         <i class="fa-solid fa-heart-pulse"></i>
         <h3>Our Values</h3>
-        <p>
-            Integrity, Care, Innovation, and Excellence in every service we provide.
-        </p>
+        <p>Integrity, Care, Innovation, and Excellence in every service we provide.</p>
     </div>
 </section>
 
@@ -85,16 +80,15 @@
     </div>
 </section>
 
+<!-- Contact -->
 <section class="contact-section">
-  <h2>Contact Us</h2>
+    <h2>Contact Us</h2>
     <div>
         <p>📞 +967 777712217</p>
         <p>📞 +967 777781817</p>
         <p>📍 Sana'a, Yemen</p>
-  <p>📧 HealthCare@hospital.com</p>
-
+        <p>📧 HealthCare@hospital.com</p>
     </div>
 </section>
 
-</body>
-</html>
+{% endblock %}

@@ -19,8 +19,9 @@ body {
 }
 
 main {
-    padding: 40px;
+    padding-top: 90px; /* نفس ارتفاع النافبار تقريبًا */
 }
+
 
 .back-btn {
     background-color: transparent;

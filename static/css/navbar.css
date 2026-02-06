@@ -2,26 +2,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 20px 40px;
     background-color: var(--white);
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    position: sticky;
+
+    position: fixed;   /* 👈 بدل sticky */
     top: 0;
-    z-index: 100;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
 }
 
+/* Logo */
 .logo {
     font-size: 22px;
     font-weight: bold;
     color: var(--secondary);
 }
 
+/* Links container */
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
+/* Links */
 .nav-links a {
     text-decoration: none;
     color: var(--dark);
@@ -33,9 +42,11 @@
     color: var(--secondary);
 }
 
+/* Buttons in navbar */
+.nav-btn,
 .book-btn {
     background-color: var(--secondary);
-    color: white;
+    color: white !important;
     padding: 10px 22px;
     border-radius: 25px;
     text-decoration: none;
@@ -43,6 +54,7 @@
     transition: background 0.3s;
 }
 
+.nav-btn:hover,
 .book-btn:hover {
     background-color: var(--dark);
 }
