@@ -1,92 +1,152 @@
+// ===== Configuration =====
 let currentPage = 1;
-const itemsPerPage = 6;
-let pageWindow = 5; // عدد الأرقام الظاهرة في pagination
-let originalNews = [...newsData];
+const itemsPerPage = 10; // must match Flask limit
+const pageWindow = 3;    // 3 pages before & after
 
-/* Render News */
-function renderNews() {
-    const grid = document.getElementById("newsGrid");
+// Fetch news from server dynamically
+async function fetchNews(page = 1, sortType = "new", query = "") {
+    const response = await fetch(`/news-data?page=${page}&sort=${sortType}&q=${encodeURIComponent(query)}`);
+    const data = await response.json();
+    return data; // { news: [...], total: x, current: y }
+}
+
+// ===== Render News Cards =====
+function renderNewsCards(newsItems) {
+    const grid = document.querySelector(".news-grid");
     grid.innerHTML = "";
 
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageItems = newsData.slice(start, end); // الأخبار الخاصة بالصفحة فقط
+    if (newsItems.length === 0) {
+        grid.innerHTML = `<div class="no-results"><p>No news found</p></div>`;
+        return;
+    }
 
-    pageItems.forEach((item, index) => {
-        const globalIndex = start + index; // رقم عالمي لكل عنصر
-        grid.innerHTML += `
-            <div class="news-card">
-                <h2>${item.title}</h2>
-                <span class="date">${item.publishDate}</span>
-                <p class="short-text">${item.content.substring(0,140)}...</p>
-                <p class="full-text" id="full-${globalIndex}">${item.content}</p>
-                <button class="more-btn" onclick="toggleMore(${globalIndex}, this)">Read More</button>
+    newsItems.forEach((n, index) => {
+        const card = document.createElement("div");
+        card.classList.add("news-card");
+
+        card.innerHTML = `
+            <span class="category-tag">${n.category}</span>
+            <h3>${n.title}</h3>
+            <p class="summary">${n.summary}</p>
+            <p class="full-text">${n.content}</p>
+            <button class="more-btn">Read More</button>
+            <div class="news-footer">
+                <span class="author">By: ${n.author}</span>
+                <span class="date">${n.publishDate}</span>
             </div>
         `;
+        grid.appendChild(card);
     });
 
-    renderPagination();
+    // Attach Read More toggle
+    const buttons = document.querySelectorAll(".more-btn");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".news-card");
+            const fullText = card.querySelector(".full-text");
+            const summary = card.querySelector(".summary");
+
+            if (fullText.style.display === "block") {
+                fullText.style.display = "none";
+                summary.style.display = "block";
+                btn.innerText = "Read More";
+            } else {
+                fullText.style.display = "block";
+                summary.style.display = "none";
+                btn.innerText = "Read Less";
+            }
+        });
+    });
 }
 
-/* Toggle Read More / Less */
-function toggleMore(index, btn) {
-    const text = document.getElementById(`full-${index}`);
-    if (text.style.display === "block") {
-        text.style.display = "none";
-        btn.innerText = "Read More";
-    } else {
-        text.style.display = "block";
-        btn.innerText = "Read Less";
-    }
-}
-
-/* Apply Filter */
-function applyFilter() {
-    const filterValue = document.getElementById("dateFilter").value;
-
-    if(filterValue === "all") newsData = [...originalNews];
-    else if(filterValue === "new") newsData = [...originalNews].sort((a,b) => new Date(b.publishDate)-new Date(a.publishDate));
-    else if(filterValue === "old") newsData = [...originalNews].sort((a,b) => new Date(a.publishDate)-new Date(b.publishDate));
-
-    currentPage = 1;
-    renderNews();
-}
-
-/* Pagination */
-function renderPagination() {
-    const totalPages = Math.ceil(newsData.length / itemsPerPage);
-    const pagination = document.getElementById("pagination");
+// ===== Render Pagination =====
+function renderPagination(totalPages) {
+    const pagination = document.querySelector(".pagination");
     pagination.innerHTML = "";
 
-    let startPage = Math.floor((currentPage-1)/pageWindow)*pageWindow + 1;
-    let endPage = Math.min(startPage + pageWindow -1, totalPages);
-
-    for(let i=startPage; i<=endPage; i++) {
-        pagination.innerHTML += `
-            <button class="${i===currentPage?'active':''}" onclick="changePage(${i})">${i}</button>
-        `;
+    // Previous Button
+    if (currentPage > 1) {
+        const prev = document.createElement("a");
+        prev.innerText = "Previous";
+        prev.href = "#";
+        prev.addEventListener("click", e => {
+            e.preventDefault();
+            changePage(currentPage - 1);
+        });
+        pagination.appendChild(prev);
     }
 
-    document.getElementById("morePagesBtn").style.display = (endPage < totalPages) ? "inline-block" : "none";
+    // Page numbers (dynamic window)
+    const startPage = Math.max(currentPage - pageWindow, 1);
+    const endPage = Math.min(currentPage + pageWindow, totalPages);
+
+    for (let i = startPage; i <= endPage; i++) {
+        if (i === currentPage) {
+            const btn = document.createElement("button");
+            btn.classList.add("active");
+            btn.innerText = i;
+            pagination.appendChild(btn);
+        } else {
+            const link = document.createElement("a");
+            link.innerText = i;
+            link.href = "#";
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                changePage(i);
+            });
+            pagination.appendChild(link);
+        }
+    }
+
+    // Next Button
+    if (currentPage < totalPages) {
+        const next = document.createElement("a");
+        next.innerText = "Next";
+        next.href = "#";
+        next.addEventListener("click", e => {
+            e.preventDefault();
+            changePage(currentPage + 1);
+        });
+        pagination.appendChild(next);
+    }
 }
 
-/* Change Page */
-function changePage(page) {
+// ===== Change Page =====
+async function changePage(page) {
+    const query = document.querySelector("input[name='q']").value || "";
+    const sortType = document.querySelector("select[name='sort']").value || "new";
+
     currentPage = page;
-    renderNews();
+
+    const data = await fetchNews(currentPage, sortType, query);
+    renderNewsCards(data.news);
+
+    const totalPages = Math.ceil(data.total / itemsPerPage);
+    renderPagination(totalPages);
+
+    // Scroll to top of news
+    window.scrollTo({ top: 160, behavior: "smooth" });
 }
 
-/* More Pages Button */
-function loadMorePages() {
-    const totalPages = Math.ceil(newsData.length / itemsPerPage);
-    let startPage = Math.floor((currentPage-1)/pageWindow)*pageWindow + 1;
-    let endPage = Math.min(startPage + pageWindow -1, totalPages);
+// ===== Apply Filter / Search =====
+document.querySelector(".search-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    currentPage = 1;
 
-    if(endPage < totalPages) {
-        currentPage = endPage + 1; // تحديث الصفحة الحالية
-        renderNews();             // إعادة عرض الأخبار الجديدة فقط
-    }
-}
+    const query = document.querySelector("input[name='q']").value || "";
+    const sortType = document.querySelector("select[name='sort']").value || "new";
 
-/* Init */
-renderNews();
+    const data = await fetchNews(currentPage, sortType, query);
+    renderNewsCards(data.news);
+
+    const totalPages = Math.ceil(data.total / itemsPerPage);
+    renderPagination(totalPages);
+});
+
+// ===== Initial Load =====
+window.addEventListener("DOMContentLoaded", async () => {
+    const data = await fetchNews(currentPage);
+    renderNewsCards(data.news);
+    const totalPages = Math.ceil(data.total / itemsPerPage);
+    renderPagination(totalPages);
+});

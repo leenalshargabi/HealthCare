@@ -1,188 +1,218 @@
+/* ===== Global ===== */
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #EEF5FB;
+    background: #f4f7fb;
     color: #2c2c2c;
 }
 
-/* Header */
+/* ===== Header ===== */
 .top-header {
     width: 100%;
     background-color: #7BA4D0;
-    padding: 45px 0;
+    padding: 50px 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .top-header h1 {
     color: white;
     margin: 0;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 600;
 }
 
 .top-header p {
     color: #eaf1fb;
-    margin-top: 8px;
-    font-size: 14px;
+    margin-top: 5px;
+    font-size: 16px;
 }
 
-/* Page */
+/* ===== Page Container ===== */
 .page-container {
-    width: 75%;
-    margin: auto;
-    padding: 50px 0;
+    width: 80%;
+    margin: 160px auto 50px auto; /* space for fixed header */
 }
 
-/* Filter */
+/* ===== Filter Bar ===== */
 .filter-bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
-    margin-bottom: 35px;
-    font-size: 14px;
-    color: #555;
+    margin-bottom: 30px;
 }
 
+.filter-bar input,
 .filter-bar select {
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    background: white;
-    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
 }
-.filter-btn {
-    padding: 6px 16px;
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+    border-color: #7BA4D0;
+}
+
+.filter-btn, .btn-clear {
+    padding: 8px 18px;
     border-radius: 6px;
     border: none;
-    background-color: #7BA4D0;
-    color: white;
     font-size: 14px;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.filter-btn {
+    background-color: #7BA4D0;
+    color: white;
+}
+
 .filter-btn:hover {
     background-color: #6a94c3;
 }
 
-/* Grid */
+.btn-clear {
+    background-color: #ccc;
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.btn-clear:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+/* ===== News Grid ===== */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
-/* Card */
+/* ===== News Card ===== */
 .news-card {
     background: white;
-    padding: 28px;
+    padding: 25px;
     border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    margin: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
-.news-card h2 {
-    margin: 0 0 6px;
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.news-card h3 {
+    margin: 10px 0 8px 0;
     font-size: 20px;
     font-weight: 600;
 }
 
-.date {
-    font-size: 13px;
-    color: #888;
-}
-
-.short-text,
-.full-text {
-    margin-top: 14px;
-    line-height: 1.7;
+.news-card .summary {
     font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #555;
 }
 
-.full-text {
+.news-card .full-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 12px;
     display: none;
 }
 
-/* Read More */
+/* ===== Read More Button ===== */
 .more-btn {
-    margin-top: 14px;
     padding: 0;
     border: none;
     background: none;
     color: #7BA4D0;
     font-size: 14px;
     cursor: pointer;
+    transition: 0.2s;
 }
+
 .more-btn:hover {
     text-decoration: underline;
 }
 
-/* Pagination Circles */
+/* ===== News Footer ===== */
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #888;
+}
+
+/* ===== Pagination ===== */
 .pagination {
-    margin-top: 50px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
+.pagination a,
 .pagination button {
-    margin: 0 6px;
-    padding: 8px 12px;
-    border: 2px solid #7BA4D0;
-    border-radius: 50%;
-    background: none;
-    color: #7BA4D0;
-    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #7BA4D0;
+    color: white;
     font-size: 14px;
-    font-weight: 500;
-    min-width: 36px;
-    height: 36px;
-    line-height: 28px;
-    transition: all 0.2s ease;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
 }
+
+.pagination a:hover,
 .pagination button:hover {
-    background-color: #7BA4D0;
-    color: white;
-}
-.pagination button.active {
-    background-color: #7BA4D0;
-    color: white;
-    font-weight: 600;
-}
-
-/* More Pages Button */
-/* .more-pagination-container { */
-    /* text-align: center; */
-    /* margin-top: 10px; */
-/* } */
-/* #morePagesBtn { */
-    /* padding: 6px 16px; */
-    /* border-radius: 6px; */
-    /* border: none; */
-    /* background-color: #7BA4D0; */
-    /* color: white; */
-    /* font-size: 14px; */
-    /* cursor: pointer; */
-/* } */
-/* #morePagesBtn:hover { */
-    /* background-color: #6a94c3; */
-/*  */
-/* } */
-
-.dit{
-font-size: 15px;
-text-align: end;
-}
-
-a{
-    padding: 10px 20px; 
     background-color: #6a94c3;
-    text-decoration: none; 
-    border-radius: 5px; 
-    width: 100px;
+}
+
+.pagination button.active {
+    background-color: #6e63b0;
+}
+
+/* ===== Return Button ===== */
+.return-container {
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #7BA4D0;
     color: white;
     font-size: 14px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-#prev{
-    background-color: #837bc7;
+.back-btn:hover {
+    background-color: #6a94c3;
 }
 
+/* ===== No Results ===== */
+.no-results {
+    text-align: center;
+    padding: 50px;
+    font-size: 16px;
+    color: #888;
+}

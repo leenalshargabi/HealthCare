@@ -178,7 +178,8 @@ def news_page():
     query_text = request.args.get('q', '').strip() 
     
     direction = -1 if sort_type == 'new' else 1
-    skip_among = (page - 1) * 10
+    per_page = 10
+    skip_among = (page - 1) * per_page
     
     query = {}
     if query_text:
@@ -188,17 +189,55 @@ def news_page():
             {"category": {"$regex": query_text, "$options": "i"}}
         ]
     
-    allItem = list(news.find(query).sort('publishDate', direction).skip(skip_among).limit(10))
+    allItem = list(news.find(query).sort('publishDate', direction).skip(skip_among).limit(per_page))
     
     total = news.count_documents(query)
-    has_next = total > (page * 10)
+    has_next = total > (page * per_page)
     
-    return render_template("news.html", 
-                           Pnews=allItem, 
-                           current=page, 
-                           has_next=has_next, 
-                           sort_type=sort_type,
-                           query_text=query_text)
+    return render_template(
+        "news.html", 
+        Pnews=allItem, 
+        current=page, 
+        has_next=has_next, 
+        sort_type=sort_type,
+        query_text=query_text,
+        total=total 
+    )
+
+@app.route("/news-data")
+def news_data():
+    page = int(request.args.get('page', 1))
+    sort_type = request.args.get('sort', 'new')
+    query_text = request.args.get('q', '').strip()
+
+    direction = -1 if sort_type == 'new' else 1
+    per_page = 10
+    skip_among = (page - 1) * per_page
+
+    query = {}
+    if query_text:
+        query["$or"] = [
+            {"title": {"$regex": query_text, "$options": "i"}},
+            {"content": {"$regex": query_text, "$options": "i"}},
+            {"category": {"$regex": query_text, "$options": "i"}}
+        ]
+
+    allItem = list(news.find(query)
+                       .sort('publishDate', direction)
+                       .skip(skip_among)
+                       .limit(per_page))
+
+    total = news.count_documents(query)
+
+    # Convert publishDate to string for JSON
+    for n in allItem:
+        n["publishDate"] = n["publishDate"].strftime("%Y-%m-%d") if n.get("publishDate") else ""
+
+    return {
+        "news": allItem,
+        "total": total,
+        "current": page
+    }
 
 # ================= AUTH =================
 # @app.route("/choose-role")
