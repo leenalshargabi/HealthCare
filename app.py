@@ -193,9 +193,8 @@ def pediatrics():
 # ================= DASHBOARDS =================
 @app.route("/dashboard/patient")
 def patient_dashboard():
-    def patient_dashboard():
-        if "user_id" not in session or session.get("role") != "patient":
-            return redirect("/login")
+    if "user_id" not in session or session.get("role") != "patient":
+        return redirect("/login")
 
     user_id = session["user_id"]
    
