@@ -154,7 +154,7 @@ def rooms():
                            order=order)
 
 # EMERGENCY ROOMS 
-@app.route("/EmergencyRooms")
+@app.route("/EmergencyRoomspython")
 def emergencyrooms():
     page = int(request.args.get('page', 1))
     per_page = 10
