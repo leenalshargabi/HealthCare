@@ -36,8 +36,16 @@ emergency_rooms = db["rooms"]
 # ================= HOME =================
 @app.route("/")
 def home():
-    return render_template("index.html")
+    total_patients = operations_coll.count_documents({}) 
 
+    total_rooms = rooms_coll.count_documents({})
+
+    total_er = rooms_coll.count_documents({"category": "Service/ER"})
+
+    return render_template("index.html", 
+                           patients_count=total_patients, 
+                           rooms_count=total_rooms, 
+                           er_count=total_er)
 
 # ================= MAIN PAGES =================
 @app.route("/specialities")

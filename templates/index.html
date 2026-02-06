@@ -28,25 +28,22 @@
             <a href="/about" class="btn-outline">About Us</a>
         </div>
 
-        <div class="stats">
-<<<<<<< HEAD
-            <div class="stat-card" onclick="location.href='/surgeries'">
-                <h2>500</h2>
-=======
-            <div class="stat-card" onclick="location.href='/about'">
-                <h2>4500+</h2>
->>>>>>> 08acc245bfdcb92edf8a29a22e9d2ac26e34f4b6
-                <span>Happy Patients</span>
-            </div>
-            <div class="stat-card" onclick="location.href='/rooms'">
-                <h2>130</h2>
-                <span>Hospital Rooms</span>
-            </div>
-            <div class="stat-card" onclick="location.href='/EmergencyRooms'">
-                <h2>20+</h2>
-                <span>Ambulances</span>
-            </div>
-        </div>
+       <div class="stats">
+    <div class="stat-card" onclick="location.href='/surgeries'">
+        <h2>{{ patients_count }}</h2>
+        <span>Happy Patients</span>
+    </div>
+
+    <div class="stat-card" onclick="location.href='/rooms'">
+        <h2>{{ rooms_count }}</h2>
+        <span>Hospital Rooms</span>
+    </div>
+
+    <div class="stat-card" onclick="location.href='/EmergencyRooms'">
+        <h2>{{ er_count }}</h2>
+        <span>ER Units</span>
+    </div>
+</div>
     </div>
 
     <div class="hero-right slide-in">
