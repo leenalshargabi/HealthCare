@@ -1,67 +1,38 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-  <title>Orthopedics</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
-  <script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
-</head>
+{% block title %}Orthopedics{% endblock %}
 
-<body class="orthopedic-theme">
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/department.css') }}">
+{% endblock %}
 
-  <div class="dept-navbar">
-    <div class="dept-logo">NovaCare</div>
+{% block content %}
 
-    <div class="dept-links">
-      <a href="/">Home</a>
-      <a href="/specialities">Specialities</a>
-      <a href="/about">About</a>
-    </div>
-  </div>
+<div class="hero orthopedic-theme">
+  <h1>Orthopedics Department</h1>
+  <p>Bone, joint, and muscle specialists.</p>
+</div>
 
-  <button class="return-btn" onclick="goBack()">Return</button>
+<div class="section">
+  <h2>Our Orthopedic Doctors</h2>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Orthopedics Department</h1>
-      <p>Comprehensive care for bones, joints, muscles, and sports injuries.</p>
-    </div>
-    <div class="wave"></div>
-  </div>
-
-  <div class="section">
-    <h2>Our Orthopedic Doctors</h2>
-    
   <div class="doctors" id="doctor-list">
-    {% for doctor in cDoctors %}
+    {% for doctor in oDoctors %}
     <div class="doctor doctor-item">
- <div >
-  <img src="{{ url_for('static', filename='images/doctor.png') }}" class="doctor-img">
-  <div class="availability available">Available</div>
-    <h3>{{ doctor.fullName }}</h3>
-    <span>{{doctor.mainSpecialty }}</span>
-    <p>{{doctor.subSpecialty }}</p>
-    <p>workingHours:{{doctor.workingHours.from }}- {{doctor.workingHours.to }} </p>
-  </div>
-</div>
- 
-      {% endfor %}
+      <h3>{{ doctor.fullName }}</h3>
+      <span>{{ doctor.mainSpecialty }}</span>
+      <p>{{ doctor.subSpecialty }}</p>
+      <p>{{ doctor.workingHours }}</p>
+    </div>
+    {% endfor %}
   </div>
 
-  <div class="pagination"  id="pagination">
-{% if current > 1 %}
-        <a href="{{ url_for('cardiology', page=current-1) }}">Previous</a>
-      {% endif %}
-
-      <span style="margin:0 15px;">Page: {{ current }}</span>
-
-      {% if has_next %}
-        <a href="{{ url_for('cardiology', page=current+1) }}">Next</a>
-      {% endif %}
-  </div>
+  <div class="pagination" id="pagination"></div>
 
 </div>
 
-</body>
+{% endblock %}
 
-</html>
+{% block extra_js %}
+<script defer src="{{ url_for('static', filename='js/department.js') }}"></script>
+{% endblock %}

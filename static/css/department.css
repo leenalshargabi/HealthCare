@@ -37,21 +37,33 @@ body {
   color: #0D2440;
 }
 
-/* RETURN BUTTON */
-
+/* Return Button */
 .return-btn {
   position: fixed;
   top: 20px;
-  right: 25px;
+  left: 20px;
+  z-index: 999;
+
   padding: 10px 18px;
   border-radius: 12px;
   border: none;
-  font-weight: 600;
   cursor: pointer;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 999;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  color: white;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
+
+.return-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
 
 /* ---------------- HERO ---------------- */
 
@@ -102,27 +114,53 @@ body {
   gap: 25px;
 }
 
-/* doctor hover glow per department */
+/* PREMIUM GLOW HOVER */
 
-.cardiology-theme .doctor:hover {
-  box-shadow: 0 18px 35px rgba(139,30,30,0.4);
+.doctor {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
 }
 
-.neurology-theme .doctor:hover {
-  box-shadow: 0 18px 35px rgba(93,53,67,0.4);
+.doctor::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .4s;
 }
 
-.orthopedic-theme .doctor:hover {
-  box-shadow: 0 18px 35px rgba(43,46,51,0.4);
+/* glow per department */
+
+.cardiology-theme .doctor::before {
+  background: radial-gradient(circle, rgba(139,30,30,.45), transparent 70%);
 }
 
-.dentistry-theme .doctor:hover {
-  box-shadow: 0 18px 35px rgba(47,111,115,0.4);
+.neurology-theme .doctor::before {
+  background: radial-gradient(circle, rgba(93,53,67,.45), transparent 70%);
 }
 
-.pediatric-theme .doctor:hover {
-  box-shadow: 0 18px 35px rgba(66,43,35,0.4);
+.orthopedic-theme .doctor::before {
+  background: radial-gradient(circle, rgba(43,46,51,.45), transparent 70%);
 }
+
+.dentistry-theme .doctor::before {
+  background: radial-gradient(circle, rgba(47,111,115,.45), transparent 70%);
+}
+
+.pediatric-theme .doctor::before {
+  background: radial-gradient(circle, rgba(66,43,35,.45), transparent 70%);
+}
+
+.doctor:hover::before {
+  opacity: 1;
+}
+
+.doctor:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
 /* DOCTOR CARD */
 
 .doctor {
@@ -308,4 +346,34 @@ body {
 @keyframes pageFadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO FLOAT ANIMATION */
+
+.hero {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* HERO LIGHT GLOW */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 60%);
+  animation: heroLightMove 8s linear infinite;
+}
+
+@keyframes heroLightMove {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

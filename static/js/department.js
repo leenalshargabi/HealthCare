@@ -1,15 +1,16 @@
 // smooth hover animation for doctor cards
-const cards = document.querySelectorAll(".doctor-card");
+const cards = document.querySelectorAll(".doctor");
 
 cards.forEach(card => {
     card.addEventListener("mouseenter", () => {
-        card.style.transform = "scale(1.05)";
+        card.style.transform = "scale(1.04)";
     });
 
     card.addEventListener("mouseleave", () => {
         card.style.transform = "scale(1)";
     });
 });
+
 
 
 // smooth scroll return button
@@ -81,4 +82,18 @@ document.querySelectorAll(".availability").forEach(badge => {
         badge.classList.add("busy");
         badge.innerText = "Busy";
     }
+});
+
+// hero entry animation
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero");
+
+  hero.style.opacity = "0";
+  hero.style.transform = "translateY(30px)";
+
+  setTimeout(() => {
+    hero.style.transition = "all .7s ease";
+    hero.style.opacity = "1";
+    hero.style.transform = "translateY(0)";
+  }, 200);
 });
