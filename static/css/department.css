@@ -135,3 +135,31 @@ body {
     transform: translateY(0);
   }
 }
+
+/* PAGINATION */
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  transform: scale(1.1);
+}
+
+.pagination .active {
+  background: #0D2440;
+  color: white;
+}
