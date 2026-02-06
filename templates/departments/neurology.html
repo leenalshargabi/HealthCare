@@ -7,30 +7,42 @@
 {% endblock %}
 
 {% block content %}
+<body class="neurology-theme">
 
-<div class="hero neurology-theme">
-  <h1>Neurology Department</h1>
-  <p>Brain, spine, and nervous system specialists.</p>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Neurology Department</h1>
+    <p>Brain, nerve, and neurological disorder specialists.</p>
+  </div>
+  <div class="wave"></div>
 </div>
 
 <div class="section">
   <h2>Our Neurologists</h2>
 
   <div class="doctors" id="doctor-list">
-    {% for doctor in nDoctors %}
+    {% for doctor in cDoctors %}
     <div class="doctor doctor-item">
+
+      <div class="doctor-top">
+        <img src="{{ doctor.image if doctor.image else url_for('static', filename='img/default-doctor.png') }}" class="doctor-img">
+      </div>
+
       <h3>{{ doctor.fullName }}</h3>
       <span>{{ doctor.mainSpecialty }}</span>
       <p>{{ doctor.subSpecialty }}</p>
       <p>{{ doctor.workingHours }}</p>
+
+      <div class="availability available">Available</div>
+
     </div>
     {% endfor %}
   </div>
 
   <div class="pagination" id="pagination"></div>
-
 </div>
 
+</body>
 {% endblock %}
 
 {% block extra_js %}

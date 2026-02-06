@@ -7,10 +7,14 @@
 {% endblock %}
 
 {% block content %}
+<body class="cardiology-theme">
 
-<div class="hero cardiology-theme">
-  <h1>Cardiology Department</h1>
-  <p>Advanced heart care, prevention, diagnosis, and life-saving treatments.</p>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Cardiology Department</h1>
+    <p>Advanced heart care, prevention, diagnosis, and life-saving treatments.</p>
+  </div>
+  <div class="wave"></div>
 </div>
 
 <div class="section">
@@ -19,18 +23,26 @@
   <div class="doctors" id="doctor-list">
     {% for doctor in cDoctors %}
     <div class="doctor doctor-item">
+
+      <div class="doctor-top">
+        <img src="{{ doctor.image if doctor.image else url_for('static', filename='img/default-doctor.png') }}" class="doctor-img">
+      </div>
+
       <h3>{{ doctor.fullName }}</h3>
       <span>{{ doctor.mainSpecialty }}</span>
       <p>{{ doctor.subSpecialty }}</p>
       <p>{{ doctor.workingHours }}</p>
+
+      <div class="availability available">Available</div>
+
     </div>
     {% endfor %}
   </div>
 
   <div class="pagination" id="pagination"></div>
-
 </div>
 
+</body>
 {% endblock %}
 
 {% block extra_js %}
