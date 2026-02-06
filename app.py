@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+from datetime import timedelta
 # import os,json
 
 app = Flask(__name__)
@@ -27,6 +28,8 @@ doctors = db["doctors"]
 news = db["news"]
 departments = db["departments"]
 admin = db["admin"]
+rooms = db["rooms"]
+emergency_rooms = db["rooms"]
 
 
 # ================= HOME =================
@@ -46,111 +49,113 @@ def about():
 
 
 
+# SURGERIES PAGE
 @app.route("/surgeries")
 def surgeries():
-    operations = [
-        {
-            "operationCode": "OP-1001",
-            "procedure": "Bypass Surgery",
-            "operationRoom": "OR-3",
-            "startTime": "2026-02-04 10:45",
-            "endTime": "2026-02-04 13:45",
-            "status": "scheduled"
-        }
-    ]
-    return render_template("surgeries.html", operations=operations)
+    page = int(request.args.get('page', 1))
+    per_page = 10
+    
+    # Search Parameters
+    q_doctor = request.args.get('doctor', '').strip()
+    q_date = request.args.get('date', '').strip()
+    order = int(request.args.get('order', -1)) # Default: Newest first
 
-#========================
+    query = {}
+    if q_doctor:
+        query["doctor.fullName"] = {"$regex": q_doctor, "$options": "i"}
+    
+    if q_date:
+        start_date = datetime.strptime(q_date, '%Y-%m-%d')
+        end_date = start_date + timedelta(days=1)
+        query["scheduling.startTime"] = {"$gte": start_date, "$lt": end_date}
+
+    skip = (page - 1) * per_page
+    projection = {
+        "operationCode": 1, "department.name": 1, "doctor.fullName": 1, 
+        "patient.fullName": 1, "medicalDetails.procedure": 1, "status": 1, 
+        "scheduling": 1, "_id": 0
+    }
+    
+    ops_data = list(operations.find(query, projection)
+                      .sort('scheduling.startTime', order)
+                      .skip(skip)
+                      .limit(per_page))
+    
+    total = operations.count_documents(query)
+    has_next = total > (page * per_page)
+
+    return render_template("surgeries.html", 
+                           operations=ops_data, 
+                           current=page, 
+                           has_next=has_next, 
+                           q_doctor=q_doctor, 
+                           q_date=q_date,
+                           order=order)
+# ROOMS PAGE
 @app.route("/rooms")
 def rooms():
-    rooms_data = [
-        {
-            "roomNumber": "ADM-600",
-            "floor": 6,
-            "departmentName": "General Management",
-            "roomType": "Office",
-            "category": "Offices/Clinics",
-            "status": "occupied",
-            "metadata": {
-                "isOffice": True,
-                "role": "General Director"
-            }
-        }
-    ]
-    return render_template("rooms.html", rooms=rooms_data)
+    page = int(request.args.get('page', 1))
+    per_page = 10
+    
+    # Search Parameters
+    q_room = request.args.get('roomNumber', '').strip()
+    q_floor = request.args.get('floor', '').strip()
+    
+    # Sorting Parameters
+    sort_by = request.args.get('sort', 'roomNumber')
+    order = int(request.args.get('order', 1)) # 1 for Asc, -1 for Desc
 
-#=========================
+    # Build Dynamic Query
+    query = {}
+    if q_room:
+        query["roomNumber"] = {"$regex": q_room, "$options": "i"}
+    if q_floor:
+        try:
+            query["floor"] = int(q_floor)
+        except ValueError:
+            pass
+
+    skip = (page - 1) * per_page
+    projection = {
+        "roomNumber": 1, "floor": 1, "departmentName": 1, 
+        "roomType": 1, "category": 1, "status": 1, "metadata": 1, "_id": 0
+    }
+    
+    rooms_data = list(rooms.find(query, projection)
+                      .sort(sort_by, order)
+                      .skip(skip)
+                      .limit(per_page))
+    
+    total = rooms.count_documents(query)
+    has_next = total > (page * per_page)
+
+    return render_template("rooms.html", 
+                           rooms=rooms_data, 
+                           current=page, 
+                           has_next=has_next, 
+                           q_room=q_room, 
+                           q_floor=q_floor,
+                           sort_by=sort_by,
+                           order=order)
+# EMERGENCY ROOMS 
 @app.route("/EmergencyRooms")
 def emergencyrooms():
-    EmergencyRooms_data = [
-        {
-            "roomNumber": "ER-101",
-            "floor": 1,
-            "departmentName": "Emergency Department",
-            "roomType": "Emergency Room",
-            "category": "Emergency Rooms",
-            "status": "occupied",
-            "metadata": {
-                "isOffice": False,
-                "equipment": "Full Emergency Kit",
-                "priorityLevel": "High"
-            }
-        },
-        {
-            "roomNumber": "ER-102",
-            "floor": 1,
-            "departmentName": "Emergency Department",
-            "roomType": "Emergency Room",
-            "category": "Emergency Rooms",
-            "status": "available",
-            "metadata": {
-                "isOffice": False,
-                "equipment": "Cardiac Monitor",
-                "priorityLevel": "High"
-            }
-        },
-        {
-            "roomNumber": "ER-103",
-            "floor": 1,
-            "departmentName": "Emergency Department",
-            "roomType": "Emergency Room",
-            "category": "Emergency Rooms",
-            "status": "occupied",
-            "metadata": {
-                "isOffice": False,
-                "equipment": "Trauma Kit",
-                "priorityLevel": "High"
-            }
-        },
-        {
-            "roomNumber": "ER-104",
-            "floor": 1,
-            "departmentName": "Emergency Department",
-            "roomType": "Emergency Room",
-            "category": "Emergency Rooms",
-            "status": "available",
-            "metadata": {
-                "isOffice": False,
-                "equipment": "Respiratory Support",
-                "priorityLevel": "Medium"
-            }
-        },
-        {
-            "roomNumber": "ER-105",
-            "floor": 1,
-            "departmentName": "Emergency Department",
-            "roomType": "Emergency Room",
-            "category": "Emergency Rooms",
-            "status": "maintenance",
-            "metadata": {
-                "isOffice": False,
-                "equipment": "Under Maintenance",
-                "priorityLevel": "High"
-            }
-        }
-    ]
-    return render_template("EmergencyRooms.html", rooms=EmergencyRooms_data)
-
+    page = int(request.args.get('page', 1))
+    per_page = 10
+    skip = (page - 1) * per_page
+    
+    query = {"category": "Service/ER"} 
+    
+    projection = {
+        "roomNumber": 1, "floor": 1, "departmentName": 1, 
+        "roomType": 1, "category": 1, "status": 1, "metadata": 1, "_id": 0
+    }
+    
+    e_rooms = list(rooms.find(query, projection).skip(skip).limit(per_page))
+    total = rooms.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("EmergencyRooms.html", rooms=e_rooms, current=page, has_next=has_next)
 
 @app.route("/news")
 def news_page():

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Operation Rooms{% endblock %}
+{% block title %}Surgeries Schedule{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
@@ -9,41 +9,93 @@
 {% block content %}
 
 <section class="rooms-page">
-  <h1>Operation Rooms Schedule</h1>
-  <p class="subtitle">Real-time overview of surgical room usage</p>
+    <h1>Operation Rooms Schedule</h1>
+    <p class="subtitle">Real-time overview of surgical room usage and scheduling</p>
 
-  <div class="table-container">
-    <table class="rooms-table">
-      <thead>
-        <tr>
-          <th>Operation Code</th>
-          <th>Procedure</th>
-          <th>Operation Room</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Status</th>
-        </tr>
-      </thead>
+    <form method="GET" class="row g-3 mb-4">
+        <div class="col-md-4">
+            <input type="text" name="doctor" class="form-control" placeholder="Search by Doctor Name..." value="{{ q_doctor or '' }}">
+        </div>
+        <div class="col-md-3">
+            <input type="date" name="date" class="form-control" value="{{ q_date or '' }}">
+        </div>
+        
+        <input type="hidden" name="order" value="{{ order }}">
+        
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Filter Schedule</button>
+            <a href="/surgeries" class="btn btn-secondary">Reset</a>
+        </div>
+    </form>
 
-      <tbody>
-        {% for op in operations %}
-        <tr>
-          <td>{{ op.operationCode }}</td>
-          <td>{{ op.procedure }}</td>
-          <td>{{ op.operationRoom }}</td>
-          <td>{{ op.startTime }}</td>
-          <td>{{ op.endTime }}</td>
-          <td>
-            <span class="status {{ op.status }}">
-              {{ op.status.capitalize() }}
-            </span>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
+    <div class="table-container">
+        <table class="rooms-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Patient</th>
+                    <th>Surgeon</th>
+                    <th>Procedure</th>
+                    <th>Room</th>
+                    <th>
+                        <a href="?doctor={{ q_doctor }}&date={{ q_date }}&order={{ -1 if order == 1 else 1 }}">
+                            Schedule Time {{ '▲' if order == 1 else '▼' }}
+                        </a>
+                    </th>
+                    <th>Status</th>
+                </tr>
+            </thead>
 
-    </table>
-  </div>
+            <tbody>
+                {% for op in operations %}
+                <tr>
+                    <td><strong>{{ op.operationCode }}</strong></td>
+                    <td>{{ op.patient.fullName }}</td>
+                    <td>{{ op.doctor.fullName or 'Not Assigned' }}</td>
+                    <td>{{ op.medicalDetails.procedure }}</td>
+                    <td><span class="room-badge">{{ op.scheduling.room }}</span></td>
+                    <td>
+                        {# Formatting the MongoDB Date Object #}
+                        {{ op.scheduling.startTime.strftime('%Y-%m-%d | %H:%M') }}
+                    </td>
+                    <td>
+                        <span class="status-pill {{ op.status }}">
+                            {{ op.status|capitalize }}
+                        </span>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No surgeries scheduled for the selected criteria.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if total_pages > 1 or has_next or current > 1 %}
+    <div class="pagination-container mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if current > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ current - 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">Previous</a>
+                </li>
+                {% endif %}
+                
+                <li class="page-item active">
+                    <span class="page-link">Page {{ current }}</span>
+                </li>
+                
+                {% if has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ current + 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
 </section>
 
 {% endblock %}
