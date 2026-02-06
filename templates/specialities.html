@@ -8,53 +8,62 @@
 
 {% block content %}
 
-<section class="specialities-section">
-
+<section class="specialities-hero">
+    <div class="particles" id="particles"></div>
     <h1 class="page-title">Our Medical Specialities</h1>
     <p class="page-subtitle">
         Comprehensive healthcare services delivered by expert professionals
     </p>
+</section>
+
+<section class="specialities-section">
 
     <div class="specialities-grid">
 
         <a href="/department/cardiology" class="card cardiology">
-            <img src="{{ url_for('static', filename='icons/cardiology.png') }}" class="icon">
+            <div class="icon-wrapper">
+                <img src="{{ url_for('static', filename='icons/cardiology.png') }}" class="icon">
+            </div>
             <h3>Cardiology</h3>
             <p>Advanced heart care, diagnostics, and cardiac treatments.</p>
         </a>
 
         <a href="/department/neurology" class="card neurology">
-            <img src="{{ url_for('static', filename='icons/neurology.png') }}" class="icon">
+            <div class="icon-wrapper">
+                <img src="{{ url_for('static', filename='icons/neurology.png') }}" class="icon">
+            </div>
             <h3>Neurology</h3>
             <p>Expert care for brain, spine, and nervous system disorders.</p>
         </a>
 
         <a href="/department/orthopedics" class="card orthopedic">
-            <img src="{{ url_for('static', filename='icons/orthopedic.png') }}" class="icon">
+            <div class="icon-wrapper">
+                <img src="{{ url_for('static', filename='icons/orthopedic.png') }}" class="icon">
+            </div>
             <h3>Orthopedics</h3>
             <p>Bone, joint, and muscle treatments with modern techniques.</p>
         </a>
 
         <a href="/department/dentistry" class="card dental">
-            <img src="{{ url_for('static', filename='icons/dental_care.png') }}" class="icon">
+            <div class="icon-wrapper">
+                <img src="{{ url_for('static', filename='icons/dental_care.png') }}" class="icon">
+            </div>
             <h3>Dental Care</h3>
             <p>Complete oral health services for all age groups.</p>
         </a>
 
         <a href="/department/pediatrics" class="card pediatrics">
-            <img src="{{ url_for('static', filename='icons/pediatrics.png') }}" class="icon">
+            <div class="icon-wrapper">
+                <img src="{{ url_for('static', filename='icons/pediatrics.png') }}" class="icon">
+            </div>
             <h3>Pediatrics</h3>
             <p>Compassionate healthcare for infants, children, and teens.</p>
         </a>
 
-        <!-- <a href="/department/ophthalmology" class="card ophthalmology">
-            <img src="{{ url_for('static', filename='icons/ophthalmology.svg') }}" class="icon">
-            <h3>Ophthalmology</h3>
-            <p>Vision care, eye surgeries, and advanced diagnostics.</p>
-        </a> -->
-
     </div>
 
 </section>
+
+<script src="{{ url_for('static', filename='js/specialities.js') }}"></script>
 
 {% endblock %}

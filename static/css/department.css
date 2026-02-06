@@ -6,6 +6,37 @@ body {
   background: #f5f7fb;
 }
 
+/* ---------------- NAVBAR ---------------- */
+
+.dept-navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.dept-logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.dept-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: .3s;
+}
+
+.dept-links a:hover {
+  color: #0D2440;
+}
+
 /* RETURN BUTTON */
 
 .return-btn {
@@ -22,22 +53,34 @@ body {
   z-index: 999;
 }
 
-/* HERO */
+/* ---------------- HERO ---------------- */
 
 .hero {
-  padding: 70px 40px;
-  color: white;
+  position: relative;
+  padding: 90px 40px 130px 40px;
+  overflow: hidden;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 40px;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-  max-width: 700px;
+.wave {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: white;
+  border-radius: 50% 50% 0 0;
+  animation: waveMove 6s infinite linear;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-40px); }
+  100% { transform: translateX(0); }
 }
 
 /* SECTION */
@@ -51,14 +94,35 @@ body {
   font-size: 28px;
 }
 
-/* DOCTORS GRID */
+/* ---------------- DOCTORS GRID ---------------- */
 
 .doctors {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
+/* doctor hover glow per department */
+
+.cardiology-theme .doctor:hover {
+  box-shadow: 0 18px 35px rgba(139,30,30,0.4);
+}
+
+.neurology-theme .doctor:hover {
+  box-shadow: 0 18px 35px rgba(93,53,67,0.4);
+}
+
+.orthopedic-theme .doctor:hover {
+  box-shadow: 0 18px 35px rgba(43,46,51,0.4);
+}
+
+.dentistry-theme .doctor:hover {
+  box-shadow: 0 18px 35px rgba(47,111,115,0.4);
+}
+
+.pediatric-theme .doctor:hover {
+  box-shadow: 0 18px 35px rgba(66,43,35,0.4);
+}
 /* DOCTOR CARD */
 
 .doctor {
@@ -162,4 +226,83 @@ body {
 .pagination .active {
   background: #0D2440;
   color: white;
+}
+
+/* DOCTOR IMAGE */
+
+.doctor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.doctor-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* AVAILABILITY BADGE */
+
+.availability {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.available {
+  background: #D4F5E9;
+  color: #0C7A43;
+}
+
+.busy {
+  background: #FFE2E2;
+  color: #A80000;
+}
+
+/* ---------------- PAGINATION BEAUTIFY ---------------- */
+
+.pagination button {
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+/* theme hover colors */
+
+.cardiology-theme .pagination button:hover {
+  background:#8B1E1E;
+  color:white;
+}
+
+.neurology-theme .pagination button:hover {
+  background:#5D3543;
+  color:white;
+}
+
+.orthopedic-theme .pagination button:hover {
+  background:#2B2E33;
+  color:white;
+}
+
+.dentistry-theme .pagination button:hover {
+  background:#2F6F73;
+  color:white;
+}
+
+.pediatric-theme .pagination button:hover {
+  background:#422B23;
+  color:white;
+}
+
+body {
+  animation: pageFadeIn 0.5s ease;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

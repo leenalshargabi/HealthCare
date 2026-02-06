@@ -72,3 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showPage(1);
 });
+
+document.querySelectorAll(".availability").forEach(badge => {
+    const random = Math.random();
+
+    if(random > 0.5){
+        badge.classList.remove("available");
+        badge.classList.add("busy");
+        badge.innerText = "Busy";
+    }
+});
