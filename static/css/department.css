@@ -39,7 +39,7 @@ body {
 
 /* Return Button */
 .return-btn {
-  position: fixed;
+  position: static;
   top: 20px;
   left: 20px;
   z-index: 999;
