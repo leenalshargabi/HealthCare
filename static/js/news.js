@@ -1,18 +1,15 @@
-// Toggle Read More / Less
-document.querySelectorAll(".more-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const card = btn.closest(".news-card");
-        const fullText = card.querySelector(".full-text");
-        const summary = card.querySelector(".summary");
+/* SMOOTH CARD ENTRY */
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".news-card");
 
-        if (fullText.style.display === "block") {
-            fullText.style.display = "none";
-            summary.style.display = "block";
-            btn.innerText = "Read More";
-        } else {
-            fullText.style.display = "block";
-            summary.style.display = "none";
-            btn.innerText = "Read Less";
-        }
+    cards.forEach((card, i) => {
+        card.style.opacity = 0;
+        card.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+            card.style.transition = ".4s ease";
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+        }, i * 120);
     });
 });

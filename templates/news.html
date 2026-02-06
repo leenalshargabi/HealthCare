@@ -8,82 +8,81 @@
 
 {% block content %}
 
-<!-- Full Width Header -->
-<div class="top-header">
-    <h1>News & Updates</h1>
-    <p>Stay informed about the latest hospital announcements</p>
-</div>
+<section class="news-hero">
+    <div class="hero-overlay"></div>
+    <h1>Hospital News & Updates</h1>
+    <p>Stay informed about the latest medical advancements and hospital announcements</p>
+</section>
 
-<div class="page-container">
 
-    <!-- Filter -->
+<section class="news-container">
+
+    <!-- FILTER BAR -->
     <div class="filter-bar">
         <form method="GET" action="{{ url_for('news_page') }}" class="search-form">
-            <div class="search-box">
-                <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="form-control">
-            </div>
 
-            <div class="sort-box">
-                <select name="sort" class="form-select">
-                    <option value="new" {% if sort_type == 'new' %}selected{% endif %}>Most Recent</option>
-                    <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest First</option>
-                </select>
-            </div>
+            <input type="text" name="q" placeholder="Search news..." value="{{ query_text }}" class="search-input">
 
-            <button type="submit" class="filter-btn">Apply</button>
+            <select name="sort" class="sort-select">
+                <option value="new" {% if sort_type == 'new' %}selected{% endif %}>Most Recent</option>
+                <option value="old" {% if sort_type == 'old' %}selected{% endif %}>Oldest</option>
+            </select>
+
+            <button type="submit" class="apply-btn">Apply</button>
+
             {% if query_text or sort_type != 'new' %}
-                <a href="{{ url_for('news_page') }}" class="btn-clear">Clear</a>
+                <a href="{{ url_for('news_page') }}" class="clear-btn">Clear</a>
             {% endif %}
         </form>
     </div>
 
-    <!-- News Grid -->
+
+    <!-- NEWS GRID -->
     <div class="news-grid">
+
         {% for n in Pnews %}
         <div class="news-card">
-            <span class="category-tag">{{ n.category }}</span>
+
+            <span class="category">{{ n.category }}</span>
+
             <h3>{{ n.title }}</h3>
+
             <p class="summary">{{ n.summary }}</p>
-            <p class="full-text">{{ n.content }}</p>
-            <button class="more-btn">Read More</button>
+
             <div class="news-footer">
-                <span class="author">By: {{ n.author }}</span>
-                <span class="date">{{ n.publishDate }}</span>
+                <span>{{ n.author }}</span>
+                <span>{{ n.publishDate }}</span>
             </div>
+
         </div>
         {% else %}
         <div class="no-results">
-            <p>No news found matching "{{ query_text }}"</p>
+            No news found matching "{{ query_text }}"
         </div>
         {% endfor %}
+
     </div>
 
-    <!-- Pagination -->
+
+    <!-- PAGINATION -->
     <div class="pagination">
-        {% set total_pages = (news.count_documents({}) // 10) + (1 if news.count_documents({}) % 10 > 0 else 0) %}
-        {% set start_page = current - 3 if current > 3 else 1 %}
-        {% set end_page = current + 3 if current + 3 <= total_pages else total_pages %}
 
         {% if current > 1 %}
-        <a href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Previous</a>
+        <a class="page-btn" href="{{ url_for('news_page', page=current-1, sort=sort_type, q=query_text) }}">Prev</a>
         {% endif %}
 
-        {% for p in range(start_page, end_page+1) %}
-            {% if p == current %}
-                <button class="active">{{ p }}</button>
-            {% else %}
-                <a href="{{ url_for('news_page', page=p, sort=sort_type, q=query_text) }}">{{ p }}</a>
-            {% endif %}
-        {% endfor %}
+        <span class="current-page">Page {{ current }}</span>
 
         {% if has_next %}
-        <a href="{{ url_for('news_page', page=current+1, sort=sort_type, q=query_text) }}">Next</a>
+        <a class="page-btn" href="{{ url_for('news_page', page=current+1, sort=sort_type, q=query_text) }}">Next</a>
         {% endif %}
+
     </div>
 
-</div>
+</section>
 
 {% endblock %}
+
 
 {% block extra_js %}
 <script src="{{ url_for('static', filename='js/news.js') }}"></script>

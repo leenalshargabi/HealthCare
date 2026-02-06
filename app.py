@@ -170,35 +170,52 @@ def emergencyrooms():
                            current=page, has_next=(page < total_pages), 
                            total_pages=total_pages)
 
-#NEWS PAGE
+# NEWS PAGE
 @app.route("/news")
 def news_page():
+
     page = int(request.args.get('page', 1))
     sort_type = request.args.get('sort', 'new')
-    query_text = request.args.get('q', '').strip() 
-    
+    query_text = request.args.get('q', '').strip()
+
+    # sort direction
     direction = -1 if sort_type == 'new' else 1
-    skip_among = (page - 1) * 10
-    
+
+    # pagination
+    per_page = 6
+    skip_amount = (page - 1) * per_page
+
+    # search query
     query = {}
+
     if query_text:
         query["$or"] = [
             {"title": {"$regex": query_text, "$options": "i"}},
-            {"content": {"$regex": query_text, "$options": "i"}},
-            {"category": {"$regex": query_text, "$options": "i"}}
+            {"summary": {"$regex": query_text, "$options": "i"}},
+            {"category": {"$regex": query_text, "$options": "i"}},
+            {"author": {"$regex": query_text, "$options": "i"}}
         ]
-    
-    allItem = list(news.find(query).sort('publishDate', direction).skip(skip_among).limit(10))
-    
+
+    # fetch news
+    all_items = list(
+        news.find(query)
+        .sort("publishDate", direction)
+        .skip(skip_amount)
+        .limit(per_page)
+    )
+
     total = news.count_documents(query)
-    has_next = total > (page * 10)
-    
-    return render_template("news.html", 
-                           Pnews=allItem, 
-                           current=page, 
-                           has_next=has_next, 
-                           sort_type=sort_type,
-                           query_text=query_text)
+    has_next = total > (page * per_page)
+
+    return render_template(
+        "news.html",
+        Pnews=all_items,
+        current=page,
+        has_next=has_next,
+        sort_type=sort_type,
+        query_text=query_text
+    )
+
 
 # ================= AUTH =================
 @app.route("/login")
@@ -439,8 +456,4 @@ def show_collections():
 
 
 if __name__ == "__main__":
-<<<<<<< Updated upstream
     app.run(debug=True, port=5000)
-=======
-    app.run(debug=True)
->>>>>>> Stashed changes
