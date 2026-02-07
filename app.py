@@ -2,8 +2,10 @@ import math
 from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
-from datetime import timedelta
+from datetime import datetime, timedelta
+from bson import ObjectId
+
+
 # import os,json
 
 app = Flask(__name__)
@@ -31,6 +33,7 @@ departments = db["departments"]
 admin = db["admin"]
 rooms_coll = db["rooms"]
 emergency_rooms = db["rooms"]
+notifications = db["notifications"]
 
 
 # ================= HOME =================
@@ -225,21 +228,30 @@ def news_page():
 
 
 # ================= AUTH =================
+# Login Page
 @app.route("/login")
 def choose_role():
     return render_template("auth/choose_role.html")
+
+# Logout
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/")
+
+# Patient Login Page
 @app.route("/login/patient", methods=["GET", "POST"])
 def patient_login():
     if request.method == "POST":
-        email = request.form["email"]
-        password_input = request.form["password"]
+        email = request.form.get("email").strip().lower()
+        password_input = request.form.get("password")
+        
         user = users.find_one({"email": email, "role": "patient"})
+        
         if user:
-            if check_password_hash(user["password"], password_input) or password_input == user["password"]:
+            stored_password = user.get("passwordHash") or user.get("password")
+            
+            if stored_password and (check_password_hash(stored_password, password_input) or password_input == stored_password):
                 session["user_id"] = str(user["_id"])
                 session["role"] = "patient"
                 session["name"] = user.get("name", "Patient")
@@ -248,7 +260,7 @@ def patient_login():
                 return "Invalid password. Please try again."
         else:
             return "Email not found. Please register first."
-           
+            
     return render_template("auth/patient_login.html")
 
 #login doctor page
@@ -310,44 +322,98 @@ def signup():
     return render_template("auth/signup.html")
 
 
+
 # ================= APPOINTMENTS =================
+
+# patient dashboard 
+from bson import ObjectId
+from datetime import datetime, timedelta
+
 @app.route("/book-appointment", methods=["GET", "POST"])
 def book_appointment():
     if "user_id" not in session:
-        return redirect("/login")
+        return redirect("/login/patient")
 
     if request.method == "POST":
-        dept = request.form["department"]
-        available_slots = ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM"]
-        today_date = datetime.now().strftime("%Y-%m-%d")
-       
-        doctor = doctors.find_one({"mainSpecialty": {"$regex": dept, "$options": "i"}})
-       
-        if not doctor:
-            return "No doctor available in this department currently."
+        selected_dept_name = request.form.get("department") # e.g., "Cardiology"
+        
+        # 1. Get Department ID (Matches first-letter-capitalized format)
+        dept_data = departments.find_one({"name": selected_dept_name})
+        if not dept_data:
+            return f"Error: Department {selected_dept_name} not found."
 
-        booked_slots = appointments.distinct("time", {"doctor_id": str(doctor["_id"]), "date": today_date})
-       
-        assigned_time = None
-        for slot in available_slots:
-            if slot not in booked_slots:
-                assigned_time = slot
-                break
-       
-        if not assigned_time:
-            return "All slots for today are fully booked. Please try tomorrow."
+        # 2. Get all doctors in this specific department using ObjectId
+        dept_doctors = list(doctors.find({"departmentId": dept_data["_id"]}))
 
-        appointments.insert_one({
-            "patient_id": session["user_id"],
-            "doctor_id": str(doctor["_id"]),
-            "doctor_name": doctor["fullName"],
-            "department": dept,
-            "date": today_date,
-            "time": assigned_time,
-            "status": "pending",
-            "created_at": datetime.now()
-        })
-        return redirect("/dashboard/patient")
+        if not dept_doctors:
+            return f"No doctors found for the {selected_dept_name} department."
+
+        # 3. Find the first available slot in the next 60 days (2 months)
+        found_slot = None
+        # Standard hourly slots from 09:00 to 15:00
+        available_hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"]
+        
+        for day_offset in range(1, 61): 
+            target_date = datetime.now() + timedelta(days=day_offset)
+            day_name = target_date.strftime("%A") # e.g., "Monday"
+
+            for hour in available_hours:
+                slot_time = datetime.strptime(f"{target_date.strftime('%Y-%m-%d')} {hour}", "%Y-%m-%d %H:%M")
+
+                for doc in dept_doctors:
+                    # CHECK 1: Is the doctor working this day?
+                    if day_name not in doc.get("workingDays", []):
+                        continue
+                    
+                    # CHECK 2: Is the slot within doctor's hours?
+                    work_from = doc.get("workingHours", {}).get("from", "09:00")
+                    work_to = doc.get("workingHours", {}).get("to", "16:00")
+                    if not (work_from <= hour <= work_to):
+                        continue
+
+                    # CHECK 3: Any surgeries scheduled in Operations collection?
+                    # We check by doctor's full name as per your operations JSON
+                    surgery_conflict = operations_coll.find_one({
+                        "doctor.fullName": doc["fullName"],
+                        "scheduling.startTime": {"$lte": slot_time},
+                        "scheduling.endTime": {"$gt": slot_time}
+                    })
+                    if surgery_conflict:
+                        continue
+
+                    # CHECK 4: Any existing appointments in Appointments collection?
+                    appointment_conflict = appointments.find_one({
+                        "doctorId": doc["_id"],
+                        "appointmentDate": slot_time,
+                        "status": {"$ne": "cancelled"}
+                    })
+                    if appointment_conflict:
+                        continue
+
+                    # If all checks pass, we found a doctor!
+                    found_slot = {
+                        "doctor": doc,
+                        "time": slot_time
+                    }
+                    break
+                if found_slot: break
+            if found_slot: break
+
+        # 4. Finalizing the booking
+        if found_slot:
+            new_appt = {
+                "appointmentCode": f"APT-{datetime.now().strftime('%M%S')}",
+                "patientId": ObjectId(session["user_id"]),
+                "doctorId": found_slot["doctor"]["_id"],
+                "departmentId": dept_data["_id"],
+                "appointmentDate": found_slot["time"],
+                "status": "scheduled",
+                "createdAt": datetime.now()
+            }
+            appointments.insert_one(new_appt)
+            return redirect("/dashboard/patient")
+
+        return "No available slots found in the next 2 months. Please try another department."
 
     return render_template("book_appointment.html")
 
@@ -355,105 +421,181 @@ def book_appointment():
 # ================= DEPARTMENTS =================
 @app.route("/department/cardiology")
 def cardiology():
-    query = {  "mainSpecialty": {'$in':[
-      "Interventional Cardiologist",'Heart Failure Specialist',
-  'Interventional Cardiologist',  ] }}
+    specialties = ['Interventional Cardiologist', 'Heart Failure Specialist']
+    query = {"mainSpecialty": {'$in': specialties}}
     
-    page = int(request.args.get('page',1))
-    skip_among=(page-1)*6
-    cardiology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents(query)
-    has_next =total>(page*6)
-    return render_template("departments/cardiology.html", cDoctors=cardiology_doctors,current=page,has_next= has_next)
+    page = int(request.args.get('page', 1))
+    per_page = 6
+    skip_among = (page - 1) * per_page
+    
+    cardiology_doctors = list(doctors.find(query).skip(skip_among).limit(per_page))
+    total = doctors.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("departments/cardiology.html", 
+                           cDoctors=cardiology_doctors, 
+                           current=page, 
+                           has_next=has_next)
 
 @app.route("/department/neurology")
 def neurology():
-    query = {  'mainSpecialty': {
-    '$in': ['Neurologist', 'Epileptologist']                    }            }
+    query = {'mainSpecialty': {'$in': ['Neurologist', 'Epileptologist']}}
     
-    page = int(request.args.get('page',1))
-    skip_among=(page-1)*6
-    neurology_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents(query)
-    has_next =total>(page*6)
-
-    return render_template("departments/neurology.html", cDoctors=neurology_doctors,current=page,has_next= has_next)
+    page = int(request.args.get('page', 1))
+    per_page = 6
+    skip_among = (page - 1) * per_page
+    
+    neurology_doctors = list(doctors.find(query).skip(skip_among).limit(per_page))
+    total = doctors.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("departments/neurology.html", 
+                           cDoctors=neurology_doctors, 
+                           current=page, 
+                           has_next=has_next)
 
 @app.route("/department/orthopedics")
 def orthopedic():
-    query = {    'mainSpecialty': {
-        '$in': [
-            'Spine Surgeon',  'Orthopedic Surgeon',        ]    }}
+    query = { 
+        'mainSpecialty': {
+            '$in': ['Spine Surgeon', 'Orthopedic Surgeon']
+        }
+    }
     
-    page = int(request.args.get('page',1))
-    skip_among=(page-1)*6
-    orthopedics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents(query)
-    has_next =total>(page*6)
-    return render_template("departments/orthopedics.html", cDoctors=orthopedics_doctors,current=page,has_next= has_next)
+    page = int(request.args.get('page', 1))
+    per_page = 6
+    skip_among = (page - 1) * per_page
+    
+    orthopedics_doctors = list(doctors.find(query).skip(skip_among).limit(per_page))
+    total = doctors.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("departments/orthopedics.html", 
+                           cDoctors=orthopedics_doctors, 
+                           current=page, 
+                           has_next=has_next)
 
 @app.route("/department/dentistry")
 def dental():
-    query = { 'mainSpecialty': {
-    '$in': [
-        'Periodontist', 'Dentist', ]}}
+    query = {'mainSpecialty': {'$in': ['Periodontist', 'Dentist']}}
 
-    page = int(request.args.get('page',1))
-    skip_among=(page-1)*6
-    dentistry_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents(query)
-    has_next =total>(page*6)
-    return render_template("departments/dentistry.html", cDoctors=dentistry_doctors,current=page,has_next= has_next)
+    page = int(request.args.get('page', 1))
+    per_page = 6
+    skip_among = (page - 1) * per_page
+    
+    dentistry_doctors = list(doctors.find(query).skip(skip_among).limit(per_page))
+    total = doctors.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("departments/dentistry.html", 
+                           cDoctors=dentistry_doctors, 
+                           current=page, 
+                           has_next=has_next)
 
 @app.route("/department/pediatrics")
 def pediatrics():
-    query = {  'mainSpecialty': {
-    '$in': [
-        'Pediatrician', 'Pediatric Cardiologist',
-  'Pediatric Neurologist'    ]}}
-    page = int(request.args.get('page',1))
-    skip_among=(page-1)*6
-    pediatrics_doctors = list(doctors.find(query).skip(skip_among).limit(6))
-    total=doctors.count_documents(query)
-    has_next =total>(page*6)
-    return render_template("departments/pediatrics.html", cDoctors=pediatrics_doctors,current=page,has_next= has_next)
+    query = {
+        'mainSpecialty': {
+            '$in': ['Pediatrician', 'Pediatric Cardiologist', 'Pediatric Neurologist']
+        }
+    }
+    
+    page = int(request.args.get('page', 1))
+    per_page = 6
+    skip_among = (page - 1) * per_page
+    
+    pediatrics_doctors = list(doctors.find(query).skip(skip_among).limit(per_page))
+    total = doctors.count_documents(query)
+    has_next = total > (page * per_page)
+    
+    return render_template("departments/pediatrics.html", 
+                           cDoctors=pediatrics_doctors, 
+                           current=page, 
+                           has_next=has_next)
 
 
 # ================= DASHBOARDS =================
+# Patient Dashboard
 @app.route("/dashboard/patient")
 def patient_dashboard():
-    if "user_id" not in session or session.get("role") != "patient":
-        return redirect("/login")
+    if "user_id" not in session:
+        return redirect("/login/patient")
 
     user_id = session["user_id"]
-   
-    upcoming_appts = list(appointments.find({
-        "patient_id": user_id,
-        "status": "scheduled"
-    }).sort("date", 1))
+    now = datetime.now()
 
-    past_appts = list(appointments.find({
-        "patient_id": user_id,
-        "status": {"$in": ["completed", "cancelled"]}
-    }).sort("date", -1))
+    # 1. جلب اسم المريض الحقيقي من كولكشن المرضى
+    patient = patients.find_one({"_id": ObjectId(user_id)})
+    patient_name = patient.get("fullName", "Patient")
 
-    return render_template("dashboards/patient_dashboard.html",
-    upcoming=upcoming_appts,history=past_appts)
+    # 2. جلب مواعيد المريض مع الربط
+    user_appts = list(appointments.find({"patientId": ObjectId(user_id)}))
+    upcoming = []
+    history = []
 
+    for appt in user_appts:
+        doc = doctors.find_one({"_id": appt.get("doctorId")})
+        dept = departments.find_one({"_id": appt.get("departmentId")})
+        
+        # جلب الطابق من كولكشن الغرف بناءً على اسم القسم
+        floor_info = "1st Floor"
+        if dept:
+            room = rooms_coll.find_one({"departmentName": dept["name"]})
+            if room:
+                floor_info = f"Floor {room.get('floor')}"
+
+        data = {
+            "appointmentCode": appt.get("appointmentCode"),
+            "doctor_name": doc.get("fullName") if doc else "Specialist",
+            "department": dept.get("name") if dept else "General",
+            "floor": floor_info,
+            "date": appt["appointmentDate"].strftime("%Y-%m-%d"),
+            "time": appt["appointmentDate"].strftime("%I:%M %p"),
+            "status": appt.get("status")
+        }
+
+        if appt["appointmentDate"] >= now and appt["status"] == "scheduled":
+            upcoming.append(data)
+        else:
+            history.append(data)
+
+    return render_template("dashboards/patient_dashboard.html", 
+                           upcoming=upcoming, 
+                           history=history, 
+                           p_name=patient_name) # نمرر الاسم هنا
+
+
+# Doctor Dashboard
 @app.route("/dashboard/doctor")
 def doctor_dashboard():
-    if session.get("role") != "doctor":
+    if "user_id" not in session or session.get("role") != "doctor":
         return redirect("/login/doctor")
 
-    total_patients = operations_coll.count_documents({}) 
+    doc_id = session["user_id"]
+
+    total_ops = operations_coll.count_documents({"doctor.id": ObjectId(doc_id)}) 
     total_rooms = rooms_coll.count_documents({})
-    total_er = rooms_coll.count_documents({"category": "Service/ER"})
+    
+    new_notifications = list(notifications.find({
+        "doctorId": ObjectId(doc_id),
+        "isRead": False
+    }).sort("createdAt", -1))
+
+    today_start = datetime.combine(datetime.now(), datetime.min.time())
+    today_end = datetime.combine(datetime.now(), datetime.max.time())
+    today_appts_count = appointments.count_documents({
+        "doctorId": ObjectId(doc_id),
+        "appointmentDate": {"$gte": today_start, "$lte": today_end}
+    })
 
     return render_template("dashboards/doctor_dashboard.html", 
                            role='doctor', 
-                           patients_count=total_patients, 
+                           patients_count=total_ops, 
                            rooms_count=total_rooms, 
-                           er_count=total_er)
+                           notifications=new_notifications,
+                           today_count=today_appts_count)
+
+
 # ================= ADMIN =================
 @app.route("/dashboard/manager")
 def manager_dashboard():
