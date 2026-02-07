@@ -11,131 +11,163 @@
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 20%, rgba(118,75,162,0.35), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(102,126,234,0.35), transparent 40%),
-    linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    radial-gradient(circle at 15% 20%, rgba(0,123,255,0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(0,85,190,0.12), transparent 40%),
+    linear-gradient(135deg, #f7fbff, #eaf4ff);
 
   display: flex;
   flex-direction: column;
 }
 
 /* =========================
-   Auth Card
+   Auth Page Wrapper
 ========================= */
-.auth-box {
-  margin: auto; /* يخليها في منتصف الصفحة */
-  width: 380px;
-  padding: 42px 36px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.45),
-    inset 0 0 0.5px rgba(255,255,255,0.6);
-  text-align: center;
-  animation: cardEnter 0.9s ease;
+.auth-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 /* =========================
-   Title
+   Auth Card
 ========================= */
-.auth-box h2 {
-  color: #fff;
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.auth-box,
+.login-box {
+  width: 390px;
+  padding: 42px 38px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e1edff;
+
+  box-shadow:
+    0 20px 40px rgba(0, 85, 190, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+
+  text-align: center;
+  animation: cardEnter 0.6s ease;
 }
 
-.auth-box h2::after {
+/* =========================
+   Titles
+========================= */
+.auth-box h2,
+.login-box h2 {
+  color: #0b3c6f;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.auth-box h2::after,
+.login-box h2::after {
   content: '';
   display: block;
-  width: 42px;
+  width: 48px;
   height: 3px;
-  margin: 14px auto 24px;
+  margin: 14px auto 26px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #0d6efd, #3aa0ff);
 }
 
 /* =========================
    Inputs
 ========================= */
-.auth-box input {
+.auth-box input,
+.login-box input {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.15);
-  color: #fff;
+  border: 1px solid #cfe3ff;
+  background: #f8fbff;
+  color: #1a2b4c;
   font-size: 14px;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.auth-box input::placeholder {
-  color: rgba(255,255,255,0.65);
+.auth-box input::placeholder,
+.login-box input::placeholder {
+  color: #7f9bbd;
 }
 
-.auth-box input:focus {
+.auth-box input:focus,
+.login-box input:focus {
   outline: none;
-  border-color: #8f8cff;
-  background: rgba(255,255,255,0.22);
-  box-shadow: 0 0 0 4px rgba(143,140,255,0.25);
+  border-color: #0d6efd;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
 }
 
 /* =========================
-   Button
+   Buttons
 ========================= */
-.auth-box button {
+.auth-box button,
+.login-box button {
   width: 100%;
   padding: 14px;
   margin-top: 6px;
-  border-radius: 16px;
+  border-radius: 14px;
   border: none;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
+  background: linear-gradient(135deg, #0d6efd, #3aa0ff);
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.auth-box button:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(118,75,162,0.45);
+.auth-box button:hover,
+.login-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(13,110,253,0.25);
+}
+
+/* =========================
+   Links
+========================= */
+.auth-links,
+.login-box a {
+  margin-top: 18px;
+  display: block;
+  font-size: 13px;
+}
+
+.auth-box a,
+.login-box a {
+  color: #0d6efd;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-box a:hover,
+.login-box a:hover {
+  text-decoration: underline;
 }
 
 /* =========================
    Error Message
 ========================= */
 .error {
-  background: rgba(255, 80, 80, 0.15);
-  color: #ffb4b4;
+  background: #fff1f1;
+  color: #d43b3b;
   padding: 10px;
   border-radius: 12px;
   font-size: 13px;
   margin-bottom: 16px;
-  border: 1px solid rgba(255,80,80,0.3);
+  border: 1px solid #ffc9c9;
 }
 
 /* =========================
-   Footer Text
+   Themes (Manager / Patient subtle differences)
 ========================= */
-.auth-box p {
-  margin-top: 22px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.75);
+.manager-theme {
+  border-top: 4px solid #0d6efd;
 }
 
-.auth-box a {
-  color: #a9a6ff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.auth-box a:hover {
-  text-decoration: underline;
+.patient-theme {
+  border-top: 4px solid #3aa0ff;
 }
 
 /* =========================
@@ -144,7 +176,7 @@ body {
 @keyframes cardEnter {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateY(25px) scale(0.96);
   }
   to {
     opacity: 1;
