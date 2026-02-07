@@ -1,33 +1,138 @@
 {% extends "base.html" %}
-{% block title %}Book Appointment{% endblock %}
+
+{% block title %}Booking appointment{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+<style>
+    .dept-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+    .dept-card {
+        border: 2px solid #edeff2;
+        border-radius: 15px;
+        padding: 25px 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #ffffff;
+        position: relative;
+    }
+    .dept-card:hover {
+        border-color: #003366;
+        background: #fcfdfe;
+        transform: translateY(-5px);
+    }
+    .dept-card.selected {
+        border-color: #003366;
+        background: #eef5ff;
+        box-shadow: 0 10px 20px rgba(0,51,102,0.1);
+    }
+    .dept-card.selected::after {
+        content: '✓';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #003366;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .dept-card i { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+    .dept-card span { font-weight: 700; font-size: 1rem; color: #003366; }
+    
+    .loading-text { display: none; color: #003366; font-weight: 600; margin-top: 25px; text-align: center; }
+    .error-msg {
+        background: #fff2f0;
+        border: 1px solid #ffccc7;
+        color: #ff4d4f;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
 <div class="auth-page">
-    <div class="auth-box">
-        <h2>Book Appointment</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">
-            Choose a department, and we will find the earliest available slot for you.
+    <div class="auth-box" style="max-width: 700px; padding: 40px;">
+        <h2 style="font-size: 2rem; color: #003366;">Smart Booking System</h2>
+        <p style="text-align: center; color: #777; margin-bottom: 30px;">
+            Choose a specialty. Our system will scan <b>60 days</b> of schedules to find the best match.
         </p>
 
-        <form method="POST" action="/book-appointment">
-            <select name="department" required>
-                <option value="">Select Department</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Neurology">Neurology</option>
-                <option value="Pediatrics">Pediatrics</option>
-                <option value="Orthopedics">Orthopedics</option>
-                <option value="Dental">Dental</option>
-            </select>
+        {% if error %}
+            <div class="error-msg">❌ {{ error }}</div>
+        {% endif %}
 
-            <button type="submit">Find Best Slot</button>
+        <form method="POST" action="/book-appointment" id="bookingForm">
+            <input type="hidden" name="department" id="selected_dept" required>
+
+            <div class="dept-grid">
+                <div class="dept-card" onclick="selectDept('Cardio', this)">
+                    <i>❤️</i>
+                    <span>Cardiology</span>
+                </div>
+                <div class="dept-card" onclick="selectDept('Pedia', this)">
+                    <i>👶</i>
+                    <span>Pediatrics</span>
+                </div>
+                <div class="dept-card" onclick="selectDept('Ortho', this)">
+                    <i>🦴</i>
+                    <span>Orthopedics</span>
+                </div>
+                <div class="dept-card" onclick="selectDept('Neuro', this)">
+                    <i>🧠</i>
+                    <span>Neurology</span>
+                </div>
+                <div class="dept-card" onclick="selectDept('Denti', this)">
+                    <i>🦷</i>
+                    <span>Dentistry</span>
+                </div>
+            
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn-primary" style="width: 100%; height: 50px; font-size: 1.1rem; border-radius: 10px;">
+                Find Available Slot
+            </button>
+            
+            <div id="loader" class="loading-text">
+                <div class="spinner" style="border-top-color: #003366; margin: 0 auto 15px;"></div> 
+                Our AI is checking doctor availability and surgical schedules...
+            </div>
         </form>
 
-        <div class="auth-links">
-            <a href="javascript:history.back()">← Return</a>
+        <div class="auth-links" style="margin-top: 25px;">
+            <a href="/dashboard/patient" style="color: #666;">← Return to Dashboard</a>
         </div>
     </div>
 </div>
+
+<script>
+    function selectDept(deptKey, element) {
+        // نرسل المفتاح المختصر (مثل Cardio) ليتناسب مع منطق الـ Fuzzy Match في الفلاسك
+        document.getElementById('selected_dept').value = deptKey;
+        
+        const cards = document.querySelectorAll('.dept-card');
+        cards.forEach(card => card.classList.remove('selected'));
+        element.classList.add('selected');
+    }
+
+    document.getElementById('bookingForm').onsubmit = function(e) {
+        if (!document.getElementById('selected_dept').value) {
+            alert("Please select a medical specialty first!");
+            e.preventDefault();
+            return;
+        }
+        document.getElementById('submitBtn').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+    };
+</script>
 {% endblock %}

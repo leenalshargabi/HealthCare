@@ -214,7 +214,7 @@ def news_page():
         .limit(per_page)
     )
 
-    total = news.count_documents(query)
+    total = news_coll.count_documents(query)
     has_next = total > (page * per_page)
 
     return render_template(
@@ -298,6 +298,7 @@ def doctor_login():
             return "This account not found in doctor "
             
     return render_template("auth/doctor_login.html")
+
 #login manager page
 @app.route("/login/manager", methods=["GET", "POST"])
 def manager_login():
@@ -336,59 +337,87 @@ def signup():
 
 
 # ================= APPOINTMENTS =================
-
-# patient dashboard 
 @app.route("/book-appointment", methods=["GET", "POST"])
 def book_appointment():
-    if "user_id" not in session:
-        return redirect("/login/patient")
+    if "user_id" not in session: return redirect("/login/patient")
 
     if request.method == "POST":
         selected_dept_name = request.form.get("department", "").strip()
         
-        dept_data = departments_coll.find_one({"name": selected_dept_name})
-        if not dept_data:
-            return f"Error: Department '{selected_dept_name}' not found."
+        # نأخذ أول 5 أحرف من اختيار المستخدم لزيادة مرونة البحث
+        # مثلاً: Cardio بدلاً من Cardiology
+        short_name = selected_dept_name[:5] 
 
-        dept_doctors = list(doctors_coll.find({"departmentId": dept_data["_id"]}))
+        # 1. البحث المرن في تخصصات الأطباء
+        # $regex مع options: 'i' تعني بحث غير حساس لحالة الأحرف ويقبل جزء من الكلمة
+        dept_doctors = list(doctors_coll.find({
+            "mainSpecialty": {"$regex": short_name, "$options": "i"}
+        }))
+
+        # 2. إذا لم نجد (احتياطاً)، نبحث في اسم القسم المربوط
         if not dept_doctors:
-            return f"No doctors found for the {selected_dept_name} department."
+            search_pipeline = [
+                {"$lookup": {"from": "departments", "localField": "departmentId", "foreignField": "_id", "as": "dept"}},
+                {"$unwind": "$dept"},
+                {"$match": {"dept.name": {"$regex": short_name, "$options": "i"}}}
+            ]
+            dept_doctors = list(doctors_coll.aggregate(search_pipeline))
 
-        found_slot = None
+        if not dept_doctors:
+            return render_template("book_appointment.html", error=f"No specialist found for {selected_dept_name}")
+
+        # نأخذ ID القسم من أول طبيب وجدناه لتوثيق الموعد
+        dept_id = dept_doctors[0].get("departmentId")
+
+        # 3. محرك البحث الزمني (60 يوم)
+        found_slot = False
         available_hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"]
         
         for day_offset in range(1, 61): 
             target_date = datetime.now() + timedelta(days=day_offset)
-            day_name = target_date.strftime("%A")
+            target_day_name = target_date.strftime("%A")
 
             for hour in available_hours:
-                slot_time = datetime.strptime(f"{target_date.strftime('%Y-%m-%d')} {hour}", "%Y-%m-%d %H:%M")
-                for doc in dept_doctors:
-                    if day_name not in doc.get("workingDays", []): continue
+                target_datetime = datetime.strptime(f"{target_date.strftime('%Y-%m-%d')} {hour}", "%Y-%m-%d %H:%M")
+                
+                for doctor in dept_doctors:
+                    # أ- فحص أيام العمل
+                    if target_day_name not in doctor.get("workingDays", []): 
+                        continue
                     
-                    work_from = doc.get("workingHours", {}).get("from", "09:00")
-                    work_to = doc.get("workingHours", {}).get("to", "16:00")
-                    if not (work_from <= hour <= work_to): continue
+                    # ب- فحص تعارض المواعيد الحالية
+                    existing_app = appointments_coll.find_one({
+                        "doctorId": doctor["_id"],
+                        "appointmentDate": target_datetime,
+                        "status": {"$ne": "cancelled"}
+                    })
+                    if existing_app: continue
 
-                    if operations_coll.find_one({"doctor.fullName": doc["fullName"], "scheduling.startTime": {"$lte": slot_time}, "scheduling.endTime": {"$gt": slot_time}}): continue
-                    if appointments_coll.find_one({"doctorId": doc["_id"], "appointmentDate": slot_time, "status": {"$ne": "cancelled"}}): continue
+                    # ج- فحص تعارض العمليات الجراحية
+                    existing_op = operations_coll.find_one({
+                        "doctor.fullName": doctor["fullName"], 
+                        "scheduling.startTime": {"$lte": target_datetime}, 
+                        "scheduling.endTime": {"$gt": target_datetime}
+                    })
+                    if existing_op: continue
 
-                    found_slot = {"doctor": doc, "time": slot_time}
+                    # 4. تنفيذ الحجز الفعلي عند إيجاد أول "فتحة" زمنية
+                    new_appointment = {
+                        "appointmentCode": f"APT-{datetime.now().strftime('%M%S%f')[:8]}",
+                        "patientId": ObjectId(session["user_id"]),
+                        "doctorId": doctor["_id"],
+                        "departmentId": dept_id,
+                        "appointmentDate": target_datetime,
+                        "status": "scheduled",
+                        "createdAt": datetime.now()
+                    }
+                    appointments_coll.insert_one(new_appointment)
+                    found_slot = True
                     break
                 if found_slot: break
             if found_slot: break
 
         if found_slot:
-            new_appt = {
-                "appointmentCode": f"APT-{datetime.now().strftime('%M%S%f')[:6]}",
-                "patientId": ObjectId(session["user_id"]),
-                "doctorId": found_slot["doctor"]["_id"],
-                "departmentId": dept_data["_id"],
-                "appointmentDate": found_slot["time"],
-                "status": "scheduled",
-                "createdAt": datetime.now()
-            }
-            appointments_coll.insert_one(new_appt)
             return redirect("/dashboard/patient")
         
         return "Sorry, no available slots found in the next 60 days."
@@ -494,32 +523,60 @@ def pediatrics():
 
 # ================= DASHBOARDS =================
 # Patient Dashboard
+# ================= DASHBOARD =================
 @app.route("/dashboard/patient")
 def patient_dashboard():
     if "user_id" not in session or session.get("role") != "patient":
         return redirect("/login/patient")
-    
-    user_id = ObjectId(session["user_id"])
+        
+    patient_id = ObjectId(session["user_id"])
     now = datetime.now()
     
-    user_appts = list(appointments_coll.find({"patientId": user_id}))
+    pipeline = [
+        {"$match": {"patientId": patient_id}},
+        {
+            "$lookup": {
+                "from": "doctors",
+                "localField": "doctorId",
+                "foreignField": "_id",
+                "as": "doctor_info"
+            }
+        },
+        {"$unwind": "$doctor_info"},
+        {
+            "$lookup": {
+                "from": "departments",
+                "localField": "doctor_info.departmentId", # تأكد من المسار الصحيح للـ ID
+                "foreignField": "_id",
+                "as": "dept_info"
+            }
+        },
+        {"$unwind": {"path": "$dept_info", "preserveNullAndEmptyArrays": True}},
+        {"$sort": {"appointmentDate": 1}}
+    ]
+    
+    raw_appointments = list(appointments_coll.aggregate(pipeline))
     upcoming, history = [], []
 
-    for appt in user_appts:
-        doc = doctors_coll.find_one({"_id": appt.get("doctorId")})
+    for appt in raw_appointments:
         data = {
-            "appointmentCode": appt.get("appointmentCode"),
-            "doctor_name": doc.get("fullName") if doc else "Doctor",
+            "appointmentCode": appt.get("appointmentCode", "N/A"),
+            "doctor_name": appt["doctor_info"].get("fullName"),
+            "department": appt["dept_info"].get("name") if appt.get("dept_info") else appt["doctor_info"].get("mainSpecialty"),
             "date": appt["appointmentDate"].strftime("%Y-%m-%d"),
             "time": appt["appointmentDate"].strftime("%I:%M %p"),
-            "status": appt.get("status")
+            "status": appt.get("status", "scheduled"),
+            "floor": "Main Clinic" 
         }
+        
         if appt["appointmentDate"] >= now and appt["status"] == "scheduled":
             upcoming.append(data)
         else:
             history.append(data)
 
-    return render_template("dashboards/patient_dashboard.html", upcoming=upcoming, history=history, p_name=session.get("name"))
+    return render_template("dashboards/patient_dashboard.html", 
+                           upcoming=upcoming, history=history, 
+                           p_name=session.get("name", "User"))
 
 
 # Doctor Dashboard Route

@@ -1,58 +1,78 @@
 {% extends "base.html" %}
 
-{% block title %}Doctor Dashboard{% endblock %}
+{% block title %}Doctor Panel{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<style>
+    .doctor-container { padding: 40px; max-width: 1100px; margin: auto; }
+    .controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .sort-buttons .btn { padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; }
+    .btn-asc { background: #003366; color: white; }
+    .btn-desc { background: #666; color: white; margin-left: 10px; }
+    
+    .apt-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .apt-table th { background: #003366; color: white; padding: 15px; text-align: left; }
+    .apt-table td { padding: 15px; border-bottom: 1px solid #eee; }
+    .status-tag { padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
+    .status-scheduled { background: #e8f5e9; color: #2e7d32; }
+</style>
 {% endblock %}
 
 {% block content %}
-
-<section class="hero">
-
-    <div class="hero-left fade-in">
-        <span class="badge">Trusted Medical Center</span>
-
-        <h1>
-            Caring for Life,<br>
-            <span>Every Step of the Way</span>
-        </h1>
-
-        <p>
-            NovaCare Hospital delivers world-class healthcare through
-            innovation, compassion, and expert medical professionals.
-        </p>
-
-        <div class="hero-actions">
-            <a href="/book-appointment" class="btn-primary">Book Appointment</a>
-            <a href="/about" class="btn-outline">About Us</a>
-        </div>
-
-       <div class="stats">
-    <div class="stat-card {% if role != 'doctor' %}disabled-card{% endif %}" 
-         {% if role == 'doctor' %} onclick="location.href='/surgeries'" {% endif %}>
-        <h2>{{ patients_count }}</h2>
-        <span>Operations</span> 
+<div class="doctor-container">
+    <div class="welcome-section">
+        <h1>Doctor Control Panel</h1>
+        <p>Manage your patient schedule and upcoming consultations.</p>
     </div>
 
-    <div class="stat-card {% if role != 'doctor' %}disabled-card{% endif %}" 
-         {% if role == 'doctor' %} onclick="location.href='/rooms'" {% endif %}>
-        <h2>{{ rooms_count }}</h2>
-        <span>Hospital Rooms</span>
-    </div>
-
-    <div class="stat-card {% if role != 'doctor' %}disabled-card{% endif %}" 
-         {% if role == 'doctor' %} onclick="location.href='/EmergencyRooms'" {% endif %}>
-        <h2>{{ er_count }}</h2>
-        <span>ER Units</span>
-    </div>
+    <div class="controls">
+        <h3>My Appointments</h3>
+        <div class="sort-buttons">
+    <span>Sort by Date:</span>
+    <a href="{{ url_for('doctor_dashboard', sort='asc') }}" 
+       class="btn {{ 'btn-asc' if current_sort == 'asc' else 'btn-desc' }}">
+       ↑ Oldest First
+    </a>
+    <a href="{{ url_for('doctor_dashboard', sort='desc') }}" 
+       class="btn {{ 'btn-asc' if current_sort == 'desc' else 'btn-desc' }}">
+       ↓ Newest First
+    </a>
 </div>
     </div>
 
-    <div class="hero-right slide-in">
-        <img src="{{ url_for('static', filename='images/doctor2.png') }}" alt="Doctor">
-    </div>
-
-</section>
-
+    <table class="apt-table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Patient Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for apt in appointments %}
+            <tr>
+                <td><strong>#{{ apt.code }}</strong></td>
+                <td>{{ apt.patient_name }}</td>
+                <td>📅 {{ apt.date }}</td>
+                <td>⏰ {{ apt.time }}</td>
+                <td>
+                    <span class="status-tag status-{{ apt.status|lower }}">
+                        {{ apt.status|capitalize }}
+                    </span>
+                </td>
+                <td>
+                    <button style="border: none; background: none; color: #003366; cursor: pointer; font-weight: bold;">View Details</button>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" style="text-align: center; padding: 30px; color: #888;">No appointments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
