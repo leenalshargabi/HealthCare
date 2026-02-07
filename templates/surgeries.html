@@ -4,38 +4,48 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/surgeries.css') }}">
 {% endblock %}
 
 {% block content %}
 
-<section class="rooms-page">
-    <h1>Operation Rooms Schedule</h1>
-    <p class="subtitle">Real-time overview of surgical room usage and scheduling</p>
+<section class="surgeries-page">
+
+    <div class="page-header">
+        <h1>Operation Rooms Schedule</h1>
+        <p class="subtitle">
+            Real-time overview of surgical room usage and scheduling
+        </p>
+    </div>
 
     <!-- FILTER FORM -->
-    <form method="GET" class="row g-3 mb-4">
-        <div class="col-md-4">
-            <input type="text" name="doctor" class="form-control"
-                   placeholder="Search by Doctor Name..."
-                   value="{{ q_doctor or '' }}">
-        </div>
+    <div class="filter-wrapper">
+        <form method="GET" class="filter-form">
 
-        <div class="col-md-3">
-            <input type="date" name="date" class="form-control"
-                   value="{{ q_date or '' }}">
-        </div>
+            <div class="filter-group">
+                <input type="text" name="doctor"
+                       placeholder="Search by Doctor Name..."
+                       value="{{ q_doctor or '' }}">
+            </div>
 
-        <input type="hidden" name="order" value="{{ order }}">
+            <div class="filter-group">
+                <input type="date" name="date"
+                       value="{{ q_date or '' }}">
+            </div>
 
-        <div class="col-md-4 d-flex gap-2">
-            <button type="submit" class="btn btn-success shadow-sm">
-                <i class="fas fa-filter"></i> Apply Filter
-            </button>
-            <a href="/surgeries" class="btn btn-secondary">
-                Reset
-            </a>
-        </div>
-    </form>
+            <input type="hidden" name="order" value="{{ order }}">
+
+            <div class="filter-actions">
+                <button type="submit" class="btn-primary">
+                    Apply Filter
+                </button>
+                <a href="/surgeries" class="btn-secondary">
+                    Reset
+                </a>
+            </div>
+
+        </form>
+    </div>
 
     <!-- FILTER INFO -->
     {% if q_doctor or q_date %}
@@ -98,12 +108,12 @@
 
     <!-- PAGINATION -->
     {% if total_pages > 1 or has_next or current > 1 %}
-    <div class="pagination-container mt-5">
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center align-items-center">
+    <div class="pagination-container">
+        <nav>
+            <ul class="pagination">
 
                 {% if current > 1 %}
-                <li class="page-item">
+                <li>
                     <a class="page-link"
                        href="?page={{ current - 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">
                         Previous
@@ -111,14 +121,14 @@
                 </li>
                 {% endif %}
 
-                <li class="page-item active">
+                <li class="active">
                     <span class="page-link">
                         Page {{ current }}
                     </span>
                 </li>
 
                 {% if has_next %}
-                <li class="page-item">
+                <li>
                     <a class="page-link"
                        href="?page={{ current + 1 }}&doctor={{ q_doctor }}&date={{ q_date }}&order={{ order }}">
                         Next
@@ -130,6 +140,7 @@
         </nav>
     </div>
     {% endif %}
+
 </section>
 
 {% endblock %}
