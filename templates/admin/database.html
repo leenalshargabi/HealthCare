@@ -1,0 +1,42 @@
+{% extends "/admin/baseDashboard.html" %}
+{% block title %}Database{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Database Control Panel</h2>
+    </div>
+
+    <div style="margin-bottom: 30px; padding: 15px; border-bottom: 1px solid #ddd;">
+        <h3>Create New Database</h3>
+        <p style="font-size: 0.8rem; color: gray;">Note: This will create a new DB in MongoDB instance.</p>
+        <form action="/admin/create-db" method="POST" style="margin-top: 10px;">
+            <input type="text" name="db_name" placeholder="Enter Database Name" required
+                   style="width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="submit" class="btn-edit" style="padding: 10px 20px;">Create DB</button>
+        </form>
+    </div>
+
+    <div style="padding: 15px;">
+        <h3>Add New Collection</h3>
+        <p style="font-size: 0.8rem; color: gray;">Target DB: {{ db.name }}</p>
+        <form action="/admin/create-collection" method="POST" style="margin-top: 10px;">
+            <input type="text" name="collection_name" placeholder="Enter Collection Name" required
+                   style="width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="submit" class="btn-edit" style="padding: 10px 20px; background-color: #698b7f;">Add Collection</button>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Active Collections in Current DB</h3>
+    <ul style="margin-top: 10px; list-style: none;">
+        {% for col in db.list_collection_names() %}
+            <li style="padding: 8px; border-bottom: 1px solid #eee;">coll {{ col }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

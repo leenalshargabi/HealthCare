@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hospital Admin{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+</head>
+<body>
+
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Smart Health</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/admin/dashboard" >Dashboard</a></li>
+                <li><a href="/admin/users" >Users Management</a></li>
+                <li><a href="/admin/reports" >Reports</a></li>
+                <li><a href="/admin/database" >Database</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="/">Exit to Site</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-box">
+                    <form action="/admin/dashboard" method="GET">
+                        <input type="hidden" name="section" value="{{ section }}">
+                        <input type="text" name="q" placeholder="Search for anything...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="user-profile">
+                    <span> Admin</span>
+                </div>
+            </header>
+
+            <section class="page-body">
+                {% block content %}{% endblock %}
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+{% extends "/admin/baseDashboard.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/manager.css') }}">
+{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<div class="cardList"><div class="card">Patients: {{ patientscount }}</div>
+<div class="card">Doctors: {{ doctorscount }}</div>
+<div class="card">Rooms: {{ roomscount }}</div>
+<div class="card">Operations: {{ operationscount }}</div>
+<div class="card">Appointments: {{ appointmentscount }}</div>
+</div>
+{% endblock %}
