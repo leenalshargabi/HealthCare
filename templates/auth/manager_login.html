@@ -2,18 +2,23 @@
 {% block title %}Manager Login{% endblock %}
 
 {% block content %}
-<div class="login-box manager-theme">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
 
-    <h2>Manager Login</h2>
+<div class="auth-page">
+    <div class="auth-box">
+        <h2>Manager Login</h2>
+        <form method="POST">
+            <input type="email" name="email" placeholder="Admin Email" required>
+            
+            <input type="password" name="password" placeholder="Password" required>
+            
+            <button type="submit">Login</button>
+        </form>
 
-    <form method="POST">
-        <input type="email" name="email" placeholder="Admin Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-
-        <button type="submit">Login</button>
-    </form>
-
-    <a href="/login">← Return</a>
-
+        <div class="auth-links">
+            <a href="/login">← Return to Roles</a>
+        
+        </div>
+    </div>
 </div>
 {% endblock %}

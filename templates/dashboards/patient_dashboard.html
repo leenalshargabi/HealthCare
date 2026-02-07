@@ -1,54 +1,100 @@
 {% extends "base.html" %}
 
-{% block title %}Specialities{% endblock %}
+{% block title %}My Appointments - NovaCare{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<style>
+    .appointment-card {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        align-items: center;
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid #003366;
+        transition: transform 0.2s;
+    }
+    .appointment-card:hover { transform: translateY(-2px); }
+    .location-info { color: #003366; font-weight: 500; font-size: 0.9rem; }
+    .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-align: center; display: inline-block; min-width: 80px; }
+    
+    /* ألوان الحالات ديناميكياً */
+    .status-scheduled, .status-confirmed { background: #e8f5e9; color: #2e7d32; }
+    .status-completed { background: #e3f2fd; color: #1565c0; }
+    .status-cancelled { background: #ffebee; color: #c62828; }
+    
+    .section-title { margin: 30px 0 15px; color: #333; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+    .apt-code { font-size: 0.7rem; color: #999; display: block; margin-top: 4px; }
+    .welcome-section { background: #003366; color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+</style>
 {% endblock %}
 
 {% block content %}
-
-<div class="container">
-    <h1>Welcome, {{ session.get('name') }}!</h1>
-    <p>View and manage your medical appointments below.</p>
+<div class="container" style="padding: 40px 20px;">
+    <div class="welcome-section">
+        <h1>Welcome, {{ p_name }}!</h1>
+        <p>Here are your scheduled appointments and medical journey details.</p>
+    </div>
 
     <h2 class="section-title">Upcoming Appointments</h2>
     <div class="appointments-list">
         {% for appt in upcoming %}
             <div class="appointment-card">
                 <div class="doctor-info">
-                    <b>Dr. {{ appt.doctor_name if appt.doctor_name else 'To be assigned' }}</b>
-                    <span>Department: {{ appt.department }}</span>
+                    <b style="font-size: 1.1rem; display: block;">{{ appt.doctor_name }}</b>
+                    <span style="color: #003366; font-weight: bold;">Dept: {{ appt.department }}</span>
+                    <small class="apt-code">Code: {{ appt.appointmentCode }}</small>
                 </div>
-                <div>📅 {{ appt.date }}</div>
-                <div>⏰ {{ appt.time }}</div>
-                <div><span class="status-badge pending">Upcoming</span></div>
+                
+                <div class="date-time">
+                    <div style="margin-bottom: 5px;">📅 {{ appt.date }}</div>
+                    <div>⏰ {{ appt.time }}</div>
+                </div>
+
+                <div class="location-info">
+                    📍 Location:<br>
+                    <span>{{ appt.floor }}</span>
+                </div>
+
+                <div style="text-align: right;">
+                    <span class="status-badge status-{{ appt.status|lower }}">
+                        {{ appt.status|capitalize }}
+                    </span>
+                </div>
             </div>
         {% else %}
-            <div class="no-data">No upcoming appointments found. <a href="/specialities">Book one now.</a></div>
+            <div class="no-data" style="background: #f9f9f9; padding: 40px; text-align: center; border-radius: 10px;">
+                You don't have any upcoming appointments. <br>
+                <a href="/book-appointment" class="btn-primary" style="display: inline-block; margin-top: 15px; text-decoration: none; padding: 10px 20px; background: #003366; color: white; border-radius: 5px;">Book an Appointment Now</a>
+            </div>
         {% endfor %}
     </div>
 
     <h2 class="section-title">Medical History</h2>
     <div class="appointments-list">
         {% for appt in history %}
-            <div class="appointment-card" style="border-left-color: #666; opacity: 0.8;">
+            <div class="appointment-card" style="border-left-color: #999; opacity: 0.8;">
                 <div class="doctor-info">
-                    <b>Dr. {{ appt.doctor_name }}</b>
-                    <span>{{ appt.department }}</span>
+                    <b style="font-size: 1.1rem; display: block;">{{ appt.doctor_name }}</b>
+                    <span style="color: #666; font-weight: bold;">{{ appt.department }}</span>
+                    <small class="apt-code">Code: {{ appt.appointmentCode }}</small>
                 </div>
-                <div>{{ appt.date }}</div>
-                <div>{{ appt.time }}</div>
-                <div>
-                    <span class="status-badge {{ appt.status }}">
-                        {{ appt.status }}
+
+                <div>📅 {{ appt.date }}</div>
+                <div>⏰ {{ appt.time }}</div>
+                
+                <div style="text-align: right;">
+                    <span class="status-badge status-{{ appt.status|lower }}">
+                        {{ appt.status|capitalize }}
                     </span>
                 </div>
             </div>
         {% else %}
-            <div class="no-data">No past records available.</div>
+            <div class="no-data" style="text-align: center; padding: 20px; color: #888;">No past medical records found.</div>
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
